@@ -11,4 +11,6 @@ COPY src src/
 
 EXPOSE 5000
 
-CMD ["gunicorn", "application:app", "-b", "0.0.0.0:5000", "-w", "4"]
+WORKDIR /src
+
+CMD ["/.venv/bin/gunicorn", "application:app", "-b", "0.0.0.0:5000", "-w", "4"]
