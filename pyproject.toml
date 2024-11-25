@@ -1,0 +1,62 @@
+[tool.poetry]
+name = "mc-intent-classifier"
+version = "0.0.1"
+description = ""
+authors = ["Erik Harding <erik@praekelt.org>"]
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+gunicorn = "^23.0.0"
+flask = "^3.1.0"
+prometheus-flask-exporter = "^0.23.1"
+flask-basicauth = "^0.2.0"
+sentry-sdk = {extras = ["flask"], version = "^2.18.0"}
+numpy = "1.23.5"
+torch = "2.2.2"
+sentence-transformers = "3.1.1"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.7.4"
+pre-commit = "^4.0.1"
+pytest = "^8.3.3"
+pytest-mock = "^3.14.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff.lint]
+select = [
+    "E", "F", "W", # pycodestyle + pyflakes == flake8 - mccabe
+    "I",           # isort
+    "UP",          # pyupgrade
+    "S",           # flake8-bandit
+    "B",           # flake8-bugbear
+    "C4",          # flake8-comprehensions
+    # "DJ",          # flake8-django
+    "PIE",         # flake8-pie
+    # "PT",          # flake8-pytest-style
+    "SIM",         # flake8-simplify
+    "PTH",         # flake8-use-pathlib
+    "RUF",         # ruff-specific rules
+]
+
+ignore = [
+    "E501",  # TODO: Something about these long lines.
+    "S113",  # TODO: Add request timeouts.
+    "PTH118", # TODO: Switch to pathlib
+    "PTH100", # TODO: 'os.path.abspath()' should be replaced by 'Path.resolve()' maybe use pathlib?
+    "PTH120", # TODO: 'os.path.dirname()' should be replaced by 'Path.parent' maybe use pathlib?
+    "PTH123", # TODO: 'open()' should be replaced by 'Path.open()' maybe use pathlib?
+    # Ignores below this line needs to be checked out by someone with more knowledge of the project
+    "S501", #TODO: Probable use of 'requests' call with 'verify=False' disabling SSL certificate checks
+    "SIM115", # TODO: Use a context manager for opening files - FWB: Tried fixing these, but ran into errors on tests
+    "S101", # TODO: Use of 'assert' detected - FWB: Looks like this is only used in migration files
+    "S608", # TODO: Possible SQL injection vector through string-based query construction
+    "RUF012", # We usually want immutable instance attributes
+
+]
