@@ -11,8 +11,8 @@ from src.intent_classifier import IntentClassifier
 
 version = importlib.metadata.version("mc-intent-classifier")
 
-
-DATA_PATH = Path("/src/data")
+dirname = os.path.dirname(__file__)
+DATA_PATH = Path(f"{dirname}/data")
 OUTPUT_FILE_PATH = DATA_PATH / "new_test_intent_embeddings.json"
 
 app = Flask(__name__)
