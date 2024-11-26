@@ -3,6 +3,7 @@ from pathlib import Path
 from typing import Tuple
 
 import numpy as np
+import yaml
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -10,12 +11,18 @@ DEFAULT_MODEL = "all-MiniLM-L6-v2"
 
 
 class IntentClassifier:
-    def __init__(self, json_path, model_name=DEFAULT_MODEL):
+    def __init__(self, embeddings_path, nlu_path, model_name=DEFAULT_MODEL):
         """
         Initialize with precomputed embeddings from a JSON file and model.
         """
         self.model_name = model_name
-        self.json_path = Path(json_path)
+
+        if not embeddings_path.exists():
+            labeled_data = read_yaml(nlu_path)
+            embeddings = compute_embeddings(labeled_data)
+            save_embeddings_to_file(embeddings, embeddings_path)
+
+        self.json_path = Path(embeddings_path)
 
         self._load_model()
         self.embeddings = self._load_embeddings()
@@ -88,3 +95,81 @@ class IntentClassifier:
         best_intent = max(average_similarities, key=average_similarities.get)
         confidence = average_similarities[best_intent]
         return best_intent, confidence
+
+
+def read_yaml(yaml_file_path):
+    """
+    Read intents and examples from a YAML file, ignoring synonym entries,
+    and removing leading '-' from each example.
+
+    Args:
+        yaml_file_path (str or Path): Path to the YAML file.
+
+    Returns:
+        dict: A dictionary containing intents as keys and examples as values.
+    """
+    yaml_file_path = Path(yaml_file_path)
+
+    if not yaml_file_path.exists():
+        raise FileNotFoundError(f"The file '{yaml_file_path}' does not exist.")
+
+    try:
+        with yaml_file_path.open("r", encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+    except yaml.YAMLError as e:
+        raise ValueError(f"Error parsing YAML file '{yaml_file_path}': {e}") from e
+
+    intents_data = {}
+    for entry in data.get("nlu", []):
+        if "intent" in entry:
+            intent = entry["intent"]
+            examples = entry["examples"].splitlines()
+            examples = [
+                example.lstrip("-").strip() for example in examples if example.strip()
+            ]
+            intents_data[intent] = examples
+
+    if not intents_data:
+        raise ValueError("No intents found in the provided YAML file.")
+
+    return intents_data
+
+
+def compute_embeddings(labeled_data, model_name=DEFAULT_MODEL):
+    """
+    Compute embeddings for labeled data using SentenceTransformer.
+
+    Model options:
+    - BAAI/bge-m3: best for multilingual tasks
+    - all-MiniLM-L6-v2: best for English-only tasks
+    - sartifyllc/African-Cross-Lingua-Embeddings-Model: to be explored
+    """
+    try:
+        model = SentenceTransformer(model_name)
+    except Exception as e:
+        raise ValueError(f"Error loading model '{model_name}': {e}") from e
+
+    embeddings = {}
+    for intent, texts in labeled_data.items():
+        try:
+            embeddings[intent] = model.encode(texts).tolist()
+        except Exception as e:
+            raise ValueError(
+                f"Error computing embeddings for intent '{intent}': {e}"
+            ) from e
+
+    return embeddings
+
+
+def save_embeddings_to_file(embeddings, output_file):
+    """
+    Save computed embeddings to a JSON file.
+    """
+    output_file = Path(output_file)
+
+    try:
+        with output_file.open("w") as f:
+            json.dump(embeddings, f)
+        print(f"Embeddings saved to '{output_file}'.")
+    except OSError as e:
+        raise OSError(f"Error saving embeddings to '{output_file}': {e}") from e

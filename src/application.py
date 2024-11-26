@@ -13,7 +13,8 @@ version = importlib.metadata.version("mc-intent-classifier")
 
 dirname = os.path.dirname(__file__)
 DATA_PATH = Path(f"{dirname}/data")
-OUTPUT_FILE_PATH = DATA_PATH / "new_test_intent_embeddings.json"
+NLU_FILE_PATH = DATA_PATH / "nlu.yaml"
+EMBEDDINGS_FILE_PATH = DATA_PATH / "intent_embeddings.json"
 
 app = Flask(__name__)
 app.config["BASIC_AUTH_USERNAME"] = os.environ.get("NLU_USERNAME")
@@ -31,7 +32,9 @@ basic_auth = BasicAuth(app)
 metrics = PrometheusMetrics(app)
 metrics.info("app_info", "Application info", version=version)
 
-classifier = IntentClassifier(json_path=OUTPUT_FILE_PATH)
+classifier = IntentClassifier(
+    embeddings_path=EMBEDDINGS_FILE_PATH, nlu_path=NLU_FILE_PATH
+)
 
 
 @app.route("/")
