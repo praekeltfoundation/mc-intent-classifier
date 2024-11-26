@@ -39,6 +39,8 @@ classifier = IntentClassifier(
 
 @app.route("/")
 def hello_world():
+    # adding this to trigger error and test sentry/glitchtip
+    division_by_zero = 1 / 0  # noqa: F841
     return "<p>Hello, World!</p>"
 
 
