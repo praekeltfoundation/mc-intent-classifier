@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mc-intent-classifier"
-version = "0.0.1"
+version = "0.1.0"
 description = ""
 authors = ["Erik Harding <erik@praekelt.org>"]
 readme = "README.md"

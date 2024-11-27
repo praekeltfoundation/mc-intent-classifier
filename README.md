@@ -1,6 +1,6 @@
 # MomConnect Intent Classifier
 
-Model that classifies the intent of inbound messages.
+Model that classifies the intent of inbound messages. It is not intended to be exposed to the outside world, we only have it accisble inside the cluster.
 
 ## Development
 This project uses [poetry](https://python-poetry.org/docs/#installation) for packaging and dependancy management, so install that first.
