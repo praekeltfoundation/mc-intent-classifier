@@ -12,7 +12,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 # ALTERNATE_MODEL = sentence-transformers/paraphrase-multilingual-mpnet-base-v2  # 68% performance
 DEFAULT_MODEL = "BAAI/bge-m3"
 logging.basicConfig(
-    level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s'
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
 
@@ -21,11 +21,12 @@ class IntentClassifier:
     Classifies incoming text into predefined intents using sentence embeddings.
     Uses Mean Embedding Similarity and Margin-Based Confidence.
     """
+
     def __init__(
         self,
         embeddings_path: str | Path,
         nlu_path: str | Path,
-        model_name: str = DEFAULT_MODEL
+        model_name: str = DEFAULT_MODEL,
     ):
         """
         Initializes the classifier, loads the model, and loads or computes
@@ -52,9 +53,7 @@ class IntentClassifier:
                     Cannot compute embeddings."""
                 )
 
-            mean_embeddings_data = compute_mean_embeddings(
-                labeled_data, self.model
-            )
+            mean_embeddings_data = compute_mean_embeddings(labeled_data, self.model)
             if not mean_embeddings_data:
                 raise ValueError(
                     f"""Failed to compute any mean embeddings
@@ -71,9 +70,7 @@ class IntentClassifier:
         try:
             self.model = SentenceTransformer(self.model_name)
         except Exception as e:
-            raise ValueError(
-                f"Error loading model '{self.model_name}': {e}"
-            ) from e
+            raise ValueError(f"Error loading model '{self.model_name}': {e}") from e
 
     def _load_mean_embeddings(self) -> dict[str, np.ndarray]:
         """
@@ -89,12 +86,18 @@ class IntentClassifier:
             with self.embeddings_path.open("r", encoding="utf-8") as f:
                 embeddings_data = json.load(f)
         except json.JSONDecodeError as e:
-            raise ValueError(f"Error decoding JSON file '{self.embeddings_path}': {e}") from e
+            raise ValueError(
+                f"Error decoding JSON file '{self.embeddings_path}': {e}"
+            ) from e
         except Exception as e:
-            raise ValueError(f"Error opening or reading file '{self.embeddings_path}': {e}") from e
+            raise ValueError(
+                f"Error opening or reading file '{self.embeddings_path}': {e}"
+            ) from e
 
         if not isinstance(embeddings_data, dict):
-            raise ValueError(f"Invalid format in embeddings file '{self.embeddings_path}'. Expected a dictionary.")
+            raise ValueError(
+                f"Invalid format in embeddings file '{self.embeddings_path}'. Expected a dictionary."
+            )
 
         mean_embeddings = {}
         intents_skipped = 0
@@ -103,15 +106,17 @@ class IntentClassifier:
                 intents_skipped += 1
                 continue
             try:
-                mean_vector = np.array(
-                    mean_vector_list, dtype=np.float32
-                ).reshape(1, -1)
+                mean_vector = np.array(mean_vector_list, dtype=np.float32).reshape(
+                    1, -1
+                )
                 mean_embeddings[intent] = mean_vector
             except Exception as e:
                 logging.error(
                     """Error processing mean embedding for intent
                     '%s' from '%s': %s. Skipping this intent.""",
-                    intent, self.embeddings_path, e
+                    intent,
+                    self.embeddings_path,
+                    e,
                 )
                 intents_skipped += 1
 
@@ -123,18 +128,14 @@ class IntentClassifier:
 
         return mean_embeddings
 
-    def _calculate_similarities_to_mean(
-        self, incoming_text: str
-    ) -> dict[str, float]:
+    def _calculate_similarities_to_mean(self, incoming_text: str) -> dict[str, float]:
         """
         Calculate cosine similarity between incoming text embedding and
         the precomputed MEAN embedding for each intent. Returns empty
         dict on critical error.
         """
         if self.model is None:
-            raise RuntimeError(
-                "Model is not loaded. Cannot calculate similarities."
-            )
+            raise RuntimeError("Model is not loaded. Cannot calculate similarities.")
 
         try:
             incoming_embedding = self.model.encode([incoming_text])
@@ -178,14 +179,11 @@ class IntentClassifier:
             return "Unclassified", 0.0
 
         log_text = (
-            incoming_text[:50] + '...' if len(incoming_text)
-            > 50 else incoming_text
+            incoming_text[:50] + "..." if len(incoming_text) > 50 else incoming_text
         )
         logging.debug("Classifying text: '%s'", log_text)
 
-        similarities_to_mean = self._calculate_similarities_to_mean(
-            incoming_text
-        )
+        similarities_to_mean = self._calculate_similarities_to_mean(incoming_text)
 
         if not similarities_to_mean:
             return "Unclassified", 0.0
@@ -200,8 +198,7 @@ class IntentClassifier:
         try:
             # Sort items by score (descending) to easily get top 2
             sorted_items = sorted(
-                similarities_to_mean.items(),
-                key=lambda item: item[1], reverse=True
+                similarities_to_mean.items(), key=lambda item: item[1], reverse=True
             )
             best_intent, intent_confidence = sorted_items[0]
             second_intent, second_score = sorted_items[1]
@@ -216,10 +213,10 @@ class IntentClassifier:
         # --- Apply Specific Business Rule: Baby Loss vs Opt out ---
         # When these two intents are close to each other, in score,
         # we want to prioritize 'Baby Loss'
-        is_babyloss_optout_pair = (
-            {best_intent, second_intent} ==
-            {"Baby Loss", "Opt out"}
-        )
+        is_babyloss_optout_pair = {best_intent, second_intent} == {
+            "Baby Loss",
+            "Opt out",
+        }
         if is_babyloss_optout_pair:
             # If confusion is between Baby Loss and Opt out,
             # always prioritize Baby Loss
@@ -255,9 +252,7 @@ def read_yaml(yaml_file_path: Path) -> dict[str, list[str]]:
         with yaml_file_path.open("r", encoding="utf-8") as f:
             data = yaml.safe_load(f)
     except yaml.YAMLError as e:
-        raise ValueError(
-            f"Error parsing YAML file '{yaml_file_path}': {e}"
-        ) from e
+        raise ValueError(f"Error parsing YAML file '{yaml_file_path}': {e}") from e
 
     intents_data = {}
     for entry in data.get("nlu", []):
@@ -265,8 +260,7 @@ def read_yaml(yaml_file_path: Path) -> dict[str, list[str]]:
             intent = entry["intent"]
             examples = entry["examples"].splitlines()
             examples = [
-                example.lstrip("-").strip()
-                for example in examples if example.strip()
+                example.lstrip("-").strip() for example in examples if example.strip()
             ]
             intents_data[intent] = examples
 
@@ -277,8 +271,7 @@ def read_yaml(yaml_file_path: Path) -> dict[str, list[str]]:
 
 
 def compute_mean_embeddings(
-    labeled_data: dict[str, list[str]],
-    model: SentenceTransformer
+    labeled_data: dict[str, list[str]], model: SentenceTransformer
 ) -> dict[str, list[float]]:
     """
     Compute the MEAN embedding for each intent's examples using the provided
@@ -331,11 +324,9 @@ def save_embeddings_to_file(embeddings: dict[str, list[float]], output_file: Pat
         output_file.parent.mkdir(parents=True, exist_ok=True)
         with output_file.open("w", encoding="utf-8") as f:
             # Use compact separators for production file size
-            json.dump(embeddings, f, separators=(',', ':'))
+            json.dump(embeddings, f, separators=(",", ":"))
     except OSError as e:
-        raise OSError(
-            f"Error saving embeddings to '{output_file}': {e}"
-        ) from e
+        raise OSError(f"Error saving embeddings to '{output_file}': {e}") from e
     except TypeError as e:
         raise TypeError(f"Data format error saving embeddings: {e}") from e
     except Exception as e:
