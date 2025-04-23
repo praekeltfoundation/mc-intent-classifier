@@ -2,877 +2,624 @@ version: "2.0"
 nlu:
   - intent: Baby Loss
     examples: |
-      - I lost my baby, please stop sending messages.
-      - My baby passed away last week.
-      - I had a miscarriage, so I don't need these messages anymore.
-      - Please stop the reminders, I lost my child.
-      - My baby is no more, please stop the notifications.
-      - Hi actually I gave birth to a stillborn.
-      - Baby died plz stop sending.
-      - please stop with the messages, I had a miscarriage.
-      - M hurt please stop sending me messages, I got a miscarriage last year in October. It was 32 weeks.
-      - Stop sending my baby passed away.
-      - Thank u but there's no need to be sending this message, I had a miscarriage.
-      - Ndoto vha block coz hezwi vha chi send milaedza yavho vha nkhumbuza nwananga t chaitoda.
-      - Hello MomConnect, I lost my baby last of last week.
-      - I have lost my kid.
-      - Stop, MY CHILD HAS PASSED AWAY.
       - I lost my baby.
-      - I had a miscarriage plz stop sending these messages.
-      - My baby didn’t make it, please stop the notifications.
-      - Plz don’t send me any more messages, my baby passed away.
-      - I lost my child, no need for these messages.
-      - My baby is gone, pls stop sending reminders.
-      - Plz stop the messages, my baby didn’t survive.
-      - I gave birth to a stillborn, stop the reminders.
-      - My baby is no more, stop these messages.
-      - Baby didn’t make it, plz stop sending notifications.
-      - I had a miscarriage, no more messages pls.
-      - Plz stop the messages, my baby died.
-      - My baby died, plz stop all notifications.
-      - I lost the baby, stop the messages.
-      - Plz stop, I lost my child.
+      - My little one didn’t make it.
+      - I had a miscarriage last night.
+      - Baby’s gone.
+      - I experienced a stillbirth.
+      - Lost my child.
+      - My baby is no more.
+      - My baby didn't make it.
+      - I had a mscarriage.
+      - Sadly, my little one passed on.
+      - Baby gone.
+      - My baby passed away.
+      - Stillborn delivery.
+      - Lost my angel.
+      - My pregnancy ended.
+      - The baby passed away.
+      - I experienced a loss.
+      - Ngishonelwe, baby didn’t survive.
+      - My little one is gone.
+      - Ek het my baba verloor.
+      - ndiphunyelwe sisisu.
+      - Ingane ishonile.
+      - angisakhulelwe.
+      - Umntwana wam ushonile.
+      - ingane ayisekho.
+      - i miscarried.
+      - Baby has passed.
+      - Had a stillbirth.
+      - Reporting a miscarriage.
+      - Unfortunately, the baby didn't survive.
+      - My pregnancy was unsuccessful.
+      - Loss of pregnancy occurred.
+      - Experienced pregnancy loss.
+      - Umntwana akaphilanga.
+      - Sisisu siphumile.
 
   - intent: Affirm
     examples: |
-      - Thank you for the information.
-      - Yes, I received the message.
-      - I appreciate the help.
-      - Hi, how are you?
-      - No, I don’t have any more questions.
-      - Thanks!
+      - Thx for the info.
       - Okay, got it.
-      - Sure, that sounds good.
-      - Awesome, thanks!
-      - Yes, please.
-      - No, thank you.
-      - Got it, thanks!
-      - Absolutely.
-      - Definitely.
+      - Sure thing, thank you.
       - Yeah, I understand.
-      - Alright, I’ll do that.
-      - Okay, I’ll follow up.
+      - Alright, I’ll follow up.
+      - Cool, appreciate it.
+      - K, noted.
+      - Ok thnx.
+      - Ja, dankie. (Yes, thank you)
+      - Yebo sharp. (Yes, okay/good)
+      - Gotcha.
+      - Ayt. (Alright)
+      - 100%.
+      - Perfect, thanks!
+      - Understood.
+      - Ewe ndiyabonga. (Yes, I thank you)
+      - Ke sharp. (It's okay/good)
+      - Yebo, received. (Yes, received)
+      - Correct thx.
+      - Roger that.
+      - Definitely.
+      - Confirmed.
+      - Sharp sharp. (Okay/Good/Fine)
+      - Ek stem saam, thanks. (I agree, thanks)
+      - Dankie, I got it. (Thank you, I got it)
+      - sawubona. (Hello)
+      - Ndiyavuma. (I agree/understand)
+      - hi
+      - hellow
+      - yebo (Yes)
+      - cha (No)
+      - ngempela (Indeed/Truly)
+      - molweni (Hello to many)
+      - no
+      - yes
+      - Alright.
+      - Okay dokay.
+      - Sure.
       - Sounds good.
-      - Thanks, I’ll keep that in mind.
-      - No worries, all good.
-      - Sure thing.
-      - Cool, thanks!
-      - Right, I get it.
-      - Sure, no problem.
-      - Fine, understood.
-      - Ok, I see.
-      - Yep, that’s clear.
-      - Thanks a lot.
-      - I got it, thanks.
-      - Sure, thanks for the update.
+      - Okay thanks for letting me know.
+      - Noted with thanks.
+      - Okay fine.
+      - Will do.
+      - Yap.
+      - Okay cool.
+      - Yes please.
+      - No problem.
 
   - intent: Opt out
     examples: |
-      - Please stop sending me messages.
-      - I want to unsubscribe from MomConnect.
-      - How do I opt-out of these notifications?
-      - I no longer wish to receive updates.
-      - Stop sending me reminders.
-      - Please, stop sending me the SMS.
-      - Am done, so I don’t want any more messages.
-      - I think you have the wrong person, I am a grandmother with no babies.
-      - I want to opt out.
-      - Stop this nonsense.
-      - Who is this? I don’t understand this language or know you.
-      - I don’t want to receive messages from you.
-      - Remove me from your list.
-      - I don’t want these updates anymore.
-      - Please, no more messages.
-      - Unsubscribe me from this service.
-      - I don’t need these notifications anymore.
-      - Can you stop sending me messages?
-      - Please, take me off your list.
-      - I don’t want to be part of MomConnect anymore.
-      - Stop texting me.
-      - I’m not interested, please stop.
-      - How do I stop these messages?
-      - No more updates, please.
-      - Please unsubscribe me.
-      - I’m done, stop the messages.
-      - Please remove my number from your system.
-      - I don’t want to receive SMS from you.
-      - Stop contacting me, please.
-      - I want to end my subscription.
-      - Please stop, I don’t need these messages.
+      - Stop sending me messages.
+      - I want to unsubscribe from these updates.
+      - Pls remove me from your list, no more texts.
+      - I don’t wish to receive any further notifications.
+      - Take me off the system, thanks.
+      - No more SMS, I’m done.
+      - Kindly opt me out.
+      - Pls stop these msgs.
+      - Unsubscribe me now.
+      - I dnt want this anymore.
+      - Remove my number.
+      - Stop sending stuff.
+      - Cancel subscription.
+      - Take me off the list plz.
+      - Opt me out.
+      - Stop spamming me.
+      - Remove my nr now.
+      - Enough with these msgs!
+      - Deactivate MomConnect.
+      - Cease comms immediately.
+      - Unenroll me.
+      - I'm out, stop.
+      - Terminate service.
+      - Ek wil nie meer hê nie
+      - Moet asseblief my nommer verwyder.
+      - Ndicela niyeke ukundithumela imessages
+      - I'm not pregnant.
+      - exit momconnect
+      - I never signed up for this, stop sending me messages.
+      - I don't want to receive these messages anymore.
+      - plz stop this I dont have a baby.
+      - I wanna leave this service.
+      - How do I opt out
+      - How to deregister from mom connect
+      - How to cancel MomConnect
 
   - intent: Facility Complaint
     examples: |
-      - The nurse at the clinic was rude to me.
-      - I waited for hours at the healthcare center without any assistance.
-      - The facility was not clean, and I felt unsafe.
-      - The staff at the clinic were not helpful at all.
-      - I didn’t receive the treatment I needed at the hospital.
-      - The clinic ran out of the necessary medicine.
-      - The hospital staff were very unprofessional.
-      - I had a bad experience at the clinic today.
-      - The doctor was dismissive of my concerns.
-      - The clinic didn’t have enough seating, and I had to stand the entire time.
-      - The healthcare workers ignored me when I asked for help.
-      - The clinic was overcrowded, and I couldn’t get the care I needed.
-      - The hospital didn’t have the equipment needed for my treatment.
-      - The nurse didn’t explain my treatment properly.
-      - The clinic was closed when I arrived, even though it was supposed to be open.
-      - I had to wait too long to see a doctor at the healthcare facility.
-      - The hospital didn’t have my records, and I had to wait even longer.
-      - The staff at the clinic were unorganized and confused.
-      - The nurse refused to listen to my symptoms.
-      - The clinic was out of vaccines, and I had to come back another day.
-      - I felt disrespected by the staff at the health center.
-      - The hospital was very dirty, and I was afraid of getting an infection.
-      - The doctor didn’t take my condition seriously.
-      - The clinic didn’t provide the medication I needed.
-      - The waiting area was uncomfortable and overcrowded.
-      - The staff at the hospital didn’t care about my needs.
-      - I had a negative experience at the clinic, and I want to file a complaint.
-      - The clinic’s service was very slow, and I couldn’t wait any longer.
-      - The nurse didn’t wear gloves during my examination.
-      - I wasn’t able to get the help I needed at the healthcare facility.
-      - The hospital staff were rude and unhelpful.
-      - There were long queues, and I had to wait all day to be seen.
-      - There was a lack of service at the clinic; no one attended to me.
-      - I spent the whole day at the clinic because of the long lines.
-      - The clinic didn't have enough staff to handle the patients.
-      - The service at the hospital was terrible; I had to wait forever.
-      - I left the clinic because the queue was too long and I couldn’t wait anymore.
-      - The clinic was severely understaffed, and it affected the service.
-      - The queues at the healthcare facility were unbearable.
-      - I didn’t get any service at the clinic after waiting for hours.
+      - nurse rude clinic
+      - staff unresponsive waited ages
+      - clinic dirty disorganized unacceptable
+      - doctor dismissed concerns
+      - bad experience facility mess
+      - staff unprofessional cramped waiting area
+      - disappointed care hospital
+      - clinic nurses rude
+      - waited hours clinic terrible service
+      - clinic dirty unhygienic
+      - staff ignored appointment
+      - lost file facility
+      - bad experience clinic unprofessional
+      - clinic queue too long no help
+      - sister unhelpful questions
+      - complaint clinic toilets state
+      - clinic toilets filthy
+      - doctor forgot file
+      - queued 6hrs 5min consult
+      - nurse shouted triage
+      - expired meds dispensed
+      - bloodwork results lost
+      - no privacy exam room
+      - security guard demanded bribe
+      - broken equipment clinic
+      - rude receptionist training needed
+      - kliniek puin service unacceptable
+      - nurse baie onbeskof onhelpend
+      - khange ndincedakale folder ibingekho
+      - queue too long
+      - waiting more 3 hours
+      - hospital staff ignored me
+      - very long wait clinic today
+      - facility unclean bad service
+      - privacy lacking during checkup
 
   - intent: Facility Compliment
     examples: |
-      - Nurses at the clinic were so kind n helpful.
-      - Had a gr8 experience at the health center 2day.
-      - Staff at the hospital were very pro.
-      - Clinic was clean, felt well cared 4.
-      - Got excellent service at the clinic.
-      - Doctors at the hospital were very understanding.
-      - Clinic was well-organized, seen quickly.
-      - Grateful 4 the care I got at the clinic.
-      - Staff at the clinic made me feel safe.
-      - Hospital was very clean n neat.
-      - Friendly service at the health center.
-      - Nurses were patient n explained everything.
-      - I was treated with respect at the clinic.
-      - Hospital staff were quick n efficient.
-      - Clinic gave me excellent care.
-      - Felt well taken care of at the clinic.
-      - Staff at the clinic were very helpful.
-      - Doctor was thorough n listened 2 all my concerns.
-      - Hospital had a welcoming vibe.
-      - Service at the clinic was top-notch.
-      - Healthcare workers were very supportive.
-      - Positive experience at the hospital, very satisfied.
-      - Clinic staff were polite n pro.
-      - Impressed by the care at the clinic.
-      - Hospital staff went the extra mile 2 help.
-      - Clinic was well-equipped n clean.
-      - Service at the clinic was fast n efficient.
-      - Felt respected at the healthcare facility.
-      - Nurses at the clinic were very caring.
-      - Hospital gave outstanding care during my visit.
-
+      - clinic staff kind attentive
+      - excellent experience hospital
+      - nurses friendly explained clearly
+      - facility clean well cared for
+      - appreciated efficient service clinic
+      - great job safe respected visit
+      - top-notch service quality care thank you
+      - great service clinic today
+      - nurses so kind helpful
+      - appreciate staff clinic
+      - quick efficient visit facility
+      - clinic clean well-organized
+      - Sr Jane fantastic thank you
+      - positive experience appointment
+      - staff professional caring
+      - compliments team hospital ward
+      - pleasant service ever
+      - midwife stayed late help
+      - cleanest maternity ward ever
+      - sister great explaining family planning
+      - midwives staff super helpful
+      - best ultrasound experience
+      - doctor helpful delivery
+      - counselor listened compassionate
+      - emergency C-section saved us
+      - pain management A+
+      - baby care classes lit (good/excellent)
+      - Dankie outstanding service
+      - appreciate vriendelike personeel
+      - seen on time shorter waiting period
+      - staff friendly put me ease
+      - nurse very patient explained well
+      - clinic efficient helpful staff
+      - positive birth experience hospital
+      - impressed cleanliness facility
+      - Oonesi basize kahle
+      - Sincendwe kwangethuba
+      - Ugqirha unobubele kunye nenkathalo
+      - Ikliniki ihlanzekile
+  
   - intent: Chatbot Complaint
     examples: |
-      - You are not responding to my questions.
-      - I'm not getting the reminders from MomConnect as expected.
-      - Your messages are not clear.
-      - MomConnect gave me incorrect information.
-      - I'm frustrated with your service.
-      - I don't get the messages from MomConnect.
-      - MomConnect didn't answer my question properly.
-      - Why didn’t you remind me about my appointment?
-      - MomConnect replies are too slow.
-      - You don’t help me when I need it.
-      - I’m not happy with the information from MomConnect.
-      - Your messages are confusing.
-      - MomConnect didn’t send me the information I asked for.
-      - I’m tired of waiting for your response.
-      - MomConnect didn’t update me about my baby’s progress.
-      - I never got the reminder from you.
-      - Your service is not reliable.
-      - MomConnect sent me the wrong message.
-      - Why do you always send the same information?
-      - I’m not getting the support I need from MomConnect.
-      - Your responses are not helpful.
-      - MomConnect sent me a message that doesn’t make sense.
-      - You didn’t remind me about my clinic visit.
-      - You keep repeating the same message.
-      - Why didn’t MomConnect tell me about my baby’s development?
-      - Your information is outdated.
-      - I asked MomConnect a question, but I didn’t get a reply.
-      - You’re not giving me the advice I need.
-      - MomConnect doesn’t seem to understand what I’m asking.
-      - I’m not satisfied with your answers.
+      - bot not answering questions properly
+      - responses confusing dont make sense
+      - momconnect repeats itself frustrating
+      - momconnect not helping issue
+      - asked question no useful reply
+      - chatbot replies slow unhelpful
+      - not happy info momconnect
+      - MomConnect useless
+      - sending wrong info
+      - MomConnect doesnt understand me
+      - answers not helpful
+      - stop repeating same message
+      - MomConnect service not working
+      - cant understand simple questions
+      - MomConnect advice yesterday wrong
+      - miscalculating my weeks
+      - always dont understand
+      - useless automated replies
+      - wrong gestational age calc
+      - why no Xitsonga option
+      - missed 32wk reminder
+      - vaccine dates mixed up
+      - cant reach human agent
+      - where MomConnect message
+      - didnt get answer last time
+      - MomConnect awuphenduli kahle
+      - this not useful
+      - still waiting response
+      - why dont respond questions
+      - dont understand messages
+      - none questions answered
+      - no longer receiving momconnect messages
+      - Momconnect doesnt work
+      - why not receiving messages appointment
+      - no reply from momconnect
 
   - intent: Chatbot Compliment
     examples: |
-      - You are really helpful for me and my baby.
-      - I appreciate the reminders from MomConnect.
-      - You give me useful information every week.
-      - I love how MomConnect keeps me informed.
-      - Thank you for the helpful messages, MomConnect!
-      - You’re doing a great job with the updates.
-      - I really value the advice from MomConnect.
-      - Your reminders are always on point.
-      - I feel supported because of your messages.
-      - MomConnect always sends me the right information.
-      - I like how you keep track of my progress.
-      - Your messages are very encouraging.
-      - I’m grateful for the info you share with me, MomConnect.
-      - You’re always there when I need help.
-      - MomConnect's advice is very practical.
-      - I trust the information you provide.
-      - You’re making this journey easier for me.
-      - I appreciate your timely messages.
-      - Your updates help me feel more prepared.
-      - MomConnect has been a great help during my pregnancy.
-      - Your reminders are very helpful.
-      - MomConnect keeps me informed every step of the way.
-      - Your advice is very reassuring.
-      - You’re doing an amazing job, MomConnect.
-      - I’m thankful for your support.
-      - Your messages make me feel confident.
-      - MomConnect is always so reliable.
-      - I like how you always check on me.
-      - Your messages give me peace of mind.
-      - MomConnect has been very supportive.
+      - appreciate these messages
+      - messages very helpful thanks
+      - love the momconnect messages
+      - thanks for the messages
+      - reminders are life savers
+      - appointment reminders appreciated
+      - info messages always useful
+      - useful tips in messages
+      - weekly updates great
+      - messages informative clear
+      - thanks timely appointment reminders help
+      - appreciate reminders MomConnect sends
+      - helps alot remind clinic appointment
+      - daily tips pregnancy babycare helpful
+      - love baby growth updates
+      - reminders never miss
+      - postpartum tips clutch
+      - siyabonga info very helpful
+      - Ngiyabonga ngemiyalezo Mom connect
+      - messages right details
+      - appreciate friendly supportive updates
+      - helpful message received today
+      - health messages good
+      - the messages keep me informed
+      - love getting your messages
+      - momconnect message saved me
+      - thanks for reminder message
+      - message content excellent
+      - alerts very helpful
+      - Momconnect super helpful thanks
+      - quick responses useful info
+      - Thanks MomConnect useful information
+      - good service very informative (Info positive)
+      - Ndiyayibulela inxaso MomConnect
+      - thanks caring pregnancy
 
   - intent: Baby Development Enquiry
     examples: |
-      - How do I know if my baby is developing well?
-      - What milestones should my baby be hitting at 6 months?
-      - My baby is not sitting up yet, should I be worried?
-      - What foods should I start introducing to my baby?
-      - How often should I be feeding my newborn?
-      - Can you tell me if my baby’s growth is normal?
-      - When should my baby start crawling?
-      - What should my baby be doing at 4 months?
-      - My baby isn’t rolling over yet, is that okay?
-      - What’s the right age to start solid foods?
-      - MomConnect, what are the signs of healthy development?
-      - When should my baby start teething?
-      - Is it normal for my baby to not crawl by 9 months?
-      - What are the first words my baby should say?
-      - How many naps should my baby take each day?
-      - You haven’t told me when my baby should start walking.
-      - How do I help my baby start talking?
-      - My baby isn’t growing as fast as others, is that normal?
-      - MomConnect, when should I start potty training?
-      - What’s the ideal weight for a 6-month-old baby?
-      - You said my baby should be standing by now, is that true?
-      - When will my baby start recognizing me?
-      - Is it safe to start my baby on cow’s milk at 12 months?
-      - What should I do if my baby is a picky eater?
-      - My baby cries a lot, is this a development issue?
-      - When should my baby start responding to their name?
-      - Can you tell me when my baby should start sleeping through the night?
-      - What’s the right age for my baby to start using a sippy cup?
-      - How do I know if my baby is meeting their milestones?
-      - My baby hasn’t started babbling yet, is that a concern?
+      - milestones baby 6 months what
+      - baby developing normally 4 months
+      - when baby start crawling
+      - baby growth on track how know
+      - developmental signs 3 months what
+      - baby not rolling over normal
+      - when baby start babbling
+      - baby not smiling consistently worry
+      - baby teeth late normal
+      - how much eat 4 months old baby
+      - when newborn baby start seeing
+      - baby sit after how many month
+      - baby weight gain concerned
+      - when babies start talking
+      - signs teething what
+      - 8mo not crawling normal
+      - teething fever how high
+      - when eyes change color
+      - growth percentile chart info
+      - solid food allergy signs
+      - speech delay 18mos
+      - baby vaccines when
+      - tummy time requirements
+      - vaccines affect milestones
+      - premie development adjust
+      - what feed newborn
+      - umntwana akakhuli kahle ndithini
+      - baby bamping what do (baby spitting up)
+      - injection no mark arm why
+      - 4 month old immunisation yes/no
+      - baby poo greenish what wrong
+      - missed first immunization get 6 weeks
+      - mixed feeding risks what
+      - how often baby sleep
+      - introduce solids when
 
   - intent: General Pregnancy Enquiry
     examples: |
-      - What should I expect in the third trimester?
-      - Is it normal to have back pain during pregnancy?
-      - How much weight should I gain while pregnant?
-      - What foods should I avoid when pregnant?
-      - How often should I visit the clinic during pregnancy?
-      - Wat r common symptoms in the 1st trimester?
-      - When should I start feeling baby move?
-      - Can I exercise while preg?
-      - How do I know if my pregnancy is on track?
-      - Wat to do if I have morning sickness?
-      - What are the best prenatal vitamins to take?
-      - Is it safe to travel while pregnant?
-      - How much water should I drink during pregnancy?
-      - What are signs of early labor?
-      - How to deal with stretch marks during pregnancy?
-      - Can I take over-the-counter meds while pregnant?
-      - Wat should I pack for the hospital?
-      - How to manage stress while pregnant?
-      - What foods should I eat for a healthy pregnancy?
-      - How much sleep do I need during pregnancy?
-      - When should I start preparing for delivery?
-      - Is it okay to drink coffee while pregnant?
-      - Tell me about the stages of labor.
-      - What are the risks of a high-risk pregnancy?
-      - How to improve baby’s health during pregnancy?
-      - Is it safe to have sex while pregnant?
-      - What should I avoid doing while pregnant?
-      - How do I know if something is wrong with my pregnancy?
-      - What exercises are safe while pregnant?
-      - What’s the best way to relieve pregnancy headaches?
+      - best sleeping position pregnancy what
+      - expect third trimester what
+      - back pain pregnant normal
+      - weight gain pregnancy how much
+      - foods safe eat pregnant what
+      - how often clinic visit pregnancy
+      - morning sickness tips manage
+      - early signs labor what watch
+      - 40 weeks overdue bad pains infection
+      - alcohol drink pregnant safe
+      - medication safe during pregnancy
+      - exercise safe during pregnancy
+      - gym while pregnant safe
+      - foods avoid pregnant what
+      - tired always pregnant normal
+      - how know in labour
+      - heartburn pregnancy causes what
+      - headache pills pregnant safe
+      - spotting normal third trimester
+      - bloated always why pregnant
+      - danger signs pregnancy what
+      - how many weeks pregnant calculate
+      - safe sex positions 3rd trimester
+      - flying 28wks allowed
+      - mucus discharge normal pregnancy
+      - lot discharge normal pregnancy
+      - pelvic pain remedies pregnancy
+      - itchy belly solutions pregnancy
+      - tummy hurts sometimes
+      - sleep on tummy first trimester safe
+      - running stomach third trimester good
+      - umntana akakhabi, why
+      - ingane ayikhahleli ikhona inkinga
+      - vitamins needed pregnancy what
+      - feeling baby move when start
 
   - intent: Language
     examples: |
-      - Can I get messages in Zulu instead of English?
-      - Please send me messages in my preferred language, Xhosa.
-      - I want to switch the language to Tswana.
-      - Could you send the updates in Afrikaans?
-      - I don’t understand English well, please change it to my home language.
-      - Plz switch my messages to Venda.
-      - How do I change the language to Ndebele?
-      - Ndifuna umyalezo ngesiXhosa, hayi ngesiNgesi.
-      - Can I receive updates in Tsonga, plz?
-      - Hey, send me the msgs in Zulu.
-      - Plz use Xhosa instead of English for me.
-      - Change the lang to Afrikaans, plz.
-      - Please update me with Xitsonga, not English.
-      - May you pls send msgs in Venda?
-      - Ke kopa o ntumele melaetsa ka Sesotho.
-      - Plz, can you change my msgs to Zulu?
-      - Can I get messages in Ndebele?
-      - Plz send me msgs in Tsonga.
-      - Is it possible to switch to Tswana language?
-      - Can you send the updates in Xhosa?
-      - I don’t get English well, can you change to Zulu?
-      - Ngicela ukuthola imiyalezo ngesiZulu.
-      - Please send msgs in Sesotho instead of English.
-      - Plz send me my messages in Venda.
-      - I want my updates in Tsonga now.
-      - Please switch to Afrikaans for me.
-      - Can you change to Xhosa, plz?
-      - Ndicela i-updates ngesiXhosa.
-      - Ngiyabonga, kodwa ngicela imiyalezo ngesiZulu.
-      - Can I have the messages in Tswana from now on?
+      - send updates Zulu instead english
+      - switch messages Xhosa
+      - receive texts Afrikaans prefer
+      - change language Tswana
+      - use Ndebele dont understand english
+      - send messages Sesotho
+      - update notifications Venda
+      - want updates Tsonga
+      - can speak Afrikaans
+      - change language Zulu
+      - need messages Sotho
+      - have Xhosa option
+      - set language English
+      - can speak my language Sepedi
+      - Tsonga messages needed
+      - prefer Venda
+      - set language Swati
+      - Ndebele if possible
+      - change Sepedi
+      - IsiZulu translations plz
+      - prefer Afrikaans updates
+      - Tshivenda option where
+      - set lang Sesotho
+      - Xhosa messages needed
+      - Ngiyafuna messages ngesiNdebele
+      - can do Swazi
+      - switch language Pedi
+      - NdiTshiVenda nga hafhu
+      - messages English and isiXhosa
+      - Angisizwa isiNgisi send isiZulu 
+      - andisithethi isilungu thetha isiXhosa
+      - language setting change Sotho
+      - switch my texts Tswana
+      - need communications Venda
+      - use Sepedi language only
 
   - intent: Channel Switch
     examples: |
-      - I want to receive updates via WhatsApp instead of SMS.
-      - Can u send the msgs on WhatsApp insted of SMS?
-      - Plz swtch my msgs frm SMS to WhatsApp.
-      - How do I change my updates frm SMS to WhatsApp?
-      - I prefer gettin the msgs on WhatsApp.
-      - Can u move my updates to WhatsApp?
-      - I don't want SMS, plz snd on WhatsApp.
-      - Switch my msgs frm SMS to WhatsApp, pls.
-      - Snd me updates on WhatsApp insted of SMS.
-      - I'd like to get the notifications on WhatsApp nw.
-      - Can I get my msgs via WhatsApp, not SMS?
-      - Plz snd my updates thru WhatsApp.
-      - Change my msgs frm SMS to WhatsApp.
-      - I prefer WhatsApp for msgs, not SMS.
-      - Plz move my msgs to WhatsApp.
-      - Can u snd updates via WhatsApp insted?
-      - Switch my notifications to WhatsApp.
-      - How do I swtch frm SMS to WhatsApp?
-      - Plz start snding msgs on WhatsApp.
-      - I'd rather get WhatsApp updates, not SMS.
-      - I don’t want SMS anymore, plz use WhatsApp.
-      - Update me via WhatsApp, not SMS.
-      - Can I change my channel to WhatsApp?
-      - Plz swtch to WhatsApp for my updates.
-      - Snd my msgs on WhatsApp, not SMS.
-      - I'd like WhatsApp updates insted of SMS.
-      - Plz snd future msgs on WhatsApp.
-      - I want to get notifications on WhatsApp nw.
-      - Can u swtch my updates to WhatsApp?
-      - I'd rather rcv updates on WhatsApp, plz.
+      - receive updates WhatsApp instead SMS
+      - move notifications WhatsApp
+      - change channel USSD to WhatsApp
+      - prefer WhatsApp updates
+      - switch messages WhatsApp
+      - stop SMS use USSD instead
+      - change contact channel WhatsApp
+      - rather get updates WhatsApp
+      - get messages WhatsApp instead
+      - switch me SMS
+      - prefer using WhatsApp updates
+      - how change SMS to WhatsApp
+      - stop SMS send WhatsApp
+      - use other number WhatsApp
+      - receive SMS not WA
+      - change channel SMS
+      - move messages WhatsApp
+      - move me WhatsApp
+      - SMS costs too much use WA
+      - WA preferred
+      - switch platform
+      - DMs Twitter better
+      - USSD not working use SMS
+      - Telegram channel option
+      - Email updates instead
+      - App notifications plz
+      - Ditch SMS use Signal
+      - dont have data cant use WhatsApp use SMS
+      - Ndicela thumela imiyalezo nge WhatsApp
+      - Ndicela thumela iimsgs nge SMS
+      - andinayo imali yeData for WhatsApp thumela nge SMS
+      - change messages to USSD
+      - use WhatsApp only
+      - prefer SMS channel
+      - stop WhatsApp use SMS
 
   - intent: Personal Data Update
     examples: |
-      - My due date is wrong, it should be updated.
-      - I need to change my phone number in your records.
-      - My baby was born on the 15th, not the 20th.
-      - Can you correct my date of birth in the system?
-      - I gave birth, please update my records.
-      - My baby landed on 24 march 2020 date at 2:00 pm.
-      - My WhatsApp number has changed to 0736174716.
-      - I want to change details, my new number is +27836173871.
-      - No, I don't want to change my number.
-      - I don't want to change my cellphone number.
-      - Plz update my due date, it’s wrong.
-      - My new number is 0612345678, plz update it.
-      - The baby’s DOB is incorrect, it’s 10th not 12th.
-      - Can u change my birthdate to the right one?
-      - I had my baby, pls update my info.
-      - Plz correct my EDD, it’s supposed to be July 20.
-      - My number changed, here’s the new one: 0823456789.
-      - Update my records, my baby was born on the 5th.
-      - The system has my wrong DOB, plz fix it.
-      - Plz change my contact number to the new one.
-      - I want to update my baby’s birthdate, it’s wrong.
-      - I need to fix my EDD in ur records.
-      - My new WhatsApp number is 0712345678, plz update.
-      - Plz correct my baby’s birth date, it’s wrong in the system.
-      - My phone number has changed, update ur records.
-      - I had a baby, pls update my info.
-      - The due date is incorrect, plz fix it.
-      - Can u update my DOB to the correct one?
-      - I gave birth, plz change my records.
-      - Here’s my new number: 0845671234, plz update.
+      - due date incorrect update
+      - change phone number records
+      - update baby birth date wrong
+      - recently delivered update info
+      - contact number changed update
+      - correct EDD system
+      - relocated no longer use milnerton clinic update
+      - gave birth twins update records
+      - change clinic location need
+      - update facility code 12345
+      - due date changed update
+      - update clinic location need
+      - moved house new address update
+      - change surname please
+      - phone number different now update
+      - update ID number pls
+      - new clinic card update details
+      - EDD wrong fix it
+      - how update personal info
+      - change delivery hospital details
+      - new cell 0745551212 update
+      - baby DOB 2023/12/25 update
+      - EDD changed March 7 update
+      - married name Dlamini update
+      - new partner change carer Sipho update
+      - clinic code 555-123 update
+      - relocated Durban update address
+      - medical aid changed update
+      - HIV status update request
+      - twin pregnancy confirmed update records
+      - correct ID number 930... update
+      - Ndicela utshintshe inombolo yam
+      - update my address Dankie (Thank you)
+      - ingane 4months not 6 update details
+      - fix my baby DOB please
 
   - intent: PMTCT
     examples: |
-      - How can I prevent transmitting HIV to my baby?
-      - Is it safe to breastfeed if I’m HIV positive?
-      - What medication should I take to protect my baby from HIV?
-      - Can I give my baby formula if I’m HIV positive?
-      - What are the chances of my baby being HIV positive?
-      - I don't have HIV, is my baby safe?
-      - Can I breastfeed if I have HIV?
-      - How do I make sure my baby doesn’t get HIV from me?
-      - What meds should I take to protect my baby from HIV?
-      - Is it ok to use formula if I'm HIV positive?
-      - Will my baby be HIV positive too?
-      - I'm HIV positive, can I still breastfeed?
-      - How do I stop my baby from getting HIV?
-      - Can I feed my baby formula if I’m HIV+?
-      - What’s the risk of my baby getting HIV?
-      - Plz help, I’m HIV positive, can I breastfeed?
-      - What should I do to protect my baby from HIV?
-      - Is formula safe for my baby if I have HIV?
-      - What are the chances my baby will get HIV from me?
-      - I’m HIV positive, what can I do to keep my baby safe?
-      - Can I breastfeed safely if I’m HIV+?
-      - How to make sure my baby doesn’t get HIV from me?
-      - What can I do to prevent HIV transmission to my baby?
-      - Is breastfeeding safe for HIV positive moms?
-      - What should I take to protect my baby from HIV?
-      - Can I give formula to my baby if I have HIV?
-      - Will my baby get HIV if I breastfeed?
-      - What’s the risk of my child being HIV positive?
-      - If I have HIV, can I breastfeed my baby?
-      - How can I make sure my baby is HIV negative?
-      - How do I protect my baby from getting AIDS?
-      - What should I know about breastfeeding if I have AIDS?
-      - If I have AIDS, can I still breastfeed my baby?
-      - Will my baby get AIDS from me?
-      - Can I pass AIDS to my baby during pregnancy?
-      - Is it safe to breastfeed if I have AIDS?
-      - What’s the risk of my baby getting AIDS?
-      - How can I keep my baby safe if I have AIDS?
+      - prevent HIV transmission baby how
+      - medication protect baby HIV what
+      - safe breastfeed HIV positive
+      - avoid passing HIV baby steps what
+      - ensure baby stays safe HIV positive how
+      - safely use formula HIV positive
+      - chances baby contracting HIV what
+      - PMTCT protocols advice needed
+      - questions HIV pregnancy
+      - need ARVs baby
+      - how prevent passing HIV baby
+      - PMTCT services info needed
+      - tests done HIV pregnancy what
+      - worried HIV transmission risk
+      - baby get AIDS mix feeding risk
+      - symptoms baby HIV positive what
+      - HIV medication advice needed
+      - ARVs during breastfeeding safe
+      - PCR test baby timing when
+      - viral load undetectable meaning
+      - partner disclosure help HIV
+      - PrEP for baby info
+      - breastmilk safe HIV positive
+      - post-exposure prophylaxis baby info
+      - unechulaza ungacelisa
+      - Novatrim suspension what is
+      - HIV AIDS support where
+      - khuseleka umntwana ungathathi ARVs possible
+      - HIV positive pregnancy diet info
+      - delivery options HIV positive
+      - HIV test partner needed
+      - ARV side effects baby what
+      - how long baby take ARVs PMTCT
+      - undetectable equals untransmittable pregnancy context
+      - HIV clinic appointments schedule
 
   - intent: Switch to Postbirth
     examples: |
-      - I've given birth, please start sending postbirth messages.
-      - My baby is born, can you update the messages I receive?
-      - I delivered last week, please change my messages.
-      - I had my baby, can you send me postbirth messages?
-      - Please start sending me postbirth content, my baby is here.
-      - I have given birth, can you update the messages?
-      - My baby was born yesterday, please send postbirth messages.
-      - I need postbirth messages now, I’ve had my baby.
-      - Can you send me postbirth messages now? My baby is born.
-      - I’ve had my baby, please send me postnatal messages.
-      - Please start sending me postbirth messages, my baby is here.
-      - I’ve delivered, please send me postbirth updates.
-      - I gave birth, update the messages to postbirth.
-      - My baby arrived, please send postnatal content.
-      - I need postbirth messages now, I’ve had my baby.
-      - My child is here, send me postbirth messages please.
-      - My delivery was successful, please send me postbirth content.
-      - The baby is born, please start sending postbirth updates.
-      - I’ve had my baby, can you send me postbirth messages now?
-      - Please update my messages to postbirth, I’ve delivered.
-      - I gave birth, please change the message set to postnatal care.
-      - My baby is here, send me postbirth content.
-      - Can you send me postbirth messages? I’ve had my child.
-      - I delivered my baby, please send me postbirth updates.
-      - My baby was born, start sending postnatal content.
-      - I’m a new mom, please send me postbirth messages.
-      - The baby is here, update the messages to postnatal.
-      - I had my child, please change the message set.
-      - My baby is born, send me postbirth updates.
-      - Please send me postbirth content, my baby has arrived.
+      - delivered send postbirth messages
+      - baby here change updates postnatal content
+      - gave birth update messages accordingly
+      - switch messages postbirth care advice
+      - had baby send postnatal info
+      - change subscription postbirth messages
+      - want postbirth guidance baby born
+      - update messages new mom status
+      - had my baby already update
+      - given birth update profile
+      - my baby is born switch messages
+      - need postnatal support now
+      - baby born yesterday update please
+      - need postbirth messages now
+      - send me baby messages now
+      - switch profile postnatal
+      - no longer pregnant baby arrived update
+      - my child is born update
+      - baby has arrived switch content
+      - change messages for after birth
+      - gave birth last week update status
+      - update status delivered
+      - delivered vaginally today update
+      - C-section complete update status
+      - newborn registered update please
+      - postnatal care info needed
+      - breastfeeding support request
+      - postpartum depression help needed
+      - birth certificate questions
+      - immunization schedule needed
+      - nginengane manje update
+      - ndibelekile umntwana update
+      - child arrived Ngiyabonga update
+      - C-section recovery tips needed
+      - switch to mom baby messages
 
   - intent: Clinic Appointment Enquiry
     examples: |
-      - When’s my next clinic appointment?
-      - I missed my clinic visit, what should I do?
-      - Can I reschedule my clinic date?
-      - Wot time is my clinic appt 2moro?
-      - Do I need to bring anything 4 my clinic visit?
-      - How do I confirm my clinic appointment?
-      - Didn’t get my clinic reminder, when’s it?
-      - Can I move my clinic date?
-      - Is my clinic appt still on 4 2day?
-      - Where is my clinic?
-      - I forgot the time of my clinic appointment, pls remind me.
-      - What do I need to bring 2 my clinic visit?
-      - Is my clinic visit a must?
-      - I need to cancel my clinic appt, how do I do that?
-      - What should I expect at my clinic visit?
-      - Can u send me a reminder 4 my clinic?
-      - Can I change the clinic date to another day?
-      - How often should I go 4 clinic visits?
-      - Do I have a clinic appt this week?
-      - What if I miss my clinic date?
-      - Plz tell me the date of my next clinic visit.
-      - Is my clinic appointment confirmed?
-      - Not sure if I have a clinic appt, can u check?
-      - How do I change the time of my clinic appt?
-      - Can u help me with details of my clinic visit?
-      - What should I do b4 my clinic appt?
-      - Is there a fee 4 my clinic visit?
-      - How can I update my clinic appt?
-      - I didn’t get a reminder 4 my clinic appt, when’s it?
-      - What should I bring 2 my clinic appointment 2moro?
-      - Can I move my clinic appointment to another day?
-      - What’s the time of my clinic visit?
-      - Is the clinic open on weekends for my visit?
-      - Can you remind me of my clinic date?
-      - Do I need to bring my baby for the clinic visit?
+      - when next clinic appointment?
+      - remind upcoming clinic visit please
+      - need know clinic appointment date
+      - when ANC appointment?
+      - clinic didnt give date next appointment
+      - nurse didnt say when come back clinic
+      - what time next check-up scheduled?
+      - provide details clinic appointment?
+      - havent received appointment reminder help
+      - next clinic visit confirmed?
+      - when should go clinic next?
+      - when next clinic date?
+      - what time appointment tomorrow?
+      - can reschedule clinic visit?
+      - what happens 10 week appointment?
+      - lost appointment card need details
+      - need bring anything clinic checkup?
+      - how often clinic visits pregnancy?
+      - missed appointment what now?
+      - clinics contact details what?
+      - send checklist pack labor
+      - reschedule 6wk checkup postnatal
+      - confirm ANC schedule please
+      - what pack hospital bag birth?
+      - list essentials delivery bag?
+      - where do Pap smear test?
+      - dad allowed at scans?
+      - due ANC appointment 30 weeks?
+      - confirm 26-week ANC check?
+      - next ANC visit set 34 weeks?
+      - when 12-week ANC appointment?
+      - need appointment confirmation message
+      - how book next clinic visit?
+      - what tests done next appointment?
+      - clinic appointment reminder not received
 
   - intent: Spam
     examples: |
-      - Shell oil tanks are totally full! They will donate it to the workers [http://](href)shell.blog/
-      - To counter the [Corona virus](pandemic) 🦠 we offer you 1000GB of free internet connection to stay at home safely and enjoy the internet Activate the internet package 🌐   👉 [http://](href)internet4goffers.com/za
-      - PICKNPAY is giving ZAR1500 Gift card to everyone to celebrate its 53th anniversary! Click here to get yours: [http://](href)www.pnp-za.club/
-      - *Pick n Pay is giving away free groceries worth R 5000 to Celebrate 53rd Anniversary*. Hurry up! Collect your FREE voucher here:[http://](href)www.pnp.co.za-gratis-kupong.club
-      - You.hilgmmoomumokj.vgngo hope.mouaiomimo.IOU.dofy opp
-      - To Fight Against the [Corona virus](pandemic) 🦠 we offering you *1000GB Free Internet Data* to Stay Safe at home and Enjoy the Free SuperFast Internet.  Click Below to Activate Now.  👉 [http://](href)bit.ly/internet_covid19
-      - *Adidas is offering 3,100 pairs of shoes and free t-shirts to celebrate its 96th anniversary*. Hurry up! Get your free pair of shoes:[http://](href)www.adidas.com-claimgiftcard.com
-      - *NOTE: THIS IS NOT A JOKE*  Shoprite is here to bless all their customers with 5000 worth of *SHOPPING VOUCHER* to order goods online with free delivery to their door step just to support people during the [lockdown](pandemic) period.  _Everyone is eligible to claim the_ *5000 shopping vouchers.*m  I just claimed mine now and you too can claim yours  _*Note you are eligible to claim it as much as possible*_  Click below to claim it  [http://](href)bit.ly/SHOPRITECOUPON300
-      - *FG* has finally approved and have started giving out free _R3500_ Relief Funds to each citizen😍  Below is how to claim and get yours credit Instantly as I have just did now  [http://](href)sa.ramaphosacyrilfoundation.com/  *Note* : You can only claim and get credited once and it's also limited so get your now Instantly.
-      - *PSIPHON PRO IS BACK*  *11 GB of Internet Data Without Any Recharge*  Get 11GB of free internet data in any mobile network for 60 days.   *Get Now Fast* [http://](href)bit.ly/3aYTimc    *Grab Fast Before Offer Expires*
-      - *FG* has finally approved and have started giving out free _R5000_ Relief Funds to each citizen😍  Below is how to claim and get yours credit Instantly as I have just did now  [http://](href)bit.ly/free-safunds  *Note* : You can only claim and get credited once and it's also limited so get your now Instantly.
-      - *FREE 10GB Data for 1 Month*      Grab your Free 10GB Data Bundle today that will last for 1 month. I just received mine now. Get yours before it Ends.   Tap the link below to get yours Now!!!.      [http://](href)bit.ly/free-10GB-data
-      - [http://](href)1000.ghlz.cc
-      - To counter the [Corona virus](pandemic) 🦠 we offer you 1000GB of free internet connection to stay at home safely and enjoy the internet Activate the internet package 🌐! _x000D_  [http://](href)5ezi.com/internet
-      - [http://](href)books.google.com/books/about/PROMISES_OF_GOD_S_GUIDANCE.html?id=AftSDwAAQBAJ
-      - Accept this if u r my friend......
-      - Forward this message to 10 friends and receive blessings today!
-      - Get R5000 free vouchers from Shoprite, click here [http://](href)shoprite.gift
-      - *Exclusive Offer* - Get 100GB free data now, only for limited users! [http://](href)freeinternet.gift
-      - Win a brand new iPhone 12, click the link to participate [http://](href)winiphone.now
-      - Hurry up! Free groceries for a year from Checkers. Just click here [http://](href)checkers-wins.gift
-      - Forward this to 5 people and unlock free WhatsApp calls for a year!
-      - Congratulations! You've won a R500 Woolworths gift card, claim here [http://](href)woolworths.gifts
-      - Warning: WhatsApp will start charging tomorrow, send this message to 10 people to avoid being billed.
-      - Get free Netflix for a year, click here to activate your account [http://](href)netflix-free.year
-      - Free Adidas shoes for the first 5000 people, claim yours now! [http://](href)adidas.gift
-      - Govt is giving R2000 relief funds to all citizens, apply now [http://](href)govt-relief-fund.now
-      - Your mobile number has won a prize in the MTN lucky draw! Click here to claim [http://](href)mtn-wins.gift
-      - You've been selected for a special offer from Vodacom, get R5000 credit [http://](href)vodacom-special.gift
-      - Win a trip to Dubai for two, click here to enter [http://](href)dubai-trip.win
-      - Free AirPods for everyone, but only for today! [http://](href)apple-gift.win
-      - Win a free gift card by clicking this link.
-      - You have been selected for a prize! Visit this website.
-      - Forward this message to 10 friends to win.
-      - Get 50% off your next purchase using this code.
-      - This is not related, but can you help me with my CV?
-
-  - synonym: clinic
-    examples: |
-      - clinic
-      - hospital
-      - healthcare center
-      - health facility
-      - medical center
-
-  - synonym: appointment
-    examples: |
-      - appointment
-      - appt
-      - visit
-      - checkup
-      - date
-      - session
-
-  - synonym: reminder
-    examples: |
-      - reminder
-      - alert
-      - notification
-      - message
-      - memo
-
-  - synonym: reschedule
-    examples: |
-      - reschedule
-      - change
-      - move
-      - adjust
-      - shift
-      - postpone
-      - delay
-
-  - synonym: confirm
-    examples: |
-      - confirm
-      - verify
-      - check
-      - validate
-      - make sure
-
-  - synonym: time
-    examples: |
-      - time
-      - hour
-      - schedule
-      - timing
-      - when
-
-  - synonym: date
-    examples: |
-      - date
-      - day
-      - appointment
-      - schedule
-      - booking
-
-  - synonym: bring
-    examples: |
-      - bring
-      - take
-      - carry
-      - pack
-      - come with
-
-  - synonym: next
-    examples: |
-      - next
-      - upcoming
-      - following
-      - future
-      - soon
-
-  - synonym: week
-    examples: |
-      - week
-      - wk
-      - wks
-      - 7 days
-      - weekly
-
-  - synonym: cancel
-    examples: |
-      - cancel
-      - remove
-      - stop
-      - void
-      - delete
-
-  - synonym: change
-    examples: |
-      - change
-      - update
-      - modify
-      - switch
-      - alter
-      - adjust
-
-  - synonym: fee
-    examples: |
-      - fee
-      - charge
-      - cost
-      - payment
-      - price
-      - bill
-
-  - synonym: weekend
-    examples: |
-      - weekend
-      - saturday
-      - sunday
-      - wknd
-      - end of week
-
-  - synonym: sms
-    examples: |
-      - sms
-      - text
-      - txt
-
-  - synonym: hiv
-    examples: |
-      - hiv
-      - hiv positive
-      - h.i.v.
-
-  - synonym: register
-    examples: |
-      - register
-      - join
-      - sign up
-      - enroll
-
-  - synonym: breastfeeding
-    examples: |
-      - breastfeeding
-      - breastmilk
-      - breast milk
-      - suckling
-      - nursing
-      - breastfed
-
-  - synonym: covid-19
-    examples: |
-      - covid-19
-      - covid
-      - corona
-      - coronavirus
-      - corona virus
-      - the virus
-
-  - synonym: vaccination
-    examples: |
-      - vaccination
-      - vaccine
-      - immunization
-      - immunisation
-      - injection
-      - shot
-
-  - synonym: whatsapp
-    examples: |
-      - whatsapp
-      - whatsp
-      - wa
-      - watsapp
-
-  - synonym: opt out
-    examples: |
-      - opt out
-      - unsubscribe
-      - stop messages
-      - stop notifications
-
-  - synonym: arvs
-    examples: |
-      - arvs
-      - arv
-      - antiretrovirals
-
-  - synonym: nevirapine
-    examples: |
-      - nevirapine
-      - nevirapin
-
-  - synonym: ndebele
-    examples: |
-      - ndebele
-      - isindebele
-
-  - synonym: sotho
-    examples: |
-      - sotho
-      - sesotho
-      - northern sotho
-
-  - synonym: swati
-    examples: |
-      - swati
-      - isiswati
-      - siswati
-
-  - synonym: tswana
-    examples: |
-      - tswana
-      - setswana
-
-  - synonym: tsonga
-    examples: |
-      - tsonga
-      - xitsonga
-      - tsongha
-
-  - synonym: venda
-    examples: |
-      - venda
-      - tshivenda
-
-  - synonym: xhosa
-    examples: |
-      - xhosa
-      - isixhosa
-      - sixhosa
-
-  - synonym: zulu
-    examples: |
-      - zulu
-      - isizulu
-      - zul
-
-  - synonym: english
-    examples: |
-      - english
-      - isingisi
-      - inglish
-
-  - synonym: yes
-    examples: |
-      - yes
-      - yeah
-      - yea
-      - yip
-      - ja
-      - yebo
-      - ya
-      - yep
-      - yup
-      - yah
-      - ewe
-
-  - synonym: ok
-    examples: |
-      - ok
-      - okay
-      - oky
-      - k
-      - shap
-      - sure
-      - ouk
-
-  - synonym: thanks
-    examples: |
-      - thanks
-      - thank you
-      - thankyou
-      - tnx
-      - thnks
-      - dankie
-      - enkosi
-      - ngiyabonga
-      - siyabonga
-      - thnx
-      - thanx
-      - thankx
-      - thanku
-      - appreciate
-
-  - synonym: no
-    examples: |
-      - no
-      - nope
-      - nah
-      - nee
-      - cha
-      - hayi
-
-  - synonym: pregnancy
-    examples: |
-      - pregnant
-      - expecting
-      - preggy
-      - prego
-      - preg
-      - with child
-      - carrying
-      - expecting a baby
-      - pregnantcy
-
-  - synonym: baby
-    examples: |
-      - infant
-      - newborn
-      - child
-      - little one
-      - babe
-      - kid
-      - bby (common misspelling)
-      - baba (common in some languages)
-      - infant
-      - newborn
-      - little one
-      - bebe (misspelling)
-      - bby
-      - baby boy
-      - baby girl
+      - buy now limited offer check this
+      - congratulations won prize claim now
+      - not health ignore this
+      - spam alert discount click here
+      - unsolicited ad disregard
+      - spam get cheap medicine online
+      - spam please ignore
+      - limited time offer not concern
+      - win free iphone click now
+      - makemoneyfast scheme
+      - urgent loan approval waiting
+      - buy cheap Viagra online
+      - dfgkjhsdgfjhgsdf (Gibberish)
+      - call me back 082XXXXXXX
+      - hot singles your area
+      - account verification suspicious link
+      - random characters !@#$%^&*()
+      - insurance quote special offer
+      - https claim R3500 grant now
+      - won Shoprite vouchers claim today
+      - free iPhone 15 click here
+      - Bitcoin investment 200% ROI guaranteed
+      - earn big Bitcoin click instant returns
+      - exclusive Bitcoin bonus secure wallet
+      - claim free rewards card discounts
+      - get rewards card cash back
+      - rewards offer unlock premium deals
+      - www VIRUS urgent tax refund link
+      - adult content subscription subscribe now
+      - loan approval 5 minutes apply now
+      - PHISHING SARS update verify now
+      - MLM opportunity earn big today
+      - dating site premium access join
+      - Dislaa ignore spam message
+      - PRAYER POINTS PREGNANT WOMEN
