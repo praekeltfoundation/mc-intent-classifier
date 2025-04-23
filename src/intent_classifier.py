@@ -1,12 +1,11 @@
-import yaml
 import json
 import logging
 from pathlib import Path
 
 import numpy as np
+import yaml
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
-
 
 # LEGACY_MODEL = "all-MiniLM-L6-v2"  # 60% performance
 # ALTERNATE_MODEL = sentence-transformers/paraphrase-multilingual-mpnet-base-v2  # 68% performance
