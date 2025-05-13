@@ -12,7 +12,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.11"
 gunicorn = "^23.0.0"
-flask = "^3.1.0"
+flask = "^3.1.1"
 prometheus-flask-exporter = "^0.23.1"
 flask-basicauth = "^0.2.0"
 sentry-sdk = {extras = ["flask"], version = "^2.18.0"}
