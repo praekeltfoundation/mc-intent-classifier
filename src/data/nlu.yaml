@@ -554,6 +554,7 @@ nlu:
       - Dull ache pregnant, expected?
       - Sharp twinges expecting, okay?
       - Pregnancy cramps typical?
+      - I have a cramp
       - Tightening pregnant, like cramps?
       - Frequent cramping pregnancy, why?
       - Is this new physical sensation I'm frequently feeling just a standard and benign part of being pregnant?
@@ -749,6 +750,9 @@ nlu:
       - Could you please fix my baby's Date Of Birth in your records? It's showing incorrectly.
       - My name is Sarah Khumalo.
       - Lerato.
+      - Call me Mom
+      - Mom
+      - mama
       - Name: John Doe.
       - I'm Thandiwe Pule.
       - Call me Grace for messages.
