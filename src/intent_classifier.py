@@ -158,8 +158,8 @@ class IntentClassifier:
     def classify(
         self,
         incoming_text: str,
-        s_thresh: float = 0.50,    # best performing similarity threshold
-        m_thresh: float = 0.002   # best performing Margin threshold
+        s_thresh: float = 0.50,  # best performing similarity threshold
+        m_thresh: float = 0.002,  # best performing Margin threshold
     ) -> tuple[str, float]:
         """
         Classify the intent using similarity to mean embeddings, an absolute
@@ -188,17 +188,16 @@ class IntentClassifier:
             return "Unclassified", 0.0
 
         log_text = (
-            incoming_text[:50] + "..." if len(incoming_text) > 50
-            else incoming_text
+            incoming_text[:50] + "..." if len(incoming_text) > 50 else incoming_text
         )
         logging.debug(
             "Classifying text: '%s' with s_thresh=%.3f, m_thresh=%.3f",
-            log_text, s_thresh, m_thresh
+            log_text,
+            s_thresh,
+            m_thresh,
         )
 
-        similarities_to_mean = self._calculate_similarities_to_mean(
-            incoming_text
-        )
+        similarities_to_mean = self._calculate_similarities_to_mean(incoming_text)
 
         if not similarities_to_mean:
             logging.debug("No similarities calculated.")
@@ -210,26 +209,30 @@ class IntentClassifier:
             intent_confidence = next(iter(similarities_to_mean.values()))
             logging.debug(
                 "Single intent found: %s with confidence score %.4f",
-                best_intent, intent_confidence
+                best_intent,
+                intent_confidence,
             )
             if intent_confidence < s_thresh:
                 logging.debug(
                     "Single intent %s with confidence of %.4f is below s_thresh of %.4f.",
-                    best_intent, intent_confidence, s_thresh
+                    best_intent,
+                    intent_confidence,
+                    s_thresh,
                 )
                 return "Unclassified", (1.0 - intent_confidence)
             else:
                 logging.debug(
                     "Single intent %s with confidence of %.4f meets s_thresh %.4f.",
-                    best_intent, intent_confidence, s_thresh
+                    best_intent,
+                    intent_confidence,
+                    s_thresh,
                 )
                 return best_intent, intent_confidence
 
         # Handle cases with 2 or more intents
         try:
             sorted_items = sorted(
-                similarities_to_mean.items(), key=lambda item: item[1],
-                reverse=True
+                similarities_to_mean.items(), key=lambda item: item[1], reverse=True
             )
             best_intent, intent_confidence = sorted_items[0]
             second_intent, second_score = sorted_items[1]
@@ -237,33 +240,43 @@ class IntentClassifier:
         except IndexError:  # Should not happen if len >= 2, but as a safeguard
             logging.error(
                 "Error during score sorting (IndexError) for %s. Similarities: %s",
-                log_text, similarities_to_mean
+                log_text,
+                similarities_to_mean,
             )
             # Should ideally not be reached if len check is correct
             return "Unclassified", 1.0
         except Exception as e:
             logging.error(
                 "Error during score sorting/margin calculation for '%s': '%s'",
-                log_text, e
+                log_text,
+                e,
             )
             return "Unclassified", 1.0
 
         logging.debug(
             "Top intent: '%s' (%.4f), Second: '%s' (%.4f), Margin: %.4f",
-            best_intent, intent_confidence, second_intent, second_score, margin
+            best_intent,
+            intent_confidence,
+            second_intent,
+            second_score,
+            margin,
         )
 
         # --- Apply S_THRESH (Absolute Similarity Threshold) for the top intent ---
         if intent_confidence < s_thresh:
             logging.debug(
                 "Top intent '%s' (%.4f) is below s_thresh (%.4f).",
-                best_intent, intent_confidence, s_thresh
+                best_intent,
+                intent_confidence,
+                s_thresh,
             )
             return "Unclassified", 1.0 - intent_confidence
 
         logging.debug(
             "Top intent '%s' (%.4f) meets s_thresh (%.4f). Proceeding with rules.",
-            best_intent, intent_confidence, s_thresh
+            best_intent,
+            intent_confidence,
+            s_thresh,
         )
 
         # --- Apply Specific Business Rule: Baby Loss vs Opt out ---
@@ -275,15 +288,13 @@ class IntentClassifier:
         }
 
         if is_babyloss_optout_pair:
-            baby_loss_actual_score = similarities_to_mean.get(
-                "Baby Loss", -1.0
-            )
+            baby_loss_actual_score = similarities_to_mean.get("Baby Loss", -1.0)
             # Prioritize Baby Loss if it's one of the top two AND its score
             # meets s_thresh
             if baby_loss_actual_score >= s_thresh:
                 logging.debug(
                     "Prioritizing 'Baby Loss' (score %.4f) due to BabyLoss/OptOut rule and meeting s_thresh.",
-                    baby_loss_actual_score
+                    baby_loss_actual_score,
                 )
                 return "Baby Loss", baby_loss_actual_score
             else:
@@ -295,7 +306,8 @@ class IntentClassifier:
                 logging.debug(
                     "'Baby Loss' is in top 2 with 'Opt out', but its score (%.4f) is below s_thresh. "
                     "Proceeding with margin check for '%s'.",
-                    baby_loss_actual_score, best_intent
+                    baby_loss_actual_score,
+                    best_intent,
                 )
 
         # --- Apply General Margin Thresholding (M_THRESH) ---
@@ -307,7 +319,9 @@ class IntentClassifier:
         if m_thresh > 0 and margin < m_thresh:
             logging.debug(
                 "Top intent '%s' meets s_thresh, but margin (%.4f) is below m_thresh (%.4f).",
-                best_intent, margin, m_thresh
+                best_intent,
+                margin,
+                m_thresh,
             )
             return "Unclassified", (1.0 - intent_confidence)
 
@@ -315,7 +329,10 @@ class IntentClassifier:
         logging.debug(
             "Confident classification: '%s' (%.4f). "
             "Margin (%.4f) meets m_thresh (%.4f) or m_thresh is disabled.",
-            best_intent, intent_confidence, margin, m_thresh
+            best_intent,
+            intent_confidence,
+            margin,
+            m_thresh,
         )
         return best_intent, intent_confidence
 
