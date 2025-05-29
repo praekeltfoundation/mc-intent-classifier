@@ -50,13 +50,6 @@ nlu:
       - Faced a stillbirth, a heartbreaking experience.
       - Loss of baby.
       - Stillbirth.
-      - My baby passed, need to talk.
-      - Had a late miscarriage.
-      - The little one isn't with us.
-      - Terminated for medical reasons, it's a loss.
-      - Bereaved parent here.
-      - No baby anymore.
-      - Lost the pregnancy at 20 weeks.
 
   - intent: Affirm
     examples: |
@@ -119,12 +112,6 @@ nlu:
       - Fine.
       - Thnx appreciate quick reply.
       - Perfect, exactly what needed.
-      - That's it.
-      - You got it.
-      - Mhm.
-      - Okay.
-      - Sweet.
-      - Right on.
 
   - intent: Opt out
     examples: |
@@ -178,10 +165,6 @@ nlu:
       - Opt out.
       - Unsubscribe.
       - Stop texts.
-      - Quit MomConnect.
-      - End messages.
-      - No more please.
-      - I'm done with these notifications.
 
   - intent: Facility Complaint
     examples: |
@@ -239,11 +222,6 @@ nlu:
       - Security guard hassling people at clinic.
       - Waiting times clinic unacceptable.
       - Facility needs better hygiene.
-      - My appointment was cancelled without notice at the clinic.
-      - The doctor seemed rushed and didn't explain things.
-      - Never again at that hospital.
-      - The clinic never answers their phone.
-      - Shocking state of the facility.
 
   - intent: Facility Compliment
     examples: |
@@ -304,11 +282,6 @@ nlu:
       - Clinic appointment ran smoothly, thanks team!
       - Support from clinic made difficult time easier.
       - Staff at Mowbray, keep up amazing work!
-      - The clinic was so welcoming.
-      - Best hospital experience I've had.
-      - The healthcare workers were amazing.
-      - So impressed with the facility.
-      - Keep up the fantastic work at your clinic!
 
   - intent: Chatbot Complaint
     examples: |
@@ -369,11 +342,6 @@ nlu:
       - How speak human MomConnect???
       - Bot irrelevant info.
       - Frustrated MomConnect not understanding.
-      - Your bot is broken.
-      - This chatbot is not helping me.
-      - I need a real person, not MomConnect.
-      - Worst bot ever.
-      - MomConnect answers are wrong.
 
   - intent: Chatbot Compliment
     examples: |
@@ -430,11 +398,6 @@ nlu:
       - Better than online search, thanks MomConnect!
       - MomConnect messages positive.
       - Grateful MomConnect updates.
-      - This chatbot is amazing.
-      - Thanks for the helpful bot.
-      - MomConnect is very supportive.
-      - So glad I have MomConnect.
-      - The information from MomConnect is top quality.
 
   - intent: Baby Development Enquiry
     examples: |
@@ -502,11 +465,6 @@ nlu:
       - Baby constant hiccuping normal?
       - Baby vaccine schedule.
       - How much tummy time for infant?
-      - What's normal for baby at 2 months?
-      - Baby first words age?
-      - Solids introduction for baby.
-      - Is my baby's cough serious?
-      - Newborn skin care tips.
 
   - intent: General Pregnancy Enquiry
     examples: |
@@ -554,7 +512,6 @@ nlu:
       - Dull ache pregnant, expected?
       - Sharp twinges expecting, okay?
       - Pregnancy cramps typical?
-      - I have a cramp
       - Tightening pregnant, like cramps?
       - Frequent cramping pregnancy, why?
       - Is this new physical sensation I'm frequently feeling just a standard and benign part of being pregnant?
@@ -567,7 +524,7 @@ nlu:
       - How much water should I really be drinking every day throughout my pregnancy to stay healthy?
       - How can I best manage pregnancy heartburn effectively without resorting to strong medication?
       - Ndingayazi njani ixesha lokubeleka elililo nelichanekileyo?
-      - Kubuhlungu kakhulu esiswini, ngabe yini okunye okungaba yinkinga ngesikhathi ngikhulelwe?
+      - Kubuhlungu kakhulu esiswini sami, ngabe yini okunye okungaba yinkinga ngesikhathi ngikhulelwe?
       - When does that 'nesting' instinct usually kick in for most pregnant women before birth?
       - Can I still sleep on my back now that I'm well into my second trimester?
       - How should I best deal with uncomfortable and persistent swelling in my feet and hands during these later stages of pregnancy?
@@ -585,11 +542,6 @@ nlu:
       - Morning sickness help.
       - Labor signs?
       - Safe exercise pregnancy?
-      - Pelvic pain pregnancy advice.
-      - Itchy skin pregnant relief.
-      - Calculate due date.
-      - Am I in labor?
-      - Sex during pregnancy concerns.
 
   - intent: Language
     examples: |
@@ -646,11 +598,6 @@ nlu:
       - Xitsonga option available yet?
       - Language change.
       - Want different language.
-      - Set to English.
-      - Change my language.
-      - Use Xhosa for me.
-      - Sotho messages.
-      - Venda updates thanks.
 
   - intent: Channel Switch
     examples: |
@@ -703,10 +650,6 @@ nlu:
       - Channel switch.
       - Use WhatsApp.
       - Change to SMS.
-      - Contact via Email.
-      - Prefer USSD channel.
-      - Stop WhatsApp, use SMS.
-      - Switch to Signal.
 
   - intent: Personal Data Update
     examples: |
@@ -750,9 +693,6 @@ nlu:
       - Could you please fix my baby's Date Of Birth in your records? It's showing incorrectly.
       - My name is Sarah Khumalo.
       - Lerato.
-      - Call me Mom
-      - Mom
-      - mama
       - Name: John Doe.
       - I'm Thandiwe Pule.
       - Call me Grace for messages.
@@ -768,11 +708,6 @@ nlu:
       - Ningandilungisela njani idilesi yam entsha?
       - New address: [Address].
       - Surname change to [Surname].
-      - Update my EDD.
-      - My new ID is [ID Number].
-      - Correct my baby's name.
-      - Change carer details.
-      - Facility code update.
 
   - intent: PMTCT
     examples: |
@@ -831,11 +766,6 @@ nlu:
       - Help partner disclosure HIV status PMTCT.
       - Newer PMTCT medications available?
       - What are ARVs, who takes them for PMTCT?
-      - PMTCT info please.
-      - HIV pregnancy care.
-      - ARV for newborn.
-      - Keeping baby HIV negative.
-      - Questions about PMTCT.
 
   - intent: Switch to Postbirth
     examples: |
@@ -889,11 +819,6 @@ nlu:
       - My delivery happened, please switch me to new mom content.
       - Baby arrived, update now.
       - Switch to new baby messages.
-      - Update to postnatal.
-      - Born! Change messages.
-      - It's a boy/girl, new messages pls.
-      - Post birth info now.
-      - Had my little one.
 
   - intent: Clinic Appointment Enquiry
     examples: |
@@ -943,16 +868,11 @@ nlu:
       - No reminder SMS received for my clinic visit next week.
       - Kumele ngiyoyenza nini i-checkup elandelayo ekliniki yami?
       - Do they do pap smears at this specific facility or should I go elsewhere for that?
-      - How do I book my baby's first immunisation appointment at the clinic?
+      - How do I book baby's first immunisation appointment at the clinic?
       - My appointment query regarding next visit.
       - Need to confirm my hospital booking for delivery date.
       - Check my appointment.
       - When's my next ANC?
-      - My clinic appointment details.
-      - Date for next hospital visit.
-      - Reschedule appointment please.
-      - What to bring to clinic?
-      - Lost appointment card.
 
   - intent: Spam
     examples: |
@@ -1003,8 +923,56 @@ nlu:
       - Vote for [Political Party Name] in the upcoming election - Win free airtime!
       - Prophet Musa miracle healing and financial blessings call this number now!
       - Lost love back spells that work fast and are guaranteed! Call psychic.
-      - Click this for a surprise.
-      - Your computer has a virus.
-      - Free holiday giveaway.
-      - Make money online quick.
-      - You have been selected.
+    
+  - intent: Unclassified
+    examples: |
+      - What's the weather like in Durban today?
+      - Can you tell me the latest soccer scores?
+      - What's the best recipe for malva pudding?
+      - Where can I find a good plumber in Rondebosch?
+      - I'm feeling really stressed about my exams.
+      - What is the capital city of Brazil?
+      - My phone's battery dies too quickly.
+      - What does the word 'ephemeral' mean?
+      - What are the current COVID-19 travel restrictions?
+      - Are you a human or an AI?
+      - Thanks for listening to me vent.
+      - Write a short story about a talking cat.
+      - How does the Gautrain schedule work?
+      - Can you recommend a good action movie to watch?
+      - I saw a beautiful sunset yesterday.
+      - What is the current date and time?
+      - Can you help me with this calculus problem?
+      - Do you prefer tea or coffee?
+      - Just wanted to greet my favorite digital assistant.
+      - I need directions to the nearest SARS office.
+      - How do I sign up for a new Gmail account?
+      - Where is the closest public library to me?
+      - Can you translate 'thank you' into Swahili?
+      - I need some advice on investing in shares.
+      - Is Lion's Head trail open for hiking this week?
+      - My car won't start this morning.
+      - Tell me something interesting about elephants.
+      - What is the current time in Sydney, Australia?
+      - I'm feeling quite bored and looking for ideas.
+      - How do I make a good potjie from scratch?
+      - Tell me a funny story.
+      - What are your support hours?
+      - Can you play some music for me?
+      - I need assistance with my Standard Bank account.
+      - My geyser just burst, what should I do first?
+      - Who is the current president of France?
+      - What's the exchange rate for Rand to Dollar?
+      - Can you book a flight for me to Johannesburg?
+      - I'm looking for a good restaurant in Sea Point.
+      - What's your opinion on the latest political news?
+      - My laptop is running very slow.
+      - Help me plan my holiday to the Drakensberg.
+      - What is the meaning of life?
+      - Sing a song for me.
+      - I need a recipe for banana bread.
+      - Can you tell me about the history of Cape Town?
+      - What are good gift ideas for a 5-year-old?
+      - My Wi-Fi connection is very unstable.
+      - How do I reset my Facebook password?
+      - Tell me about current fashion trends.
