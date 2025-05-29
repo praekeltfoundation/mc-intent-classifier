@@ -156,79 +156,168 @@ class IntentClassifier:
         return similarities
 
     def classify(
-        self, incoming_text: str, margin_threshold: float = 0.009
+        self,
+        incoming_text: str,
+        s_thresh: float = 0.50,    # best performing similarity threshold
+        m_thresh: float = 0.002   # best performing Margin threshold
     ) -> tuple[str, float]:
         """
-        Classify the intent using similarity to mean embeddings and a
-        confidence margin. Includes a rule to prioritize 'Baby Loss' if
-        confusion with 'Opt out' is below margin.
+        Classify the intent using similarity to mean embeddings, an absolute
+        similarity threshold (s_thresh), and a confidence margin (m_thresh).
+        Includes a rule to prioritize 'Baby Loss' if confused with 'Opt out',
+        provided 'Baby Loss' itself meets s_thresh.
 
         Args:
             incoming_text (str): The user input text.
-            margin_threshold (float): Minimum difference required between the
-                top score and the second-best score for general confidence.
-                Set to 0 or negative to disable margin check.
+            s_thresh (float): Minimum similarity score required for the top
+                intent to be considered a confident match.
+            m_thresh (float): Minimum difference required between the top
+                score and the second-best score for general confidence if
+                s_thresh is met. Set to 0 or negative to disable margin check.
 
         Returns:
-            tuple[str, float]: (intent, score). Intent may be 'out_of_scope'
-                or 'Unclassified'. Score is the score of the returned intent.
+            tuple[str, float]: (intent, score).
+                Intent may be 'Unclassified'.
+                Score interpretation depends on why it was unclassified:
+                - If s_thresh failed: score is the top intent's confidence.
+                - If m_thresh failed: score is (1.0 - top intent's confidence).
+                - Otherwise: score is the confident intent's confidence.
         """
 
         if not isinstance(incoming_text, str) or not incoming_text.strip():
             return "Unclassified", 0.0
 
         log_text = (
-            incoming_text[:50] + "..." if len(incoming_text) > 50 else incoming_text
+            incoming_text[:50] + "..." if len(incoming_text) > 50
+            else incoming_text
         )
-        logging.debug("Classifying text: '%s'", log_text)
+        logging.debug(
+            "Classifying text: '%s' with s_thresh=%.3f, m_thresh=%.3f",
+            log_text, s_thresh, m_thresh
+        )
 
-        similarities_to_mean = self._calculate_similarities_to_mean(incoming_text)
+        similarities_to_mean = self._calculate_similarities_to_mean(
+            incoming_text
+        )
 
         if not similarities_to_mean:
-            return "Unclassified", 0.0
+            logging.debug("No similarities calculated.")
+            return "Unclassified", 1.0
 
         # Handle case with only one possible intent
-        if len(similarities_to_mean) < 2:
+        if len(similarities_to_mean) == 1:
             best_intent = next(iter(similarities_to_mean.keys()))
             intent_confidence = next(iter(similarities_to_mean.values()))
-            return best_intent, intent_confidence
+            logging.debug(
+                "Single intent found: %s with confidence score %.4f",
+                best_intent, intent_confidence
+            )
+            if intent_confidence < s_thresh:
+                logging.debug(
+                    "Single intent %s with confidence of %.4f is below s_thresh of %.4f.",
+                    best_intent, intent_confidence, s_thresh
+                )
+                return "Unclassified", (1.0 - intent_confidence)
+            else:
+                logging.debug(
+                    "Single intent %s with confidence of %.4f meets s_thresh %.4f.",
+                    best_intent, intent_confidence, s_thresh
+                )
+                return best_intent, intent_confidence
 
-        # --- Get Top 2 Intents and Scores ---
+        # Handle cases with 2 or more intents
         try:
-            # Sort items by score (descending) to easily get top 2
             sorted_items = sorted(
-                similarities_to_mean.items(), key=lambda item: item[1], reverse=True
+                similarities_to_mean.items(), key=lambda item: item[1],
+                reverse=True
             )
             best_intent, intent_confidence = sorted_items[0]
             second_intent, second_score = sorted_items[1]
             margin = intent_confidence - second_score
-
+        except IndexError:  # Should not happen if len >= 2, but as a safeguard
+            logging.error(
+                "Error during score sorting (IndexError) for %s. Similarities: %s",
+                log_text, similarities_to_mean
+            )
+            # Should ideally not be reached if len check is correct
+            return "Unclassified", 1.0
         except Exception as e:
-            raise ValueError(
-                f"""Error during score sorting/margin calculation
-                for '{log_text}': '{e}'"""
-            ) from e
+            logging.error(
+                "Error during score sorting/margin calculation for '%s': '%s'",
+                log_text, e
+            )
+            return "Unclassified", 1.0
+
+        logging.debug(
+            "Top intent: '%s' (%.4f), Second: '%s' (%.4f), Margin: %.4f",
+            best_intent, intent_confidence, second_intent, second_score, margin
+        )
+
+        # --- Apply S_THRESH (Absolute Similarity Threshold) for the top intent ---
+        if intent_confidence < s_thresh:
+            logging.debug(
+                "Top intent '%s' (%.4f) is below s_thresh (%.4f).",
+                best_intent, intent_confidence, s_thresh
+            )
+            return "Unclassified", 1.0 - intent_confidence
+
+        logging.debug(
+            "Top intent '%s' (%.4f) meets s_thresh (%.4f). Proceeding with rules.",
+            best_intent, intent_confidence, s_thresh
+        )
 
         # --- Apply Specific Business Rule: Baby Loss vs Opt out ---
-        # When these two intents are close to each other, in score,
-        # we want to prioritize 'Baby Loss'
+        # This rule applies if the top two contenders are 'Baby Loss' and 'Opt out'.
+        # It prioritizes 'Baby Loss' if its own score is acceptable (>= s_thresh).
         is_babyloss_optout_pair = {best_intent, second_intent} == {
             "Baby Loss",
             "Opt out",
         }
-        if is_babyloss_optout_pair:
-            # If confusion is between Baby Loss and Opt out,
-            # always prioritize Baby Loss
-            baby_loss_score = similarities_to_mean.get("Baby Loss", -1.0)
-            return "Baby Loss", baby_loss_score
 
-        # Apply General Margin Thresholding (if not is_babyloss_optout_pair)
-        elif margin_threshold > 0 and margin < margin_threshold:
-            # If margin is too small for any other pair,
-            # classify as Unclassified
-            return "Unclassified", intent_confidence
-        else:
-            return best_intent, intent_confidence
+        if is_babyloss_optout_pair:
+            baby_loss_actual_score = similarities_to_mean.get(
+                "Baby Loss", -1.0
+            )
+            # Prioritize Baby Loss if it's one of the top two AND its score
+            # meets s_thresh
+            if baby_loss_actual_score >= s_thresh:
+                logging.debug(
+                    "Prioritizing 'Baby Loss' (score %.4f) due to BabyLoss/OptOut rule and meeting s_thresh.",
+                    baby_loss_actual_score
+                )
+                return "Baby Loss", baby_loss_actual_score
+            else:
+                # Baby Loss is in top 2, but its score is < s_thresh.
+                # It's not a strong candidate on its own.
+                # The best_intent (which must be "Opt out", and its score
+                # intent_confidence >= s_thresh) will proceed to the general
+                # margin check.
+                logging.debug(
+                    "'Baby Loss' is in top 2 with 'Opt out', but its score (%.4f) is below s_thresh. "
+                    "Proceeding with margin check for '%s'.",
+                    baby_loss_actual_score, best_intent
+                )
+
+        # --- Apply General Margin Thresholding (M_THRESH) ---
+        # This is reached if:
+        # 1. s_thresh was met for best_intent.
+        # 2. The BabyLoss/OptOut special rule either didn't apply or
+        # didn't result in an early 'Baby Loss' return
+        #    (e.g., Baby Loss score was too low, or it wasn't a BL/OO pair).
+        if m_thresh > 0 and margin < m_thresh:
+            logging.debug(
+                "Top intent '%s' meets s_thresh, but margin (%.4f) is below m_thresh (%.4f).",
+                best_intent, margin, m_thresh
+            )
+            return "Unclassified", (1.0 - intent_confidence)
+
+        # --- If all checks pass ---
+        logging.debug(
+            "Confident classification: '%s' (%.4f). "
+            "Margin (%.4f) meets m_thresh (%.4f) or m_thresh is disabled.",
+            best_intent, intent_confidence, margin, m_thresh
+        )
+        return best_intent, intent_confidence
 
 
 def read_yaml(yaml_file_path: Path) -> dict[str, list[str]]:
