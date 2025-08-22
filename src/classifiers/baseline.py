@@ -4,6 +4,7 @@ from pathlib import Path
 
 import numpy as np
 import yaml
+from numpy.typing import NDArray
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -41,7 +42,7 @@ class IntentClassifier:
         self.embeddings_path = Path(embeddings_path)
         self.nlu_path = Path(nlu_path)
         self.model: SentenceTransformer | None = None
-        self.mean_embeddings: dict[str, np.ndarray] = {}
+        self.mean_embeddings: dict[str, NDArray[np.float32]] = {}
 
         self._load_model()
         if not self.embeddings_path.exists():
@@ -50,6 +51,11 @@ class IntentClassifier:
                 raise ValueError(
                     f"""No valid labeled data loaded from '{self.nlu_path}'.
                     Cannot compute embeddings."""
+                )
+
+            if self.model is None:
+                raise ValueError(
+                    "Model could not be loaded, cannot compute embeddings."
                 )
 
             mean_embeddings_data = compute_mean_embeddings(labeled_data, self.model)
@@ -64,14 +70,14 @@ class IntentClassifier:
         else:
             self.mean_embeddings = self._load_mean_embeddings()
 
-    def _load_model(self):
+    def _load_model(self) -> None:
         """Loads the Sentence Transformer model."""
         try:
             self.model = SentenceTransformer(self.model_name)
         except Exception as e:
             raise ValueError(f"Error loading model '{self.model_name}': {e}") from e
 
-    def _load_mean_embeddings(self) -> dict[str, np.ndarray]:
+    def _load_mean_embeddings(self) -> dict[str, NDArray[np.float32]]:
         """
         Load precomputed MEAN embeddings from a JSON file.
         Each intent maps to a single mean vector (NumPy array).
@@ -98,7 +104,7 @@ class IntentClassifier:
                 f"Invalid format in embeddings file '{self.embeddings_path}'. Expected a dictionary."
             )
 
-        mean_embeddings = {}
+        mean_embeddings: dict[str, NDArray[np.float32]] = {}
         intents_skipped = 0
         for intent, mean_vector_list in embeddings_data.items():
             if not isinstance(mean_vector_list, list):
@@ -416,7 +422,9 @@ def compute_mean_embeddings(
     return mean_embeddings
 
 
-def save_embeddings_to_file(embeddings: dict[str, list[float]], output_file: Path):
+def save_embeddings_to_file(
+    embeddings: dict[str, list[float]], output_file: Path
+) -> None:
     """
     Save computed mean embeddings to a JSON file.
 

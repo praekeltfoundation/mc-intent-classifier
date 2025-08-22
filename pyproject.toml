@@ -19,12 +19,23 @@ sentry-sdk = {extras = ["flask"], version = "^2.18.0"}
 numpy = "2.2.5"
 torch = "2.6.0"
 sentence-transformers = "^3.1.1"
+# Added for v2.0
+pydantic = "^2.9.0"
+unidecode = "^1.3.8"
+pyyaml = "^6.0.1"
+joblib = "^1.4.2"
+scikit-learn = "^1.5.1"
+transformers = "^4.4.1"
+
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.4"
 pre-commit = "^4.0.1"
 pytest = "^8.3.3"
 pytest-mock = "^3.14.0"
+mypy = "^1.17.1"
+types-pyyaml = "^6.0.12.20250822"
+types-unidecode = "^1.3.0.20240106" # Added for unidecode type hints
 
 [build-system]
 requires = ["poetry-core"]
@@ -62,3 +73,24 @@ ignore = [
     "RUF012", # We usually want immutable instance attributes
 
 ]
+
+# --- NEW SECTION FOR MYPY CONFIGURATION ---
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["src", "tests"]
+
+# This section tells mypy to ignore missing type stubs for these specific libraries
+[[tool.mypy.overrides]]
+module = [
+    "joblib",
+    "sklearn.*",
+    "transformers.*",
+    "flask_basicauth",
+    "prometheus_flask_exporter",
+    "sentry_sdk.*",
+    "intent_classifier", # Ignore your own untyped legacy file
+    "src.intent_classifier",
+    "src.classifiers.baseline"
+]
+ignore_missing_imports = true

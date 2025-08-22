@@ -1,8 +1,11 @@
 import os
 import sys
 from base64 import b64encode
+from typing import Generator
 
 import pytest
+from flask.testing import FlaskClient
+from pytest_mock import MockerFixture
 
 from src.application import app
 
@@ -10,7 +13,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 @pytest.fixture
-def client():
+def client() -> Generator[FlaskClient, None, None]:
     """A test client for the app."""
     app.config["BASIC_AUTH_USERNAME"] = "test_username"
     app.config["BASIC_AUTH_PASSWORD"] = "test_password"  # noqa: S105
@@ -19,7 +22,7 @@ def client():
         yield client
 
 
-def test_nlu_success(client, mocker):
+def test_nlu_success(client: FlaskClient, mocker: MockerFixture) -> None:
     """Test the home route."""
 
     method = mocker.patch("src.intent_classifier.IntentClassifier.classify")
@@ -41,7 +44,7 @@ def test_nlu_success(client, mocker):
     method.assert_called_once_with("the nurses at the clinic was fantastic")
 
 
-def test_nlu_unauthenticated(client):
+def test_nlu_unauthenticated(client: FlaskClient) -> None:
     """Test the home route."""
 
     response = client.get(
@@ -50,7 +53,7 @@ def test_nlu_unauthenticated(client):
     assert response.status_code == 401
 
 
-def test_nlu_invalid(client):
+def test_nlu_invalid(client: FlaskClient) -> None:
     """"""
 
     credentials = b64encode(b"test_username:test_password").decode("utf-8")
