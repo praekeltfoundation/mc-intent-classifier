@@ -53,7 +53,7 @@ def main(model_dir: Path, nlu_path: Path, validation_path: Path) -> None:
     """
     Initialise or update threshold config for intent classification.
 
-    Policy (DoH + SxD agreed):
+    Policy (DS + SxD agreed):
     - Baby Loss / Opt-out (sensitive_exit): lower threshold (0.30)
       → prioritise recall, accept more false positives to avoid missing real cases.
     - Service Feedback (complaints/compliments): higher threshold (0.60)
