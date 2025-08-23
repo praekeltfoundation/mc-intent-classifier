@@ -1,7 +1,9 @@
 import argparse
+import json
 from pathlib import Path
 
 import numpy as np
+import pandas as pd
 import yaml
 from sklearn.metrics import precision_recall_fscore_support
 
@@ -51,19 +53,14 @@ def evaluate_thresholds(y_true: list[int], y_scores: list[float], policy: str) -
 
 def main(model_dir: Path, nlu_path: Path, validation_path: Path) -> None:
     """
-    Initialise or update threshold config for intent classification.
+    Tune thresholds + review band from validation data.
 
-    Policy (DS + SxD agreed):
-    - Baby Loss / Opt-out (sensitive_exit): lower threshold (0.30)
-      → prioritise recall, accept more false positives to avoid missing real cases.
-    - Service Feedback (complaints/compliments): higher threshold (0.60)
-      → prioritise precision, avoid overloading staff with false positives.
-    - Noise/Spam: strict (0.75)
-      → only accept if highly confident, don't discard real messages too easily.
-    - Other: balanced (0.50)
-      → fallback catch-all.
-    - Review band: 0.40
-      → messages in 0.30-0.50 range can be flagged for human review.
+    Policies:
+    - sensitive_exit → recall priority
+    - service_feedback → precision priority
+    - noise → precision priority
+    - other → balance
+    - review_band → derived dynamically from margin distribution
     """
     clf = EnsembleClassifier(artifacts_dir=model_dir)
 
@@ -73,9 +70,12 @@ def main(model_dir: Path, nlu_path: Path, validation_path: Path) -> None:
     scores_by_intent: dict[str, list[float]] = {label.value: [] for label in IntentEnum}
     true_by_intent: dict[str, list[int]] = {label.value: [] for label in IntentEnum}
 
+    # For review band derivation
+    margins: list[float] = []
+    review_candidates: list[dict[str, str | float]] = []
+
     # Collect classifier scores
     for text, label in zip(texts, labels):
-        # Replicate scoring logic from EnsembleClassifier.predict
         norm_text = normalise_text(text)
         emb = clf.encoder.encode([norm_text], show_progress_bar=False)
         clf_probs = clf.clf.predict_proba(emb)[0]
@@ -83,9 +83,37 @@ def main(model_dir: Path, nlu_path: Path, validation_path: Path) -> None:
             intent.value: prob for intent, prob in zip(list(IntentEnum), clf_probs)
         }
 
+        # Populate per-intent evaluation buckets
         for intent, score in scores.items():
             scores_by_intent[intent].append(score)
             true_by_intent[intent].append(1 if label == intent else 0)
+
+        # Top-2 margin for review band
+        sorted_probs = sorted(clf_probs, reverse=True)
+        top, second = sorted_probs[0], sorted_probs[1]
+        pred = list(IntentEnum)[int(np.argmax(clf_probs))].value
+
+        if pred != label:
+            margins.append(top - second)
+
+        # Record borderline examples
+        review_candidates.append(
+            {
+                "text": text,
+                "true_label": label,
+                "predicted": pred,
+                "top_prob": round(float(top), 3),
+                "second_prob": round(float(second), 3),
+                "margin": round(float(top - second), 3),
+            }
+        )
+
+    # Derive review band
+    if margins:
+        review_margin = float(np.percentile(margins, 75))
+        print(f"📊 Derived review margin = {review_margin:.2f}")
+    else:
+        review_margin = 0.10  # fallback if no errors
 
     # Sweep thresholds with policy bias
     thresholds = Thresholds(
@@ -109,13 +137,24 @@ def main(model_dir: Path, nlu_path: Path, validation_path: Path) -> None:
             scores_by_intent["other"],
             policy="balance",
         ),
-        review_band=0.40,  # fixed for now
+        review_band=review_margin,
     )
 
-    # Save thresholds
+    # Save thresholds JSON
     out_path = model_dir / "thresholds.json"
     out_path.write_text(thresholds.model_dump_json(indent=2))
     print(f"✅ Thresholds tuned and saved at {out_path}")
+
+    # Save review candidates CSV
+    df = pd.DataFrame(review_candidates)
+    csv_path = model_dir / "review_candidates.csv"
+    df.to_csv(csv_path, index=False)
+    print(f"✅ Review candidates saved at {csv_path}")
+
+    # Print summary
+    print("\n=== Thresholds Summary ===")
+    print(json.dumps(thresholds.model_dump(), indent=2))
+    print("==========================\n")
 
 
 if __name__ == "__main__":
