@@ -41,6 +41,9 @@ types-pyyaml = "^6.0.12.20250822"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.pytest.ini_options]
+asyncio_default_fixture_loop_scope = "function"
+
 
 [tool.ruff.lint]
 select = [

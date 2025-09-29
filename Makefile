@@ -13,7 +13,7 @@ UV := uv
 # Default encoder (can override: make train ENCODER=all-MiniLM-L6-v2)
 ENCODER ?= BAAI/bge-m3
 
-.PHONY: help venv install lint typecheck test train thresholds serve clean
+.PHONY: help venv install lint typecheck test datasets train thresholds serve clean
 
 help:
 	@echo "MomConnect Intent Classifier v2.0"
@@ -23,6 +23,7 @@ help:
 	@echo "make lint         - run ruff lint + format check"
 	@echo "make typecheck    - run mypy type checker"
 	@echo "make test         - run pytest"
+	@echo "make datasets     - standardise labels in YAML (+ subintent) and emit JSONL"
 	@echo "make train        - train new model"
 	@echo "make thresholds   - tune thresholds"
 	@echo "make serve        - run Flask app (dev mode)"
@@ -43,6 +44,10 @@ typecheck:
 
 test:
 	pytest -q --disable-warnings
+
+# --- NEW: build datasets (annotate YAML in place + write samples.*.jsonl) ---
+datasets:
+	$(PYTHON) $(SRC)/data/build_datasets.py --data-dir $(DATA) --emit-jsonl --out-dir $(SRC)/mapped_data
 
 train:
 	$(PYTHON) $(SRC)/train.py --data-dir $(DATA) --artifacts-dir $(ARTIFACTS) --encoder $(ENCODER)

@@ -1,79 +1,156 @@
 # MomConnect Intent Classifier
 
-Model that classifies the intent of inbound messages. It is not intended to be exposed to the outside world, we only have it accisble inside the cluster.
+The **MomConnect Intent Classifier** labels inbound messages from mothers into high-level intents.  
+It is used by the Department of Health to triage and route messages appropriately (e.g. *service feedback*, *sensitive exits like baby loss or opt-outs*, etc.).
+
+⚠️ **Note:** This service is **internal only** and not exposed outside the cluster.
+
+---
+
+## Features
+
+- **Sentence embeddings** (via [SentenceTransformers](https://www.sbert.net/))
+- **Linear classifier head** trained on embeddings
+- **Threshold-based decisioning** per intent
+- **Policy-driven biasing**:
+  - *Sensitive exits (baby loss, opt-out)* → prioritise **recall**
+  - *Service feedback* → prioritise **precision**
+  - *Noise/Spam* → strict filtering
+- **Automatic enrichment**:
+  - Service feedback → sentiment polarity (positive/negative/neutral)
+  - Sensitive exit → bereavement vs generic opt-out
+- **Review band**: low-confidence predictions are flagged as `NEEDS_REVIEW`
+
+---
 
 ## Development
-This project uses [poetry](https://python-poetry.org/docs/#installation) for packaging and dependancy management, so install that first.
 
-Ensure you're also running at least python 3.11, `python --version`.
+This project uses [Poetry](https://python-poetry.org/docs/#installation) for packaging and dependency management.
 
-Then you can install the dependencies
-```bash
-~ poetry install
-```
+1. Ensure you’re running **Python 3.11+**:
+   ```bash
+   python --version
+Install dependencies:
 
-To run a local worker, set NLU_USERNAME and NLU_PASSWORD environment variables, then start up the flask worker
-```bash
-~ poetry run flask --app src.application run
-```
+bash
+Copy
+Edit
+poetry install
+Running the Flask worker
+Set the environment variables and start the app:
 
-To run the autoformatting and linting, run
-```bash
-~ ruff format && ruff check && mypy --install-types
-```
+bash
+Copy
+Edit
+export NLU_USERNAME=your-username
+export NLU_PASSWORD=your-password
 
-For the test runner, we use [pytest](https://docs.pytest.org/):
-```bash
-~ pytest
-```
+poetry run flask --app src.application run
+Code Quality
+Autoformat + Linting:
 
-## Regenerating the embeddings json file
+bash
+Copy
+Edit
+poetry run ruff format .
+poetry run ruff check .
+poetry run mypy --install-types
+Tests:
 
-1. Delete the json embeddings file in src/data/
-1. Update the nlu.yaml with your changes
-1. Run the flask app, this should regenerate the embeddings file. `poetry run flask --app src.application run`
+bash
+Copy
+Edit
+poetry run pytest
+Regenerating Embeddings
+Delete the existing embeddings JSON in src/data/
 
-## Editor configuration
+Update training examples in nlu.yaml
 
-If you'd like your editor to handle linting and/or formatting for you, here's how to set it up.
+Run the Flask app:
 
-### Visual Studio Code
+bash
+Copy
+Edit
+poetry run flask --app src.application run
+→ Embeddings will be regenerated.
 
-1. Install the Python and Ruff extensions
-1. In settings, check the "Python > Linting: Mypy Enabled" box
-1. In settings, set the "Python > Formatting: Provider" to "black" (apparently "ruff format" isn't supported by the Python extension yet and "black" is probably close enough)
-1. If you want to have formatting automatically apply, in settings, check the "Editor: Format On Save" checkbox
+Threshold Tuning
+Thresholds live in artifacts/thresholds.json.
+They can be tuned with validation data via:
 
-Alternatively, add the following to your `settings.json`:
-```json
-{
-    "python.linting.mypyEnabled": true,
-    "python.formatting.provider": "black",
-    "editor.formatOnSave": true,
-}
-```
+bash
+Copy
+Edit
+poetry run python src/fit_thresholds.py \
+  --model-dir artifacts/ \
+  --nlu-path src/data/nlu.yaml \
+  --validation-path src/data/validation.yaml
+Policy:
 
-## Release process
+Sensitive exits → low threshold (recall focus)
 
-To release a new version, follow these steps:
+Service feedback → higher threshold (precision focus)
 
-1. Make sure all relevant PRs are merged and that all necessary QA testing is complete
-1. Make sure release notes are up to date and accurate
-1. In one commit on the `main` branch:
-   - Update the version number in `pyproject.toml` to the release version
-   - Replace the UNRELEASED header in `CHANGELOG.md` with the release version and date
-1. Tag the release commit with the release version (for example, `v0.2.1` for version `0.2.1`)
-1. Push the release commit and tag
-1. In one commit on the `main` branch:
-   - Update the version number in `pyproject.toml` to the next pre-release version
-   - Add a new UNRELEASED header in `CHANGELOG.md`
-1. Push the post-release commit
+Noise → strict threshold
 
-## Running in Production
-There is a [docker image](https://github.com/praekeltfoundation/mc-intent-classifier/pkgs/container/mc-intent-classifier) that can be used to easily run this service. It uses the following environment variables for configuration:
+Other → balanced
 
-| Variable      | Description |
-| ----------    | ----------- |
-| NLU_USERNAME  | The username used for API requests |
-| NLU_PASSWORD  | The password used for API requests |
-| SENTRY_DSN    | Where to send exceptions to |
+Review band → learned dynamically from disagreement zone
+
+Editor Configuration
+For VS Code:
+
+Install the Python and Ruff extensions.
+
+Settings:
+
+"python.linting.mypyEnabled": true
+
+"python.formatting.provider": "black"
+
+"editor.formatOnSave": true
+
+Release Process
+Merge all PRs & complete QA.
+
+Update release notes in CHANGELOG.md.
+
+On main branch:
+
+Update version in pyproject.toml
+
+Replace UNRELEASED with release version + date in CHANGELOG.md
+
+Commit + tag:
+
+bash
+Copy
+Edit
+git tag v0.2.1
+git push origin main --tags
+Post-release:
+
+Increment version in pyproject.toml (e.g. 0.2.2.dev0)
+
+Add new UNRELEASED header to CHANGELOG.md
+
+Running in Production
+A Docker image is published for deployment.
+
+Required environment variables:
+
+Variable	Description
+NLU_USERNAME	Username for API requests
+NLU_PASSWORD	Password for API requests
+SENTRY_DSN	Sentry DSN for error reporting
+
+License
+MIT
+
+yaml
+Copy
+Edit
+
+---
+
+Do you also want me to add an **API Quickstart** section (sample `curl` + example JSON response) so QA/SxD can test it directly without spinning up notebooks?
