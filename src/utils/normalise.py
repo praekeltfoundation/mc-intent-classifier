@@ -2,7 +2,7 @@ import re
 
 from unidecode import unidecode
 
-from src.config.constants import ABBREV
+from src.config.constants import ABBREV_EXPANSIONS
 
 
 def normalise_text(text: str) -> str:
@@ -11,7 +11,7 @@ def normalise_text(text: str) -> str:
         return ""
     t = text.strip()
     t = unidecode(t).lower()
-    for pat, repl in ABBREV.items():
+    for pat, repl in ABBREV_EXPANSIONS.items():
         t = re.sub(pat, repl, t)
     t = re.sub(r"([!?.,])\1{1,}", r"\1", t)  # collapse repeated punctuation
     t = re.sub(r"\s+", " ", t)

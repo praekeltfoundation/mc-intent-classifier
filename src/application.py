@@ -1,54 +1,116 @@
+# src/application.py
+from __future__ import annotations
+
 import importlib.metadata
 import os
 from pathlib import Path
-from typing import Union
 
 import sentry_sdk
-from flask import Flask, Response, jsonify, request
+from flask import Flask, jsonify, request
+from flask.typing import ResponseReturnValue
 from flask_basicauth import BasicAuth
 from prometheus_flask_exporter import PrometheusMetrics
 
 from src.classifiers.ensemble import EnsembleClassifier
+from src.utils.logger import get_logger
 
-# Version info
+# --- Setup ---
 version = importlib.metadata.version("mc-intent-classifier")
-
-# Paths
-dirname = os.path.dirname(__file__)
-DATA_PATH = Path(f"{dirname}/data")
-ARTIFACTS_DIR = Path(dirname) / "artifacts"
+logger = get_logger(__name__)
+ROOT_DIR = Path(__file__).parent
+ARTIFACTS_DIR = ROOT_DIR / "artifacts"
 THRESHOLDS_PATH = ARTIFACTS_DIR / "thresholds.json"
 
-# Flask app
+# --- App Initialization ---
 app = Flask(__name__)
 app.config["BASIC_AUTH_USERNAME"] = os.environ.get("NLU_USERNAME")
 app.config["BASIC_AUTH_PASSWORD"] = os.environ.get("NLU_PASSWORD")
 
-# Sentry
-if os.environ.get("SENTRY_DSN"):
-    sentry_sdk.init(dsn=os.environ.get("SENTRY_DSN"), traces_sample_rate=0.0)
+if dsn := os.environ.get("SENTRY_DSN"):
+    sentry_sdk.init(dsn=dsn, traces_sample_rate=0.1)
+    logger.info("Sentry initialized.")
 
-# Auth + Metrics
 basic_auth = BasicAuth(app)
 metrics = PrometheusMetrics(app)
-metrics.info("app_info", "Application info", version=version)
+metrics.info("app_info", "MC Intent Classifier Service", version=version)
 
-# Load classifier
-classifier = EnsembleClassifier(
-    artifacts_dir=ARTIFACTS_DIR, thresholds_path=THRESHOLDS_PATH
-)
+# --- Load Classifier ---
+classifier: EnsembleClassifier | None = None
+try:
+    classifier = EnsembleClassifier(
+        artifacts_dir=ARTIFACTS_DIR, thresholds_path=THRESHOLDS_PATH
+    )
+    logger.info(f"Classifier loaded. Version: {classifier.manifest['version']}")
+except Exception:
+    logger.exception("CRITICAL: Failed to load the classifier on startup.")
 
 
-@app.route("/nlu/")
+# --- API Endpoints ---
+@app.route("/health")
+@metrics.do_not_track()  # type: ignore
+def health_check() -> ResponseReturnValue:
+    """Health check endpoint."""
+    status = {
+        "status": "ok",
+        "version": version,
+        "model_loaded": classifier is not None,
+    }
+    return jsonify(status)
+
+
+@app.route("/nlu/babyloss/")
 @basic_auth.required  # type: ignore
-def nlu() -> Union[Response, tuple[dict[str, str], int]]:
+def nlu_babyloss() -> ResponseReturnValue:
+    """Detects the 'baby loss' sub-intent with detailed metrics."""
+    if not classifier:
+        return jsonify({"error": "Classifier not available"}), 503
+
     question = request.args.get("question")
     if not question:
-        return {"error": "question is required"}, 400
+        return jsonify({"error": "The 'question' parameter is required."}), 400
 
-    response = classifier.predict(question)
-    return jsonify(response.model_dump())  # pydantic ensures schema
+    prediction = classifier.predict(question)
+    top_intent = prediction["intents"][0]
+
+    is_babyloss = (
+        top_intent["key"] == "SENSITIVE_EXIT"
+        and top_intent["enrichment"].get("sub_reason") == "BABY_LOSS"
+    )
+
+    response_payload = {
+        "babyloss": is_babyloss,
+        "model_version": prediction["model_version"],
+        "parent_label": top_intent["key"],
+        "sub_intent": top_intent["enrichment"].get("sub_reason"),
+        "probability": top_intent["probability"],
+        "review_status": prediction["review_status"],
+    }
+    return jsonify(response_payload)
 
 
-if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=8000)
+@app.route("/nlu/feedback/")
+@basic_auth.required  # type: ignore
+def nlu_feedback() -> ResponseReturnValue:
+    """Detects 'compliment' or 'complaint' sub-intents with detailed metrics."""
+    if not classifier:
+        return jsonify({"error": "Classifier not available"}), 503
+
+    question = request.args.get("question")
+    if not question:
+        return jsonify({"error": "The 'question' parameter is required."}), 400
+
+    prediction = classifier.predict(question)
+    top_intent = prediction["intents"][0]
+
+    intent_response = "None"
+    if top_intent["key"] == "FEEDBACK":
+        intent_response = top_intent["enrichment"].get("sub_reason", "None")
+
+    response_payload = {
+        "intent": intent_response,
+        "model_version": prediction["model_version"],
+        "parent_label": top_intent["key"],
+        "probability": top_intent["probability"],
+        "review_status": prediction["review_status"],
+    }
+    return jsonify(response_payload)

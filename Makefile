@@ -5,58 +5,54 @@
 PYTHON := python3
 SRC := src
 DATA := $(SRC)/data
+MAPPED_DATA := $(SRC)/mapped_data
 ARTIFACTS := $(SRC)/artifacts
 
 VENV := .venv
 UV := uv
 
-# Default encoder (can override: make train ENCODER=all-MiniLM-L6-v2)
-ENCODER ?= BAAI/bge-m3
-
-.PHONY: help venv install lint typecheck test datasets train thresholds serve clean
+.PHONY: help install lint typecheck test datasets train serve serve-dev clean
 
 help:
 	@echo "MomConnect Intent Classifier v2.0"
 	@echo "--------------------------------"
-	@echo "make venv         - create virtualenv with uv"
 	@echo "make install      - install deps"
 	@echo "make lint         - run ruff lint + format check"
 	@echo "make typecheck    - run mypy type checker"
 	@echo "make test         - run pytest"
-	@echo "make datasets     - standardise labels in YAML (+ subintent) and emit JSONL"
+	@echo "make datasets     - emit JSONL from source YAML"
 	@echo "make train        - train new model"
-	@echo "make thresholds   - tune thresholds"
-	@echo "make serve        - run Flask app (dev mode)"
+	@echo "make serve-dev    - run Flask app for LOCAL development"
+	@echo "make serve        - run Flask app with Gunicorn (for production)"
 	@echo "make clean        - remove build artifacts"
-
-venv:
-	$(UV) venv $(VENV)
 
 install:
 	$(UV) pip install -r requirements.txt
 
 lint:
 	ruff check $(SRC)
-	ruff format --check $(SRC)
+	ruff format $(SRC)
 
 typecheck:
 	mypy $(SRC)
 
 test:
-	pytest -q --disable-warnings
+	pytest -vv --disable-warnings
 
-# --- NEW: build datasets (annotate YAML in place + write samples.*.jsonl) ---
 datasets:
-	$(PYTHON) $(SRC)/data/build_datasets.py --data-dir $(DATA) --emit-jsonl --out-dir $(SRC)/mapped_data
+	$(PYTHON) $(SRC)/data/build_datasets.py --data-dir $(DATA) --emit-jsonl --out-dir $(MAPPED_DATA)
 
 train:
-	$(PYTHON) $(SRC)/train.py --data-dir $(DATA) --artifacts-dir $(ARTIFACTS) --encoder $(ENCODER)
+	$(PYTHON) $(SRC)/train_model.py --data-path $(MAPPED_DATA)/samples.train.jsonl --artifacts-dir $(ARTIFACTS)
 
-thresholds:
-	$(PYTHON) $(SRC)/fit_thresholds.py --model-dir $$(ls -td $(ARTIFACTS)/mcic-* | head -1)
+# Use this for local development on macOS to avoid MPS/forking issues
+serve-dev:
+	FLASK_APP=src/application.py poetry run flask run -p 5001
 
+# This is for production-like environments (e.g., Linux containers)
 serve:
-	FLASK_APP=$(SRC)/application.py FLASK_ENV=development $(PYTHON) -m flask run --host=0.0.0.0 --port=8000
+	OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES gunicorn --workers 2 --bind 0.0.0.0:5001 --preload src.application:app
 
 clean:
-	rm -rf $(ARTIFACTS)/*.pkl $(ARTIFACTS)/*.json __pycache__ .pytest_cache .mypy_cache
+	rm -rf $(ARTIFACTS) __pycache__ .pytest_cache .mypy_cache
+

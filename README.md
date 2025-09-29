@@ -1,156 +1,154 @@
-# MomConnect Intent Classifier
+## MomConnect Intent Classifier
 
-The **MomConnect Intent Classifier** labels inbound messages from mothers into high-level intents.  
-It is used by the Department of Health to triage and route messages appropriately (e.g. *service feedback*, *sensitive exits like baby loss or opt-outs*, etc.).
+A machine learning service to classify inbound user messages for the *MomConnect*. This service identifies user intents such as service feedback and sensitive topics like baby loss, enabling the platform to provide appropriate and timely responses.
 
-⚠️ **Note:** This service is **internal only** and not exposed outside the cluster.
 
----
+### How It Works: A Hybrid Approach to Intent Classification
+This classifier uses a modern, two-stage process to understand user messages with both accuracy and precision. This design ensures that broad categories are handled robustly by a data-driven model, while critical, specific cases are managed with transparent and reliable rules.
 
-## Features
+_A simplified flowchart of the classification process._
 
-- **Sentence embeddings** (via [SentenceTransformers](https://www.sbert.net/))
-- **Linear classifier head** trained on embeddings
-- **Threshold-based decisioning** per intent
-- **Policy-driven biasing**:
-  - *Sensitive exits (baby loss, opt-out)* → prioritise **recall**
-  - *Service feedback* → prioritise **precision**
-  - *Noise/Spam* → strict filtering
-- **Automatic enrichment**:
-  - Service feedback → sentiment polarity (positive/negative/neutral)
-  - Sensitive exit → bereavement vs generic opt-out
-- **Review band**: low-confidence predictions are flagged as `NEEDS_REVIEW`
+1. Broad Understanding (Machine Learning): First, the user's message is converted into a sophisticated numerical representation (an "embedding") using a SentenceTransformer model. A trained machine learning model then reads this embedding to classify the message into one of four broad parent categories: `FEEDBACK`, `SENSITIVE_EXIT`, `NOISE_SPAM`, or `OTHER`.
 
----
+2. Specific Details (*Enrichment Rules*): Once the main category is known, the system applies a set of precise rules to determine the specific sub-intent.
 
-## Development
+    - If the message is `FEEDBACK`, a sentiment analysis model determines if it's a `COMPLIMENT` or `COMPLAINT`.
 
-This project uses [Poetry](https://python-poetry.org/docs/#installation) for packaging and dependency management.
+    - If it's `SENSITIVE_EXIT`, carefully curated patterns detect if it's about `BABY_LOSS` or an `OPTOUT` request.
 
-1. Ensure you’re running **Python 3.11+**:
-   ```bash
-   python --version
-Install dependencies:
 
-bash
-Copy
-Edit
-poetry install
-Running the Flask worker
-Set the environment variables and start the app:
 
-bash
-Copy
-Edit
-export NLU_USERNAME=your-username
-export NLU_PASSWORD=your-password
+### Model Development & Training
+This section is for anyone involved in managing the data, training the model, or evaluating its performance.
 
-poetry run flask --app src.application run
-Code Quality
-Autoformat + Linting:
+**Data & Schema**
 
-bash
-Copy
-Edit
-poetry run ruff format .
-poetry run ruff check .
-poetry run mypy --install-types
-Tests:
+The ground truth for this model lives in `src/data/nlu.yaml`. This file contains all the training examples, which are then processed by `src/data/build_datasets.py` to create the final training files.
 
-bash
-Copy
-Edit
-poetry run pytest
-Regenerating Embeddings
-Delete the existing embeddings JSON in src/data/
+  - To regenerate the training data from the source YAML files, run
+    ```bash
+    make datasets  # Which runs: poetry run python src/data/build_datasets.py --emit-jsonl
+    ```
+    This will create clean .jsonl files (e.g., samples.train.jsonl) in the src/mapped_data/ directory.
+    
+  - To train a new version of the model, run
+    ```bash
+      make train  # Which runs: poetry run python src/train_model.py
+      ```
+    This script executes the complete pipeline: it loads the processed data, encodes the text, trains the classifier, and saves all model artifacts to the `src/artifacts/ directory`.
 
-Update training examples in nlu.yaml
 
-Run the Flask app:
+### Evaluation & Threshold Tuning
 
-bash
-Copy
-Edit
-poetry run flask --app src.application run
-→ Embeddings will be regenerated.
+Model performance is measured against a hold-out test set (`test.yaml`). Confidence thresholds are defined in `src/artifacts/thresholds.json` and can be tuned by analyzing the model's performance on the validation set to balance the needs of each intent (e.g., prioritizing recall for `SENSITIVE_EXIT`).
 
-Threshold Tuning
-Thresholds live in artifacts/thresholds.json.
-They can be tuned with validation data via:
 
-bash
-Copy
-Edit
-poetry run python src/fit_thresholds.py \
-  --model-dir artifacts/ \
-  --nlu-path src/data/nlu.yaml \
-  --validation-path src/data/validation.yaml
-Policy:
+### API, Deployment & Integration
+This section is for engineers responsible for deploying and integrating the service, and for QA who need to test the API.
 
-Sensitive exits → low threshold (recall focus)
+**Setup and Installation**
 
-Service feedback → higher threshold (precision focus)
+- Install dependencies:
+    ```bash
+    make install # Which runs: poetry install
+    ```
 
-Noise → strict threshold
+- Activate the virtual environment:
+    ```
+    poetry shell
+    ```
 
-Other → balanced
 
-Review band → learned dynamically from disagreement zone
+#### Running the API Service
+The application is a standard Flask service. Do not use the built-in Flask development server for production.
 
-Editor Configuration
-For VS Code:
+- For production or staging, use a WSGI server like Gunicorn:
 
-Install the Python and Ruff extensions.
+    ```
+    gunicorn --workers 2 --bind 0.0.0.0:5001 src.application:app
+    ```
 
-Settings:
+- For local development, you can use the Flask dev server:
 
-"python.linting.mypyEnabled": true
+    ```
+     poetry run flask --app src.application run 
+    ```
 
-"python.formatting.provider": "black"
+    _You will need to set the `NLU_USERNAME` and `NLU_PASSWORD` environment variables for authentication._
 
-"editor.formatOnSave": true
 
-Release Process
-Merge all PRs & complete QA.
+#### API Endpoints
+The service provides two specific, authenticated endpoints. Authentication is handled via HTTP Basic Auth.
 
-Update release notes in CHANGELOG.md.
+1. **Baby Loss Detection**
 
-On main branch:
+    This endpoint analyzes a message to determine if it relates to baby loss. It is optimized for high recall to ensure sensitive cases are not missed.
 
-Update version in pyproject.toml
+    - Request: GET /nlu/babyloss/
+    - Query Parameters
+  
+          Parameter  Type   Required  Description
+          question   string  Yes      The user's message text to be classified.
+   
 
-Replace UNRELEASED with release version + date in CHANGELOG.md
+    - Responses:
 
-Commit + tag:
+        - `200 OK` (Success): The babyloss key will be true if the intent is detected, and false otherwise.
 
-bash
-Copy
-Edit
-git tag v0.2.1
-git push origin main --tags
-Post-release:
+              {
+                "babyloss": true,
+                "model_version": "2025-09-29-v1",
+                "parent_label": "SENSITIVE_EXIT",
+                "sub_intent": "BABY_LOSS",
+                "probability": 0.98,
+                "review_status": "CLASSIFIED"
+              }
+        - `400 Bad Request`: Returned if the question parameter is missing.
 
-Increment version in pyproject.toml (e.g. 0.2.2.dev0)
+2. **Feedback Detection**
 
-Add new UNRELEASED header to CHANGELOG.md
+    This endpoint analyzes a message to determine if it is a compliment or a complaint.
 
-Running in Production
-A Docker image is published for deployment.
+    - Request: GET /nlu/feedback/
+    - Query Parameters
+  
+          Parameter  Type   Required  Description
+          question   string  Yes      The user's message text to be classified.
+   
 
-Required environment variables:
+    - Responses:
 
-Variable	Description
-NLU_USERNAME	Username for API requests
-NLU_PASSWORD	Password for API requests
-SENTRY_DSN	Sentry DSN for error reporting
+        - `200 OK`: The primary intent key will be COMPLIMENT, COMPLAINT, or None.
 
-License
-MIT
+              {
+                "intent": "COMPLIMENT",
+                "model_version": "2025-09-29-v1",
+                "parent_label": "FEEDBACK",
+                "probability": 0.99,
+                "review_status": "CLASSIFIED"
+              }
 
-yaml
-Copy
-Edit
+        - `401 Unauthorized`: Returned for any endpoint if authentication is incorrect.
 
----
 
-Do you also want me to add an **API Quickstart** section (sample `curl` + example JSON response) so QA/SxD can test it directly without spinning up notebooks?
+###  Testing and Code Quality
+Run these commands to ensure code quality and correctness.
+
+- Run Unit Tests:
+  ```
+  make test  # Which runs: poetry run pytest -vv
+  ```
+
+- Run Static Type Checking:
+    ```
+    make typecheck  # Which runs: poetry run mypy .
+    ```
+
+- Run Linter/Formatter:
+    ```
+    make lint  # Which runs: poetry run ruff check --fix . && poetry run ruff format .
+    ```
+
+
+### Production Deployment
+For production, the Dockerfile should be configured to run the application using the Gunicorn command. The number of workers (--workers 4) should be adjusted based on the resources of the environment. The `src/artifacts directory`, which contains the trained model, must be included in the final container image.

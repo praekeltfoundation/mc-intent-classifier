@@ -1,17 +1,21 @@
+# src/classifiers/ensemble.py
+from __future__ import annotations
+
 import json
 from pathlib import Path
-from typing import Any, Optional, Tuple
+from typing import Any, Literal, cast
 
 import joblib
 import numpy as np
 from numpy.typing import NDArray
 from sentence_transformers import SentenceTransformer
 from sklearn.base import ClassifierMixin
+from sklearn.preprocessing import LabelEncoder
 from transformers import TextClassificationPipeline, pipeline
 
-from src.config.constants import BEREAVEMENT_PATTERNS, LABEL_MAP, IntentEnum
-from src.config.schemas import Enrichment, IntentResult, PredictionResponse
-from src.config.thresholds import Thresholds, load_thresholds
+from src.config.constants import BEREAVEMENT_PATTERNS, OPTOUT_PATTERNS
+from src.config.schemas import Enrichment, IntentResult, ParentLabel, PredictionResponse
+from src.config.thresholds import load_thresholds
 from src.utils.logger import get_logger
 from src.utils.normalise import normalise_text
 
@@ -19,98 +23,85 @@ logger = get_logger(__name__)
 
 
 class EnsembleClassifier:
-    """Classifier combining linear head + enrichment rules."""
+    """Classifier combining a dense encoder, ML head, and rule-based enrichment."""
 
-    def __init__(self, artifacts_dir: Path, thresholds_path: Optional[Path] = None):
-        self.artifacts_dir: Path = artifacts_dir
-
-        # Manifest
-        manifest_path = artifacts_dir / "manifest.json"
-        if not manifest_path.exists():
-            raise RuntimeError("Manifest not found in artifacts directory")
-        self.manifest: dict[str, Any] = json.loads(manifest_path.read_text())
-
-        # Model + encoder
-        self.clf: ClassifierMixin = joblib.load(artifacts_dir / "clf.pkl")
+    def __init__(self, artifacts_dir: Path, thresholds_path: Path | None = None):
+        self.artifacts_dir = artifacts_dir
+        self.manifest = self._load_json(artifacts_dir / "manifest.json")
+        self.thresholds = load_thresholds(thresholds_path)
         self.encoder: SentenceTransformer = SentenceTransformer(
             self.manifest["encoder"]
         )
-
-        # Thresholds
-        self.thresholds: Thresholds = load_thresholds(thresholds_path)
-
-        # Sentiment
+        self.clf: ClassifierMixin = joblib.load(artifacts_dir / "clf.pkl")
+        self.label_encoder: LabelEncoder = joblib.load(
+            artifacts_dir / "label_encoder.pkl"
+        )
         self.sentiment_pipeline: TextClassificationPipeline = pipeline(
-            task="text-classification",
+            "text-classification",
             model="distilbert-base-uncased-finetuned-sst-2-english",
         )
 
-        logger.info("EnsembleClassifier loaded successfully")
+    @staticmethod
+    def _load_json(path: Path) -> dict[str, Any]:
+        """Safely loads a JSON file."""
+        if not path.exists():
+            raise FileNotFoundError(f"Manifest not found at {path}")
+        return cast(dict[str, Any], json.loads(path.read_text()))
 
-    def _enrich(self, intent: IntentEnum, text: str) -> Optional[Enrichment]:
-        """Adds enrichment for service feedback & sensitive exits."""
-        if intent == IntentEnum.SERVICE_FEEDBACK:
-            try:
-                res = self.sentiment_pipeline(text, top_k=1)[0]
-                return Enrichment(polarity=res["label"].lower())
-            except Exception:
-                return Enrichment(polarity="neutral")
+    def _enrich(self, parent: str, text: str) -> Enrichment:
+        """Determines the sub-intent based on the predicted parent label."""
+        if parent == "FEEDBACK":
+            sentiment = self.sentiment_pipeline(text, top_k=1)[0]
+            sub_reason = (
+                "COMPLIMENT" if sentiment["label"] == "POSITIVE" else "COMPLAINT"
+            )
+            return Enrichment(sub_reason=sub_reason, score=sentiment["score"])
 
-        if intent == IntentEnum.SENSITIVE_EXIT:
-            if BEREAVEMENT_PATTERNS.search(text):
-                return Enrichment(sub_reason="bereavement_high_likelihood")
-            return Enrichment(sub_reason="opt_out")
+        if parent == "SENSITIVE_EXIT":
+            if any(p.search(text) for p in BEREAVEMENT_PATTERNS):
+                return Enrichment(sub_reason="BABY_LOSS")
+            if any(p.search(text) for p in OPTOUT_PATTERNS):
+                return Enrichment(sub_reason="OPTOUT")
+        return Enrichment()
 
-        return None
-
-    def classify(self, text: str) -> Tuple[str, float]:
-        """Simple interface for Flask endpoint."""
-        result = self.predict(text)
-        best = result.intents[0]
-        return best.label, best.probability
-
-    def predict(self, text: str, top_k: int = 2) -> PredictionResponse:
-        """Full prediction with thresholds + enrichment."""
+    def predict(self, text: str, top_k: int = 1) -> PredictionResponse:
+        """Predicts the intent and sub-intent for a given text."""
         norm_text = normalise_text(text)
-        emb = self.encoder.encode([norm_text], show_progress_bar=False)
-        clf_probs: NDArray[np.float64] = self.clf.predict_proba(emb)[0]
+        embedding: NDArray[np.float64] = self.encoder.encode([norm_text])
+        probabilities: NDArray[np.float64] = self.clf.predict_proba(embedding)[0]
+        top_indices = np.argsort(probabilities)[::-1][:top_k]
 
         candidates: list[IntentResult] = []
-        for i, prob in enumerate(clf_probs):
-            intent = list(IntentEnum)[i]
-            thr = getattr(self.thresholds, intent.value, 0.5)
-            if prob >= thr:
+        for i in top_indices:
+            label: ParentLabel = self.label_encoder.classes_[i]
+            prob = probabilities[i]
+            if prob >= self.thresholds.for_parent(label):
                 candidates.append(
                     IntentResult(
-                        label=LABEL_MAP[intent],
-                        key=intent,
+                        label=label,
+                        key=label,
                         probability=round(float(prob), 4),
-                        enrichment=self._enrich(intent, text),
+                        enrichment=self._enrich(label, norm_text),
                     )
                 )
-
-        # fallback if no candidates
         if not candidates:
-            i = int(np.argmax(clf_probs))
-            intent = list(IntentEnum)[i]
+            top_index = np.argmax(probabilities)
+            label = self.label_encoder.classes_[top_index]
+            prob = probabilities[top_index]
             candidates.append(
                 IntentResult(
-                    label=LABEL_MAP[intent],
-                    key=intent,
-                    probability=round(float(clf_probs[i]), 4),
-                    enrichment=self._enrich(intent, text),
+                    label=label,
+                    key=label,
+                    probability=round(float(prob), 4),
+                    enrichment=self._enrich(label, norm_text),
                 )
             )
 
-        # sort + trim
-        candidates = sorted(candidates, key=lambda x: x.probability, reverse=True)[
-            :top_k
-        ]
-
-        review_status = "CLASSIFIED"
-        if candidates[0].probability < self.thresholds.review_band:
-            review_status = "NEEDS_REVIEW"
-
+        review_status: Literal["CLASSIFIED", "NEEDS_REVIEW"] = (
+            "NEEDS_REVIEW"
+            if candidates[0]["probability"] < self.thresholds.review_band
+            else "CLASSIFIED"
+        )
         return PredictionResponse(
             model_version=self.manifest["version"],
             intents=candidates,

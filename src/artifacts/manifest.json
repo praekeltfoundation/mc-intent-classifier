@@ -1,0 +1,12 @@
+{
+  "version": "2025-09-29-v1",
+  "encoder": "BAAI/bge-m3",
+  "parent_labels": [
+    "FEEDBACK",
+    "NOISE_SPAM",
+    "OTHER",
+    "SENSITIVE_EXIT"
+  ],
+  "training_data": "samples.train.jsonl",
+  "timestamp_utc": "2025-09-29T11:32:42Z"
+}

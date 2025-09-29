@@ -1,22 +1,48 @@
-from pydantic import BaseModel
+# src/config/schemas.py
+"""Data schemas and type definitions for the application."""
 
-from src.config.constants import IntentEnum
+from __future__ import annotations
+
+from typing import Literal, NotRequired, TypedDict
+
+# --- Type definitions for labels ---
+ParentLabel = Literal["FEEDBACK", "SENSITIVE_EXIT", "NOISE_SPAM", "OTHER"]
+FeedbackSubtype = Literal["COMPLIMENT", "COMPLAINT"]
+SensitiveExitSubtype = Literal["BABY_LOSS", "OPTOUT"]
+OtherSubtype = Literal["ACCOUNT_UPDATE", "INFORMATION_QUERY", "CONFIRMATION"]
 
 
-class Enrichment(BaseModel):
-    polarity: str | None = None
-    sub_reason: str | None = None
+# --- Data structure for training samples ---
+class SampleRow(TypedDict):
+    """Defines the structure of a row in the JSONL training data."""
+
+    text: str
+    label: ParentLabel
+    feedback_subtype: NotRequired[FeedbackSubtype]
+    sensitive_exit_subtype: NotRequired[SensitiveExitSubtype]
+    other_subtype: NotRequired[OtherSubtype]
 
 
-class IntentResult(BaseModel):
+# --- API Response Schemas (used by the classifier) ---
+class Enrichment(TypedDict, total=False):
+    """Holds enrichment data, like subtype or sentiment score."""
+
+    sub_reason: str
+    score: float
+
+
+class IntentResult(TypedDict):
+    """Represents a single predicted intent."""
+
     label: str
-    key: IntentEnum
+    key: ParentLabel | str
     probability: float
-    enrichment: Enrichment | None = None
+    enrichment: Enrichment
 
 
-class PredictionResponse(BaseModel):
+class PredictionResponse(TypedDict):
+    """The final structure of a prediction returned by the classifier."""
+
     model_version: str
-    language: str = "en"
     intents: list[IntentResult]
-    review_status: str
+    review_status: Literal["CLASSIFIED", "NEEDS_REVIEW"]
