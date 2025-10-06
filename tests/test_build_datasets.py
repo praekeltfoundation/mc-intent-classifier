@@ -1,3 +1,5 @@
+"""Test the dataset annotation and intent mapping functions."""
+
 from __future__ import annotations
 
 import json
@@ -33,12 +35,14 @@ OTHER_SUBS = {"ACCOUNT_UPDATE", "INFORMATION_QUERY", "CONFIRMATION"}
 
 @pytest.fixture()
 def tmp_data_dir(tmp_path: Path) -> Path:
+    """Provide a temporary, isolated data directory for tests."""
     d = tmp_path / "src" / "data"
     d.mkdir(parents=True, exist_ok=True)
     return d
 
 
 def _seed_yaml(intent: str, example: str) -> str:
+    """Create a minimal Rasa NLU YAML string for testing."""
     return yaml.safe_dump(
         {
             "version": "3.1",
@@ -53,6 +57,13 @@ def _seed_yaml(intent: str, example: str) -> str:
 def test_parent_as_intent_subintent_order_legacy_and_jsonl(
     tmp_data_dir: Path, intent: str
 ) -> None:
+    """Verify `annotate_file` correctly maps a legacy intent in-place.
+
+    Checks for correct parent/sub-intent structure, `legacy_intent`
+    preservation, correct JSONL output, and that the process is
+    **stable if run again**.
+    """
+
     src = tmp_data_dir / "nlu.yaml"
     example = f"{intent} example"
     src.write_text(_seed_yaml(intent, example), encoding="utf-8")
@@ -113,6 +124,10 @@ def test_parent_as_intent_subintent_order_legacy_and_jsonl(
 
 
 def test_non_destructive_suffix_outputs(tmp_data_dir: Path) -> None:
+    """
+    Verify using `out_suffix` creates new files and preserves the original.
+    """
+
     src = tmp_data_dir / "nlu.yaml"
     src.write_text(_seed_yaml("Opt out", "STOP all messages"), encoding="utf-8")
 

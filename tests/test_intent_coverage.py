@@ -1,4 +1,6 @@
-# tests/test_intent_coverage.py
+"""
+Tests to enforce intent schema and coverage in the source data files.
+"""
 from __future__ import annotations
 
 from pathlib import Path

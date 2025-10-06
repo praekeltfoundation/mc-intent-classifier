@@ -17,17 +17,14 @@ help:
 	@echo "MomConnect Intent Classifier v2.0"
 	@echo "--------------------------------"
 	@echo "make install      - install deps"
-	@echo "make lint         - run ruff lint + format check"
+	@echo "make lint         - run ruff lint + format check --fix"
 	@echo "make typecheck    - run mypy type checker"
-	@echo "make test         - run pytest"
+	@echo "make test         - run pytest -vv"
 	@echo "make datasets     - emit JSONL from source YAML"
 	@echo "make train        - train new model"
 	@echo "make serve-dev    - run Flask app for LOCAL development"
 	@echo "make serve        - run Flask app with Gunicorn (for production)"
 	@echo "make clean        - remove build artifacts"
-
-install:
-	$(UV) pip install -r requirements.txt
 
 lint:
 	ruff check $(SRC)

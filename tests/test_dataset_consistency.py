@@ -1,3 +1,9 @@
+"""
+Tests for data consistency between annotated YAML and generated JSONL files.
+
+Ensures that the YAML source of truth and the derived JSONL artifacts contain
+the exact same number of samples, labels, and text examples.
+"""
 from __future__ import annotations
 
 import json
@@ -13,6 +19,11 @@ BASE_DIRS = [Path("src/data"), Path("src/mapped_data")]
 
 
 def _pick_existing_pairs() -> list[tuple[Path, str, str]]:
+    """
+    Scan project directories to find all existing YAML/JSONL file pairs to
+    test.
+    """
+
     candidates = [
         # in-place
         ("nlu.yaml", "samples.train.jsonl"),
@@ -37,6 +48,10 @@ def _pick_existing_pairs() -> list[tuple[Path, str, str]]:
 
 
 def _flatten_yaml(yaml_path: Path) -> list[dict[str, Any]]:
+    """
+    Parse a Rasa NLU YAML file and flatten it into a list of example records.
+    """
+
     doc: dict[str, Any] = yaml.safe_load(yaml_path.read_text(encoding="utf-8")) or {}
     rows: list[dict[str, Any]] = []
     for item in doc.get("nlu") or []:
@@ -70,6 +85,7 @@ def _flatten_yaml(yaml_path: Path) -> list[dict[str, Any]]:
 
 
 def _load_jsonl(jsonl_path: Path) -> list[dict[str, Any]]:
+    """Load all records from a JSONL file into a list."""
     return [
         json.loads(line)
         for line in jsonl_path.read_text(encoding="utf-8").splitlines()
@@ -78,6 +94,15 @@ def _load_jsonl(jsonl_path: Path) -> list[dict[str, Any]]:
 
 
 def test_yaml_and_jsonl_counts_and_labels_match() -> None:
+    """
+    Verify that YAML and JSONL files are consistent in content.
+
+    Checks for every pair of YAML/JSONL files found that:
+        - The total number of examples is identical.
+        - The counts for each parent label (i.e. intent) are identical.
+        - The set of all example texts is identical.
+    """
+
     pairs = _pick_existing_pairs()
     if not pairs:
         pytest.skip(

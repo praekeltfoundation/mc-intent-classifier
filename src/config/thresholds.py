@@ -5,11 +5,10 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Literal
 
 from pydantic import BaseModel, Field, ValidationError
 
-Parent = Literal["FEEDBACK", "SENSITIVE_EXIT", "NOISE_SPAM", "OTHER"]
+from src.config.schemas import ParentLabel
 
 
 class Thresholds(BaseModel):
@@ -32,7 +31,7 @@ class Thresholds(BaseModel):
             review_band=0.40,
         )
 
-    def for_parent(self, parent: Parent | str) -> float:
+    def for_parent(self, parent: ParentLabel | str) -> float:
         """Return the acceptance cutoff for the given parent family."""
         if parent == "FEEDBACK":
             return self.service_feedback

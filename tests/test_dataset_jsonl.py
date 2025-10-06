@@ -1,4 +1,4 @@
-# tests/test_dataset_jsonl.py
+"""Tests for the JSONL and metadata file generation process."""
 from __future__ import annotations
 
 import json
@@ -11,6 +11,17 @@ from src.data.build_datasets import process_file
 
 
 def test_emit_jsonl_and_meta_from_annotated_yaml(tmp_path: Path) -> None:
+    """
+    Verify that JSONL and meta files are created correctly from an annotated YAML.
+
+    This test checks that:
+        - Both `.jsonl` and `.meta.json` files are created.
+        - The JSONL rows contain the correct labels and counts.
+        - The ordering of rows in the JSONL is deterministic.
+        - The meta file contains the expected version, SHA hash, and sample
+          counts.
+    """
+
     data_dir = tmp_path / "src" / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
     p = data_dir / "nlu.yaml"

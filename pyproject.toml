@@ -77,7 +77,6 @@ ignore = [
 
 ]
 
-# --- NEW SECTION FOR MYPY CONFIGURATION ---
 [tool.mypy]
 python_version = "3.11"
 strict = true
