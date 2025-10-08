@@ -1,4 +1,5 @@
 """Tests for the JSONL and metadata file generation process."""
+
 from __future__ import annotations
 
 import json

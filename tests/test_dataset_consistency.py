@@ -4,6 +4,7 @@ Tests for data consistency between annotated YAML and generated JSONL files.
 Ensures that the YAML source of truth and the derived JSONL artifacts contain
 the exact same number of samples, labels, and text examples.
 """
+
 from __future__ import annotations
 
 import json
