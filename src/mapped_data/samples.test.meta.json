@@ -1,0 +1,12 @@
+{
+  "source_file": "test.yaml",
+  "source_sha256": "39a3fcee0ee0ae35dc77a1fc4300bc0920ed22575de1735d0877924790d67fcb",
+  "mapping_version": "2025-09-29-OTHER-v2",
+  "counts": {
+    "SENSITIVE_EXIT": 98,
+    "FEEDBACK": 221,
+    "OTHER": 560,
+    "NOISE_SPAM": 47
+  },
+  "num_samples": 926
+}

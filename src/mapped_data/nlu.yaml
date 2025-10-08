@@ -1,0 +1,1026 @@
+version: "3.1"
+nlu:
+- intent: SENSITIVE_EXIT
+  subintent: BABY_LOSS
+  legacy_intent: Baby Loss
+  examples: |
+    - I lost my baby.
+    - My little one didn’t make it through the delivery.
+    - I had a miscarriage last night, it's confirmed by the doctor.
+    - My baby’s gone, we are grieving this loss.
+    - I experienced a stillbirth with my recent pregnancy.
+    - So heartbroken, I've lost my child.
+    - My baby is no more, it happened just yesterday morning.
+    - My baby didn't make it, the doctors informed me.
+    - I had a mscarriage, it's been very hard.
+    - Sadly, my little one passed on during the birth.
+    - Baby gone. It was a devastating loss for us.
+    - My baby passed away this morning, I don't know what to do next.
+    - It was a stillborn delivery, a very difficult and sad time.
+    - I've lost my angel before I even got to hold them.
+    - My pregnancy ended in a tragic loss a few days ago.
+    - The baby passed away, I need grief support information.
+    - I experienced a profound loss during my pregnancy journey last month.
+    - Ngishonelwe, umntwana wami akasindanga, kubuhlungu.
+    - My little one is gone, it's so very hard to accept.
+    - Ek het my baba verloor, dit was 'n bevestigde miskraam.
+    - Ndiphunyelwe sisisu.
+    - Ingane ishonile, my heart is completely broken by this.
+    - Angisakhulelwe ngenxa yokulahlekelwa ngumntwana wami, it was a loss.
+    - Umntwana wam ushonile ngesikhathi ngibelethe.
+    - Ingane ayisekho, the hospital confirmed it was a stillbirth.
+    - I miscarried my baby last week.
+    - My baby has passed, it's a confirmed fetal loss, I need to update my records.
+    - I had a stillbirth, this was reported at the maternity clinic.
+    - I need to report a confirmed miscarriage that happened on [date].
+    - Unfortunately, the baby didn't survive the full pregnancy term.
+    - My pregnancy was unsuccessful, it sadly ended with the loss of my baby.
+    - A loss of my pregnancy occurred earlier this week, I am struggling to cope.
+    - I experienced a pregnancy loss and need to inform MomConnect.
+    - Umntwana akaphilanga, kwakuyi stillborn, ngicela usizo.
+    - Sisisu siphumile, please note this as a miscarriage.
+    - We received the difficult news from the doctor, it's a fetal demise.
+    - They couldn't find a heartbeat at the scan, the baby is gone.
+    - Need to register a neonatal death for my child who passed.
+    - My baby passed away very shortly after being born last Tuesday.
+    - The pregnancy wasn't viable.
+    - Reporting the loss of our baby.
+    - My pregnancy ended early due to a loss, it's been tough.
+    - Just confirming I had a loss, this is difficult to share.
+    - Pls update my records, I miscarried recently.
+    - It was a miscarriage confirmed by the clinic.
+    - Faced a stillbirth, a heartbreaking experience.
+    - Loss of baby.
+    - Stillbirth.
+    - My baby passed, need to talk.
+    - Had a late miscarriage.
+    - The little one isn't with us.
+    - Terminated for medical reasons, it's a loss.
+    - Bereaved parent here.
+    - No baby anymore.
+    - Lost the pregnancy at 20 weeks.
+- intent: OTHER
+  subintent: CONFIRMATION
+  legacy_intent: Affirm
+  examples: |
+    - Thx for the info, helpful.
+    - Okay, got it now, thanks.
+    - Sure thing, thank you for explaining.
+    - Yeah, I understand that perfectly.
+    - Alright, I’ll follow up then.
+    - Cool, appreciate it much.
+    - K, noted.
+    - Ok thnx for clarifying.
+    - Ja, dankie.
+    - Yebo sharp, makes sense.
+    - Gotcha, clear now.
+    - Ayt, I will.
+    - 100% agree.
+    - Perfect, thanks a lot!
+    - Understood completely.
+    - Ewe ndiyabonga kakhulu ngolwazi.
+    - Ke sharp, danko.
+    - Yebo, received and understood.
+    - Correct thx for confirming.
+    - Roger that, loud and clear.
+    - Definitely, that's right.
+    - Confirmed from my side.
+    - Sharp sharp, all good.
+    - Ek stem saam, thanks for help.
+    - Dankie, I got it now, clearer.
+    - Sawubona!
+    - Hi there
+    - Hello
+    - Molweni
+    - Molo
+    - Greetings!
+    - Good day
+    - Ndiyavuma ngokuqinisekileyo.
+    - Hi
+    - Hellow
+    - Yebo
+    - Cha
+    - Ngempela kunjalo impela.
+    - No
+    - Yes
+    - Alright then.
+    - Okay dokay, sounds fine.
+    - Sure, no problem.
+    - Sounds good to me.
+    - Okay thanks for letting me know.
+    - Noted with thanks.
+    - Okay fine, that works.
+    - Will do.
+    - Yap, got it.
+    - Okay cool, thanks.
+    - Yes please.
+    - No problem at all.
+    - That's correct.
+    - Exactly.
+    - Thanks.
+    - Agree.
+    - Fine.
+    - Thnx appreciate quick reply.
+    - Perfect, exactly what needed.
+    - That's it.
+    - You got it.
+    - Mhm.
+    - Okay.
+    - Sweet.
+    - Right on.
+- intent: SENSITIVE_EXIT
+  subintent: OPTOUT
+  legacy_intent: Opt out
+  examples: |
+    - Stop sending me messages from MomConnect.
+    - I want to unsubscribe from these updates please.
+    - Pls remove me from list, no more texts needed.
+    - I don’t wish to receive any further notifications from MomConnect.
+    - Take me off system, thanks for past messages but don't need now.
+    - No more SMS, I’m done with service.
+    - Kindly opt me out of all future communications.
+    - Pls stop these msgs immediately.
+    - Unsubscribe me now from MomConnect.
+    - I dnt want this anymore, stop sending.
+    - Remove my number from database.
+    - Stop sending stuff, I've had my baby.
+    - Cancel my subscription to messages.
+    - Take me off list plz, no more.
+    - Opt me out of MomConnect.
+    - Please stop spamming me with texts.
+    - Remove my nr now, urgent.
+    - Enough with these msgs! Stop.
+    - Deactivate MomConnect for my number.
+    - Cease comms immediately, final request.
+    - Unenroll me from program.
+    - I'm out, stop all messages.
+    - Terminate this service for me.
+    - Ek wil nie meer hierdie boodskappe hê nie, stop asseblief nou.
+    - Moet asseblief my nommer verwyder van julle sisteem af.
+    - Ndicela niyeke ukundithumela le miyalezo ngoku nangoku.
+    - Not pregnant anymore, please stop messages.
+    - Exit momconnect services.
+    - Never signed up for this, stop sending.
+    - Don't want to receive these messages anymore, unsubscribe.
+    - Plz stop this, circumstances changed.
+    - Wanna leave service, how opt out?
+    - How do I opt out MomConnect?
+    - How to deregister mom connect?
+    - Process to cancel MomConnect?
+    - Baby born a while ago, stop pregnancy messages.
+    - No longer require service, remove me.
+    - Unsubscribe me from all MomConnect.
+    - STOP all messages.
+    - CANCEL MomConnect.
+    - Remove me, no longer expecting.
+    - Situation different now, unsubscribe.
+    - Given my recent loss was already recorded, now stop all messages.
+    - My pregnancy has ended, no need for these messages now.
+    - Since my loss was confirmed, please remove me from future mailings.
+    - Dnt send again.
+    - Ndicela uyeka ukundithumela lemiyalezo.
+    - Opt out.
+    - Unsubscribe.
+    - Stop texts.
+    - Quit MomConnect.
+    - End messages.
+    - No more please.
+    - I'm done with these notifications.
+- intent: FEEDBACK
+  subintent: COMPLAINT
+  legacy_intent: Facility Complaint
+  examples: |
+    - Nurse rude clinic.
+    - Staff unresponsive, waited ages.
+    - Clinic dirty disorganized.
+    - Doctor dismissed concerns.
+    - Bad experience facility mess.
+    - Staff unprofessional, waiting area cramped.
+    - Disappointed care hospital.
+    - The nurse at the Main Street clinic was exceptionally rude to me yesterday.
+    - Why were the clinic staff so unresponsive when I needed help? I waited ages.
+    - That maternity ward is consistently dirty, disorganized, and frankly unacceptable!
+    - I am very upset that my doctor at the day hospital dismissed all my serious concerns without proper examination.
+    - I had such a terrible experience last week; the entire facility, including the waiting room, was a complete mess and unhygienic.
+    - The staff there are so unprofessional, and the waiting area is always cramped, uncomfortable, and significantly overcrowded.
+    - I'm lodging a formal complaint because I'm very disappointed with the shocking level of care I received at the provincial hospital.
+    - Could you tell me why the clinic nurses are often so rude and seem unhelpful? It's not a good experience.
+    - I waited for over four hours at the clinic today, and the service is consistently terrible every time I go.
+    - The clinic was really dirty and felt distinctly unhygienic during my last antenatal visit there.
+    - Staff completely ignored my scheduled appointment time, and I wasn't seen for several hours after.
+    - It seems they've actually lost my patient file at the facility, which is a very serious issue for my care.
+    - It was an appalling experience at that local clinic; the staff had a very unprofessional and dismissive attitude.
+    - The clinic queue was far too long with no clear system, and there was absolutely no one available to help or direct people.
+    - The sister on duty was dismissive and unhelpful when I simply asked for clarification on my prescribed medication.
+    - I need to lodge a formal complaint regarding the shocking and unsanitary state of the clinic toilets.
+    - Clinic toilets are absolutely filthy and clearly have not been cleaned properly for days.
+    - My doctor forgot to check my medical file during the consultation, which is quite worrying for my ongoing treatment.
+    - I queued for 6 hours just for a rushed 5-minute consult; it's simply not right and a total waste of patients' time.
+    - A nurse actually shouted very loudly at me in the triage area when I was feeling vulnerable and unwell.
+    - I have a strong concern and believe they might have dispensed expired medication to me.
+    - My crucial bloodwork results appear to have been misplaced or completely lost by the clinic staff, this is unacceptable.
+    - There was absolutely no privacy provided in the examination room during my check-up; others could hear.
+    - A security guard at the main hospital entrance actually demanded a bribe from me before allowing entry.
+    - The medical equipment at the clinic looked very old, poorly maintained, and possibly broken down.
+    - The receptionist was incredibly rude and unhelpful on the phone; she clearly needs urgent customer service training.
+    - Kliniek was 'n absolute puin, en die diens was heeltemal onaanvaarbaar gewees en ek is kwaad.
+    - Die verpleegster daar was regtig baie onbeskof en glad nie behulpsaam nie, sy het my sleg en verkleineer laat voel.
+    - Khange ndincedakale kakuhle, ifolder yam ibingekho kwaye akukhange kubekho mntu undikhathaleleyo kwaleyo klniki yokubelethela.
+    - The queue at that facility is always terribly long without explanation, something must urgently be done.
+    - I've been waiting for more than 3 hours just to be seen by any doctor or nurse.
+    - Hospital staff completely ignored me and other patients when we repeatedly asked for assistance.
+    - Another very long and extremely frustrating wait at the clinic again today for basic services.
+    - The entire facility was unclean, and the overall standard of service provided was extremely poor and disappointing.
+    - Patient privacy was seriously lacking during my antenatal checkup; it was very uncomfortable and unprofessional.
+    - The wait times at this particular government clinic are simply unbearable and need urgent attention.
+    - I am very unhappy and thoroughly dissatisfied with the disrespectful treatment I received from the clinic staff.
+    - Could someone please immediately investigate the consistently poor and unhygienic conditions at Some Clinic Name.
+    - The communication from the clinic staff was terrible and confusing.
+    - I felt completely neglected and unseen during my time at the hospital.
+    - Blood results lost, must redo!
+    - Mowbray MOU queue management disaster.
+    - Clinic 30 mins late opening.
+    - Sister dismissed baby's cough concerns.
+    - Security guard hassling people at clinic.
+    - Waiting times clinic unacceptable.
+    - Facility needs better hygiene.
+    - My appointment was cancelled without notice at the clinic.
+    - The doctor seemed rushed and didn't explain things.
+    - Never again at that hospital.
+    - The clinic never answers their phone.
+    - Shocking state of the facility.
+- intent: FEEDBACK
+  subintent: COMPLIMENT
+  legacy_intent: Facility Compliment
+  examples: |
+    - Clinic staff kind attentive.
+    - Excellent experience hospital.
+    - Nurses friendly, explained clearly.
+    - Facility clean, well cared for.
+    - Appreciated efficient service clinic.
+    - Great job, felt safe respected.
+    - Top-notch service, quality care, thank you.
+    - The clinic staff were all incredibly kind, patient and very attentive to all of my needs.
+    - I had an absolutely excellent and reassuring healthcare experience at that particular hospital.
+    - All the nurses I interacted with during my stay were so friendly and took the time to explain everything clearly and patiently.
+    - The entire facility was noticeably clean, hygienic, and very well cared for, which was impressive.
+    - I truly appreciated the highly efficient and smooth running service I received at the clinic during my recent visit.
+    - A great job by the entire dedicated team; I felt safe, respected, and extremely well-looked after throughout my visit.
+    - It was genuinely top-notch service and very high quality care; I want to express my most sincere thanks to everyone.
+    - I received really great and prompt service at the clinic today; it was well above my expectations for a public facility.
+    - The nurses were so consistently kind, compassionate, and helpful throughout my entire hospital stay, even when busy.
+    - I really appreciate all the dedicated and hard-working staff at my local community clinic; they clearly do amazing work.
+    - It was such a quick and surprisingly efficient visit to the facility this time around, much improved.
+    - The clinic is always impressively clean and very well-organized whenever I have an appointment there.
+    - Sister Jane was particularly fantastic, patient, and thorough during my consultation; please pass on my heartfelt thanks to her.
+    - I had a very positive, calm, and thoroughly reassuring experience at my last antenatal appointment.
+    - The staff were so highly professional and displayed genuinely caring and empathetic attitudes towards me and my baby.
+    - My compliments to the whole dedicated team on the maternity ward; they are all truly amazing professionals.
+    - That was honestly the most pleasant, respectful, and supportive healthcare service I've ever received.
+    - My assigned midwife stayed well past her shift ending just to help me through a particularly difficult and long labour.
+    - It's undoubtedly the cleanest, brightest, and best-kept maternity ward I have ever had the pleasure of seeing.
+    - The sister on duty was truly great and very clear at explaining all the family planning options available to me.
+    - The midwives and other support staff were super helpful, very patient, and always had a smiling face.
+    - I had the best and most informative ultrasound experience there; the sonographer was absolutely wonderful and reassuring.
+    - The doctor who attended to me was incredibly supportive, highly skilled, and very helpful during my entire delivery process.
+    - The hospital counsellor listened with such profound compassion and genuine understanding during a tough time.
+    - An emergency C-section performed at that hospital saved both me and my baby; I'm eternally grateful to the skilled team.
+    - The pain management I received during my hospital stay was A+ and made a massive difference to my recovery.
+    - Those baby care classes offered by the clinic were absolutely lit! So informative and engaging.
+    - Dankie vir die wonderlike, professionele en heeltemal uitstaande diens wat ek ontvang het.
+    - I truly appreciate the vriendelike personeel at Some Clinic Name; they made a real positive difference to my overall experience.
+    - I was actually seen on time for my scheduled appointment, which meant a shorter waiting period than I ever expected!
+    - The staff at the reception were so friendly and welcoming; they managed to put me completely at ease from the very start.
+    - The attending nurse was very patient with all my questions and explained everything so well; I felt fully informed and confident.
+    - My local clinic is surprisingly efficient for a public facility and is staffed by wonderfully helpful and dedicated people.
+    - I had such a positive and empowering birth experience at that particular hospital, thanks to the amazing midwifery team.
+    - I was thoroughly impressed by the consistently high standard of cleanliness and hygiene throughout the entire facility.
+    - Oonesi base Some Clinic Name bandincede kakuhle kakhulu, ndiyabonga ngokusuka emazantsi entliziyo.
+    - Sincendwe kwangethuba nangobuchule obukhulu esibhedlele, enkosi kakhulu kuni nonke basebenzi.
+    - Ugqirha eGroote Schuur wayenobubele obukhulu kunye nenkathalo engummangaliso kum nakusana lwam olusandul 'ukuzalwa.
+    - Ikliniki yase Khayelitsha ihleli icocekile kwaye ilungelelaniswe kakuhle ngalo lonke ixesha endiya kuyo.
+    - Such wonderfully helpful nurses at the government clinic today; it was a very pleasant and unexpected surprise indeed.
+    - The level of dedicated care I received from everyone at the facility was truly exceptional and memorable.
+    - Everyone at the clinic made me feel comfortable and listened to.
+    - Sister Pumla Khayelitsha clinic star!
+    - Short wait time clinic, better!
+    - Doctor treated me very well.
+    - Grateful quick response triage hospital.
+    - Appreciate clear communication clinic staff.
+    - Clinic appointment ran smoothly, thanks team!
+    - Support from clinic made difficult time easier.
+    - Staff at Mowbray, keep up amazing work!
+    - The clinic was so welcoming.
+    - Best hospital experience I've had.
+    - The healthcare workers were amazing.
+    - So impressed with the facility.
+    - Keep up the fantastic work at your clinic!
+- intent: FEEDBACK
+  subintent: COMPLAINT
+  legacy_intent: Chatbot Complaint
+  examples: |
+    - Bot no answer proper.
+    - Chatbot confused.
+    - MomConnect repeats, frustrating!
+    - MomConnect not helping.
+    - Asked, no useful reply bot.
+    - Bot slow unhelpful.
+    - Bot not answering my questions properly at all.
+    - Your chatbot responses are confusing and don't make any sense to me.
+    - Momconnect keeps repeating itself; it's incredibly frustrating to use!
+    - This Momconnect service is not helping with my specific issue effectively.
+    - I asked a clear question but got no useful or relevant reply from the bot.
+    - This chatbot's replies are far too slow and generally quite unhelpful for my needs.
+    - I'm not happy with the information Momconnect is providing me; it seems outdated or incorrect.
+    - MomConnect is pretty useless for what I actually need real help with.
+    - It feels like you're consistently sending me the wrong or misleading info.
+    - MomConnect doesnt understand me even when I type very clearly and use simple words.
+    - The answers I get from this particular bot are not helpful to my current situation.
+    - Please can you stop the bot from repeating the exact same message over and over again? It's annoying.
+    - The MomConnect messaging service isn't working correctly for me today, is it down?
+    - Why can't this bot understand even the most simple questions I'm asking it?
+    - The MomConnect advice I received yesterday regarding feeding was completely wrong and unhelpful.
+    - It keeps miscalculating my pregnancy weeks by a significant margin, which is a serious issue.
+    - You always don't understand what I'm trying to say to you, no matter how I phrase it.
+    - These are just useless pre-programmed automated replies; I really need to speak to an actual human being.
+    - The wrong gestational age calculation by this bot is a recurring and concerning problem.
+    - Why is there still no official Xitsonga language option in this otherwise potentially useful service?
+    - I missed my important 32wk reminder from MomConnect this week, and I relied on it.
+    - Your system appears to have completely mixed up my upcoming clinic vaccine dates.
+    - I can't seem to find a way to reach a human agent through this chatbot interface.
+    - Where is the specific MomConnect message I was expecting to receive today about my scan results?
+    - I didn't get a satisfactory answer the last time I asked MomConnect for assistance with this problem.
+    - MomConnect awuphenduli kahle neze, andiyiva kakuhle lento uyithethayo ebhedini kum.
+    - This information you've just provided is not useful or relevant to me in any way.
+    - I'm still waiting for a proper and actually relevant response from you regarding my previous query.
+    - Why don't you actually respond to my specific detailed questions instead of just sending generic information all the time?
+    - I don't understand the messages that you send me sometimes; they are often too complicated or very vague.
+    - None of my important health questions have been answered adequately or clearly enough by this bot.
+    - I'm no longer receiving any momconnect messages at all; what happened to the service or perhaps my subscription?
+    - Momconnect just doesnt work properly most of the time; it's frequently broken, seems offline, or is unresponsive.
+    - Why am I not receiving any messages about my next crucial clinic appointment from your system anymore?
+    - There's been absolutely no reply or acknowledgement from momconnect for several days now, despite my repeated messages.
+    - This chatbot is really quite bad, frustrating, and generally unhelpful for users needing real support.
+    - Can you actually provide real assistance or do you just send out standard, pre-written, generic stuff all the time without listening?
+    - That is completely not what I asked for, MomConnect. Please try to understand my actual query this time.
+    - The bot seems to be stuck in some kind of repetitive information loop.
+    - Your automated system is very confusing and quite difficult to navigate effectively.
+    - Asked clinic times, got baby food info!
+    - Stop repeating bot!
+    - Gestation calc incorrect.
+    - System mixing appointment dates.
+    - Momconnect messages unclear.
+    - MomConnect service useless.
+    - Why service stop messages MomConnect?
+    - MomConnect info needs to be accurate!
+    - How speak human MomConnect???
+    - Bot irrelevant info.
+    - Frustrated MomConnect not understanding.
+    - Your bot is broken.
+    - This chatbot is not helping me.
+    - I need a real person, not MomConnect.
+    - Worst bot ever.
+    - MomConnect answers are wrong.
+- intent: FEEDBACK
+  subintent: COMPLIMENT
+  legacy_intent: Chatbot Compliment
+  examples: |
+    - Messages helpful, thanks.
+    - Love MomConnect messages.
+    - Thx for messages.
+    - Reminders life savers.
+    - Appointment reminders good.
+    - I really appreciate these helpful messages I get from MomConnect.
+    - Your regular MomConnect messages are very helpful indeed, thanks so much for them!
+    - I absolutely love the weekly Momconnect messages; they're always great and so informative.
+    - Thanks for sending these consistently useful and timely messages to me.
+    - These timely reminders from MomConnect are absolute life savers for me as a busy expectant mom.
+    - The crucial MomConnect appointment reminders are very much appreciated, thank you for sending them.
+    - Your info messages via MomConnect are always useful, relevant, and perfectly timed for my stage.
+    - I find so many useful and practical health tips in your MomConnect messages.
+    - The weekly pregnancy updates I get from MomConnect are fantastic and exciting.
+    - Your messages are consistently informative and very clear and easy to understand.
+    - Thanks for the timely clinic appointment reminders from MomConnect; they really do help me a lot.
+    - I truly appreciate all the helpful reminders MomConnect sends out to me regularly.
+    - This MomConnect service helps me a lot to remember my important clinic appointments.
+    - The daily tips you provide on pregnancy and new babycare are so helpful and very practical.
+    - I love getting the baby growth updates each week from MomConnect; it's so exciting to follow!
+    - These MomConnect reminders ensure I never miss anything important for my health or my baby's.
+    - The postpartum tips you sent recently via MomConnect were absolutely clutch for me!
+    - Siyabonga kakhulu, le info evela kuMomConnect ivery helpful ngempela.
+    - Ngiyabonga kakhulu ngemiyalezo emihle kangaka evela kuMomConnect.
+    - Your MomConnect messages always seem to have just the right details I need at precisely the right time.
+    - I appreciate the friendly, encouraging, and very supportive updates I get from MomConnect.
+    - That was a particularly helpful message I received from MomConnect today, thank you so much.
+    - These health messages you send via MomConnect are really good quality and easy to follow.
+    - The messages MomConnect sends always keep me well informed and fully prepared for what's next.
+    - I just love getting your helpful MomConnect messages every week; they make me feel supported.
+    - A momconnect message literally saved me from forgetting an important clinic appointment last week!
+    - Thanks again for that MomConnect reminder message; it was perfect timing for my busy schedule.
+    - The general message content from this MomConnect service is consistently excellent and reliable.
+    - Your alerts for appointments and health check-ups are very helpful; please keep them coming.
+    - Momconnect is super helpful for pregnant moms and new mothers; thank you for this wonderful service!
+    - I always get quick responses and very useful, relevant info from this MomConnect bot.
+    - Thanks MomConnect for all the consistently useful and practical information you share with us.
+    - This is a truly good service from MomConnect, very informative and always so positive and encouraging.
+    - Ndiyayibulela kakhulu yonke inkxaso enkulu evela kuMomConnect.
+    - Thanks MomConnect for caring so much about my pregnancy journey and my future baby's health.
+    - This MomConnect chatbot is actually excellent and very well designed for users!
+    - Keep up the great work, MomConnect team, you're making a real positive difference in our lives!
+    - This is the best support bot for moms that I have ever come across, by far.
+    - Very impressed with this MomConnect messaging service.
+    - MomConnect is a lifesaver for forgetful moms like me!
+    - Thanks MomConnect for clinic visit reminder!
+    - MomConnect stage-specific info perfect.
+    - Smart bot MomConnect!
+    - Excellent support MomConnect pregnancy.
+    - MomConnect system works well.
+    - Better than online search, thanks MomConnect!
+    - MomConnect messages positive.
+    - Grateful MomConnect updates.
+    - This chatbot is amazing.
+    - Thanks for the helpful bot.
+    - MomConnect is very supportive.
+    - So glad I have MomConnect.
+    - The information from MomConnect is top quality.
+- intent: OTHER
+  subintent: INFORMATION_QUERY
+  legacy_intent: Baby Development Enquiry
+  examples: |
+    - Baby 6 month milestones?
+    - 4 month baby normal development?
+    - Baby crawling when?
+    - Baby growth on track?
+    - 3 month baby signs?
+    - What are the typical developmental milestones for a baby at 6 months old?
+    - How can I tell if my 4 month old infant is developing normally for their age?
+    - Around when do babies typically start to attempt crawling or moving independently?
+    - How do I really know if my own baby's growth and weight gain is on the right track?
+    - What specific developmental signs like cooing or reaching should I be looking for in my 3 month old?
+    - Is it within the normal range if my baby is not yet rolling over at 5 months old?
+    - When do babies usually start babbling consistently or making more complex speech-like sounds?
+    - My baby is not smiling socially or consistently at people yet; should I be concerned about this?
+    - Is it considered normal if my baby's first teeth are coming in a bit later than expected?
+    - How much food or milk in total should a 4 months old baby typically be eating each day?
+    - When does a newborn baby usually start to see clearly and focus properly on objects or faces?
+    - After how many months on average do babies usually learn to sit up without needing any support?
+    - I'm quite concerned about my baby's recent pattern of weight gain; it seems slow.
+    - When do most babies start actually talking or saying their very first recognizable words?
+    - What are the most common and recognizable signs of teething discomfort I should watch for in my infant?
+    - My 8 month old baby is not crawling at all yet; is that still considered within the normal range of development?
+    - How high can a teething related fever actually get for a young baby, and when is it serious?
+    - When do a baby's eyes usually change from their birth color to their permanent, final eye color?
+    - Can I get some reliable and clear information on how to read baby growth percentile charts correctly?
+    - What are the tell-tale early signs of a potential solid food allergy in young babies?
+    - I'm worried about a possible significant speech delay in my 18 month old toddler; what are the signs?
+    - When are the different crucial baby vaccines and immunisations typically scheduled during the first year of life?
+    - What are the current official tummy time requirements and safe recommendations for a newborn infant?
+    - Do standard childhood vaccines sometimes temporarily affect a baby's usual developmental milestones or behaviour?
+    - How should I appropriately adjust my developmental expectations for a baby born prematurely?
+    - What is the best and safest thing to feed my newborn baby in the very first few days after birth?
+    - Umntwana wam akakhuli kahle njengabanye abantwana, ndingenzani ukuze akhule?
+    - My baby keeps spitting up a large amount after most feeds; what should I do about this?
+    - The injection site from my baby's last vaccine has no visible mark on her arm; why would that be?
+    - Is a 4 month old baby's immunisation absolutely necessary, or can it be skipped?
+    - My baby's poo has been a strange greenish color for a few days now; what could be wrong with him?
+    - We unfortunately missed my baby's very first immunization appointment; can we still get the 6 weeks shots now?
+    - What are the potential health risks of mixed feeding for my new baby?
+    - How often and for how long each time should my 3-month-old baby be sleeping throughout the day and night?
+    - When is the generally recommended and safest time to begin introducing solid foods to my developing baby?
+    - My baby seems noticeably much smaller than other babies of exactly the same age, is this okay?
+    - Is my newborn infant's breathing pattern and respiratory rate normal, or should I get it checked by a doctor?
+    - What are the typical distinguishing signs and effective remedies for colic in an infant baby?
+    - Could you tell me more about a baby's soft spot on their head and how to properly care for it?
+    - How do I correctly and safely check if my young baby has a high fever, especially if I don't have a thermometer handy?
+    - My infant has developed a strange looking red rash on their chest and back; what could this possibly be from?
+    - Is it okay and considered normal that my 2 month old baby only sleeps for very short periods at a time, like quick catnaps?
+    - Why is my baby crying so much more than usual lately, what could be the reason?
+    - My baby's not eating well for the past two days, any advice?
+    - I have some questions about my newborn's general health and physical well-being.
+    - What are some effective ways known to soothe a very fussy or unsettled baby?
+    - Information about baby's sleep schedule needed.
+    - Common signs teething discomfort babies?
+    - When introduce peanut butter baby?
+    - Worried flat head baby, what do?
+    - Concerns newborn vision development.
+    - Baby next immunisation shots when?
+    - Prepare for baby first immunisations?
+    - What happens 6 week checkup baby?
+    - Info on baby sleep patterns.
+    - Newborn wet nappies per day?
+    - Baby constant hiccuping normal?
+    - Baby vaccine schedule.
+    - How much tummy time for infant?
+    - What's normal for baby at 2 months?
+    - Baby first words age?
+    - Solids introduction for baby.
+    - Is my baby's cough serious?
+    - Newborn skin care tips.
+- intent: OTHER
+  subintent: INFORMATION_QUERY
+  legacy_intent: General Pregnancy Enquiry
+  examples: |
+    - Best pregnancy sleeping position?
+    - Third trimester what expect?
+    - Back pain pregnant normal?
+    - Pregnancy weight gain how much?
+    - Safe foods pregnant?
+    - What's the best and safest sleeping position for me during the later stages of pregnancy?
+    - What major bodily and emotional changes can I typically expect to happen in the third trimester of my pregnancy?
+    - Is experiencing some persistent lower back pain considered a normal symptom when you're pregnant?
+    - How much total weight gain is generally considered healthy and within the normal range throughout the entire pregnancy?
+    - What specific foods are completely safe for me to eat while I am pregnant, and which ones should I strictly avoid?
+    - How often should I be attending routine clinic visits and antenatal check-ups during the course of my current pregnancy?
+    - Do you have any effective and safe tips that can help me manage persistent and severe morning sickness?
+    - What are the very early and subtle signs of labor that I should start to watch out for as I get closer to my estimated due date?
+    - I'm 40 weeks overdue now and having some bad cramping pains in my abdomen; could it possibly be an infection or actual early labor?
+    - Is it absolutely safe for me and my developing baby to drink any amount or type of alcoholic beverage when I'm pregnant?
+    - What over-the-counter medication is generally considered safe for me to take for common ailments like a cold during my pregnancy?
+    - Is it still safe for me to continue my regular exercise routine and specific workouts during this current stage of pregnancy?
+    - Can I still safely go to the gym and lift moderate weights while I am pregnant, or should I stop?
+    - Which particular foods and drinks should I make sure to completely avoid consuming now that I'm pregnant to protect my baby?
+    - Is it considered normal for me to feel extremely tired and utterly fatigued all the time throughout my entire pregnancy journey?
+    - How do I know for absolute sure if what I'm currently feeling is really active labour starting and not false alarms?
+    - What usually causes recurring and painful heartburn, especially during the second and third trimesters of pregnancy for many women?
+    - Are any common over-the-counter headache pills or pain relievers safe for me to take if I'm currently pregnant?
+    - Is experiencing some light vaginal spotting considered a normal occurrence in the third trimester for some pregnant women?
+    - Why do I feel bloated constantly and have a lot of uncomfortable gas now that I'm pregnant?
+    - What are the key critical danger signs during pregnancy that I absolutely must look out for and report to my clinic immediately?
+    - How can I accurately calculate exactly how many weeks and days pregnant I currently am from my last menstrual period?
+    - What are some safe, comfortable, and medically recommended sex positions for the 3rd trimester of pregnancy?
+    - Am I generally allowed by airlines to take a long-haul international flight when I am 28 weeks pregnant?
+    - Is having some noticeable clear or whitish mucus discharge a normal physiological occurrence during various stages of pregnancy?
+    - I've noticed a significant amount of vaginal discharge that's changed color lately; is that considered normal in pregnancy or a sign of concern?
+    - Do you have any effective home remedies or sound medical advice for nagging pelvic girdle pain during my pregnancy?
+    - What are some safe and soothing topical solutions or natural creams for an extremely itchy belly in late pregnancy?
+    - My tummy just hurts sometimes, it's not severe pain but a noticeable ache; is that a typical pregnancy related feeling?
+    - Is it truly safe for me to continue to sleep mostly on my tummy during the early part of the first trimester of pregnancy?
+    - Is having a running stomach or diarrhoea for a day or two in the third trimester generally okay or something I should be worried about?
+    - Umntwana wam akakhabi kakuhle kule veki, ingaba kukhona okungahambi kakuhle ngaphakathi?
+    - Ingane ayikhahleli rhoqo njengakuqala ebendiyiqhelile, ngaba ikhona ingxaki enkulu endingayaziyo ekufuneka ndiyijongile?
+    - What specific vitamins, minerals, and essential daily supplements are most critically needed by my body during pregnancy?
+    - When should I typically start to feel my baby move inside me for the very first time in this pregnancy?
+    - Pregnancy pains normal?
+    - Dull ache pregnant, expected?
+    - Sharp twinges expecting, okay?
+    - Pregnancy cramps typical?
+    - I have a cramp
+    - Tightening pregnant, like cramps?
+    - Frequent cramping pregnancy, why?
+    - Is this new physical sensation I'm frequently feeling just a standard and benign part of being pregnant?
+    - I need help with severe and constant nausea in my second trimester; what can I do for relief?
+    - What can I do at home or with my doctor's advice about very swollen ankles and feet now that I'm heavily pregnant?
+    - I have general body aches and muscle soreness pretty much all over during my pregnancy; what helps to alleviate this discomfort?
+    - Are these odd pulling or stretching sensations deep in my abdomen just part of being pregnant and my body adapting and changing?
+    - I have some general questions about my own health and physical well-being during this current pregnancy.
+    - What are the most common discomforts and various symptoms typically experienced by women in the first trimester of pregnancy?
+    - How much water should I really be drinking every day throughout my pregnancy to stay healthy?
+    - How can I best manage pregnancy heartburn effectively without resorting to strong medication?
+    - Ndingayazi njani ixesha lokubeleka elililo nelichanekileyo?
+    - Kubuhlungu kakhulu esiswini, ngabe yini okunye okungaba yinkinga ngesikhathi ngikhulelwe?
+    - When does that 'nesting' instinct usually kick in for most pregnant women before birth?
+    - Can I still sleep on my back now that I'm well into my second trimester?
+    - How should I best deal with uncomfortable and persistent swelling in my feet and hands during these later stages of pregnancy?
+    - What are Braxton Hicks practice contractions supposed to actually feel like when they happen during pregnancy?
+    - When is it recommended that I should consider starting regular perineal massage in preparation for natural birth?
+    - How should I mentally and physically prepare myself for a planned or emergency C-section delivery?
+    - Can I safely travel a very long distance by car in my last trimester of pregnancy?
+    - How often should I be feeling my baby move when I am approximately 25 weeks pregnant?
+    - What are good and safe food sources of iron that I should focus on for me during my pregnancy?
+    - How to best cope with the extreme and overwhelming fatigue I'm experiencing during pregnancy?
+    - What typically causes sudden dizziness spells or lightheadedness when you're pregnant?
+    - How can I best prepare my older toddler siblings for the arrival of the new baby while I'm still pregnant?
+    - Experiencing weird feelings pregnant body.
+    - General health questions pregnant.
+    - Morning sickness help.
+    - Labor signs?
+    - Safe exercise pregnancy?
+    - Pelvic pain pregnancy advice.
+    - Itchy skin pregnant relief.
+    - Calculate due date.
+    - Am I in labor?
+    - Sex during pregnancy concerns.
+- intent: OTHER
+  subintent: ACCOUNT_UPDATE
+  legacy_intent: Language
+  examples: |
+    - Zulu instead english.
+    - Switch messages Xhosa.
+    - Afrikaans texts prefer.
+    - Change language Tswana.
+    - Ndebele, no english.
+    - Send my updates in Zulu instead of English, please.
+    - Please switch all my messages over to Xhosa.
+    - I would much prefer to receive all texts in Afrikaans.
+    - Change my language setting to Tswana for me, if possible.
+    - Could you please use Ndebele for all communications? I don't understand English very well.
+    - Can I get my MomConnect messages in Sesotho from now on?
+    - Please update my notification language preference to Venda.
+    - I want all my future updates from you to be in Tsonga.
+    - Afrikaans messages please, not the English ones.
+    - Change my contact language for MomConnect to Zulu.
+    - I need all my important messages to be in Sotho from this point forward.
+    - Is there a Xhosa language option available for these MomConnect messages?
+    - Please set my preferred communication language to English for now.
+    - Are you able to communicate with me in my home language, Sepedi?
+    - Tsonga messages are what I need from this service.
+    - I would much prefer Venda for all official MomConnect communications.
+    - Can you set my language to Swati if that's an available option?
+    - Ndebele is my first language, if that's an option for receiving messages?
+    - Please change my setting to Sepedi for all my future texts from you.
+    - IsiZulu translations for all MomConnect messages would be great, please provide them.
+    - I strongly prefer getting all my Afrikaans updates from MomConnect from now on.
+    - Where can I find the Tshivenda language option in the MomConnect settings or app?
+    - Set lang to Sesotho for my entire MomConnect profile.
+    - Xhosa messages would be much better and easier for me to understand.
+    - Ngiyafuna ukuthola yonke imiyalezo yami ngolwimi lwesiNdebele kuphela.
+    - Is Swazi currently available as a message language option?
+    - Please switch my main language preference over to Pedi for all messages.
+    - NdiTshiVenda nga hafhu, ndiyacela ngokuqinisekileyo ukuba kutshinsthwe.
+    - Can I opt to receive important messages in both English and isiXhosa?
+    - Angisizwa kahle kakhulu isiNgisi, ngicela nithumele konke ngolwimi lwesiZulu.
+    - Andisithethi kakuhle neze isilungu, ndicela uthethe ngolwimi olusisiXhosa nam xa ukwazi.
+    - My language setting for MomConnect needs to be officially changed over to Sotho.
+    - Please switch all my text message communications to the Tswana language.
+    - I require all future official communications from MomConnect to be sent in Venda.
+    - For my messages from MomConnect, please use the Sepedi language only from now on.
+    - Is it possible to get information from MomConnect in a language other than just English?
+    - What languages do you currently support for sending out messages?
+    - I'd like to select a different language for my account.
+    - Request language change to Sepedi.
+    - Can I use Afrikaans for messages instead?
+    - Support for Sepedi messages?
+    - Ndebele option?
+    - MomConnect supported languages?
+    - Need Pedi language support.
+    - Use Swati for info?
+    - Xitsonga option available yet?
+    - Language change.
+    - Want different language.
+    - Set to English.
+    - Change my language.
+    - Use Xhosa for me.
+    - Sotho messages.
+    - Venda updates thanks.
+- intent: OTHER
+  subintent: ACCOUNT_UPDATE
+  legacy_intent: Channel Switch
+  examples: |
+    - WhatsApp instead SMS.
+    - Move notifications WhatsApp.
+    - Change USSD to WhatsApp.
+    - Prefer WhatsApp.
+    - Switch messages WhatsApp.
+    - Can I receive my MomConnect updates via WhatsApp instead of boring SMS?
+    - Please move all my future notifications over to my WhatsApp account.
+    - Is it possible for me to change my communication channel from USSD to WhatsApp?
+    - I would much prefer to get all my MomConnect WhatsApp updates from you guys.
+    - Could you please switch my messages over to the WhatsApp platform from now on?
+    - Please stop all further SMS messages and use USSD instead for my specific number.
+    - I want to officially change my contact channel for MomConnect to WhatsApp if that's possible.
+    - I'd actually rather get all my important updates on my WhatsApp account, not SMS.
+    - Can I get my MomConnect messages on WhatsApp instead of these constant texts?
+    - Please switch me back to receiving only SMS messages from MomConnect.
+    - I definitely prefer using WhatsApp for these kinds of important updates from you.
+    - How can I easily change my MomConnect message setting from SMS to WhatsApp?
+    - Please stop sending any SMS messages and send everything via WhatsApp instead from today.
+    - Could you please use my other phone number for all WhatsApp messages from MomConnect?
+    - I specifically want to receive all MomConnect messages via SMS, not WA at all.
+    - Please change my communication channel preference back to SMS only for now.
+    - Move all my future MomConnect messages over to my registered WhatsApp number.
+    - Can you please move me over to WhatsApp for all MomConnect communications?
+    - SMS messages are costing me too much money; can we please use WA instead if it's free?
+    - WA is strongly preferred by me for receiving these important messages from MomConnect.
+    - I need to switch the delivery platform for all my MomConnect messages.
+    - Direct Messages on Twitter would actually be a much better communication channel for me.
+    - The USSD service is consistently not working for me; can you please use SMS instead as a backup?
+    - Is there a Telegram channel option available for receiving this MomConnect service?
+    - Would it be possible for me to get email updates from MomConnect instead of just SMS texts?
+    - App notifications please, if you have an app, rather than just text messages.
+    - Please ditch SMS for me and use Signal if that's an available channel option for MomConnect.
+    - I don't have mobile data often enough so I can't reliably use WhatsApp; please only use SMS for my messages.
+    - Ndicela ningithumele yonke imiyalezo yami nge WhatsApp kuphela, hayi nge SMS.
+    - Ndicela nithumele zonke iimsgs engizitholayo kwaMomConnect nge SMS kuphela manje.
+    - Andinayo imali eyanele yeData yeWhatsApp ngaso sonke isikhathi, ngicela nithumele konke nge SMS.
+    - Can you please change my messages to be delivered only via the USSD channel?
+    - I only want to use WhatsApp for receiving all messages from MomConnect.
+    - For now, I much prefer the SMS channel for all communication with MomConnect.
+    - Please stop all further WhatsApp messages and use SMS exclusively for me from now on.
+    - Do you guys offer a Facebook messenger option for these MomConnect updates?
+    - I'd like to officially change the way I currently get messages from MomConnect.
+    - Can I get these messages via email instead of my phone?
+    - Just use SMS for me for all MomConnect communication.
+    - I rely on USSD, pls enable it for my MomConnect messages.
+    - How update preferred channel MomConnect?
+    - Channel switch.
+    - Use WhatsApp.
+    - Change to SMS.
+    - Contact via Email.
+    - Prefer USSD channel.
+    - Stop WhatsApp, use SMS.
+    - Switch to Signal.
+- intent: OTHER
+  subintent: ACCOUNT_UPDATE
+  legacy_intent: Personal Data Update
+  examples: |
+    - Due date incorrect, update.
+    - Change phone number.
+    - Update baby birth date.
+    - Recently delivered, update info.
+    - Contact number changed, update.
+    - My due date listed on my profile is incorrect; please can you update it for me?
+    - I really need to change my registered primary phone number on your MomConnect records.
+    - Please update my baby's actual birth date in your system; the one you currently have is wrong.
+    - My main contact cell number has changed recently; please update it for me as soon as possible.
+    - Can you please correct my Estimated Due Date (EDD) in the MomConnect system? It's off by a week.
+    - I've relocated from Gugulethu and no longer use the Milnerton clinic; please update my file details.
+    - I need to urgently change my currently registered clinic location to a new one in a different area.
+    - Please update my specific facility code in your system to be 12345.
+    - My expected due date has now officially changed based on my latest scan; please can you update it in your system?
+    - I need to update my preferred primary clinic location as I've recently moved house.
+    - I've moved to a new house, my address for MomConnect updates is [New Address].
+    - Could you please change my surname on my MomConnect profile to [New Surname]?
+    - My primary phone number is different now; it needs an update in your system please.
+    - Can you please update my ID number in your MomConnect records to [ID Number]?
+    - I have received a new clinic card; I need to update my associated details with you.
+    - The EDD you have for me is completely wrong; please can you fix it urgently for me?
+    - How exactly do I update my personal information on the MomConnect platform or with an agent?
+    - I need to change my chosen delivery hospital details in your system for my upcoming birth.
+    - My new cell phone number is 0745551212; please update your contact records for me.
+    - My baby's actual Date of Birth is 2023/12/25; can you please update this specific information?
+    - My EDD has now been changed by my doctor to March 7th; this needs an immediate update.
+    - My married name is Dlamini now; please update my surname from my previous one.
+    - My new partner and primary carer is Sipho Zulu; can you please update this information for me?
+    - My correct clinic code is 555-123 for an update in your system.
+    - I've recently relocated to Durban from Cape Town; please update my address details accordingly.
+    - My medical aid details have changed since I last updated them; please can you update them?
+    - I am requesting an HIV status update to be made in my confidential MomConnect records.
+    - A twin pregnancy has now been confirmed by my doctor; please ensure my MomConnect records reflect this.
+    - Please correct my ID number in your system; it should be 930..., needs an urgent update.
+    - Ndicela utshintshe inombolo yam yefoni kuba indala ayisebenzi kakuhle.
+    - Please update my residential address with this new information, Dankie.
+    - My baby is actually 4 months old now, not 6 as your system currently says; please update these details.
+    - Could you please fix my baby's Date Of Birth in your records? It's showing incorrectly.
+    - My name is Sarah Khumalo.
+    - Lerato.
+    - Call me Mom
+    - Mom
+    - mama
+    - Name: John Doe.
+    - I'm Thandiwe Pule.
+    - Call me Grace for messages.
+    - For my name, use Sibusiso.
+    - My contact email: [email protected]
+    - Update details.
+    - ID number [ID Number] add.
+    - Check my phone number is [number]?
+    - Is my EDD [date] correct?
+    - How provide new clinic card details?
+    - Current clinic registered correctly MomConnect?
+    - Remove old number 082..., new 083....
+    - Ningandilungisela njani idilesi yam entsha?
+    - New address: [Address].
+    - Surname change to [Surname].
+    - Update my EDD.
+    - My new ID is [ID Number].
+    - Correct my baby's name.
+    - Change carer details.
+    - Facility code update.
+- intent: OTHER
+  subintent: INFORMATION_QUERY
+  legacy_intent: PMTCT
+  examples: |
+    - Prevent HIV transmission baby how?
+    - Meds protect baby HIV?
+    - Safe breastfeed HIV positive?
+    - Avoid passing HIV baby steps?
+    - Baby stay safe HIV positive how?
+    - How can I best prevent HIV transmission from me to my baby?
+    - What specific medication can help protect my unborn baby from HIV if I am positive?
+    - Is it completely safe for me to breastfeed my baby if I am HIV positive and on ARVs?
+    - What are the key important steps to take to avoid passing HIV to my baby during pregnancy and birth?
+    - How can I absolutely ensure my baby stays safe and remains HIV negative if I am HIV positive myself?
+    - Can I safely use formula milk exclusively for my baby if I'm HIV positive, to avoid transmission?
+    - What are the actual statistical chances of my baby contracting HIV from me if I follow PMTCT protocols?
+    - I need some clear and practical advice regarding current PMTCT protocols, please.
+    - I have some confidential questions about HIV and its implications for my current pregnancy.
+    - Does my newborn baby definitely need to take ARVs if I am HIV positive and was on treatment?
+    - How do I effectively prevent passing the HIV virus on to my new baby after they are born?
+    - Information about local PMTCT services and support groups is what I need urgently.
+    - What specific diagnostic tests are usually done for HIV for me and my baby during and after pregnancy?
+    - I'm very worried and anxious about the HIV transmission risk from me to my precious child.
+    - Is there a significant risk my baby could get AIDS if I try mixed feeding?
+    - What are the early symptoms I should look for if a baby is unfortunately HIV positive?
+    - HIV medication advice is desperately needed for me and for protecting my baby.
+    - Are ARVs generally safe to take during breastfeeding for an HIV positive mother on treatment?
+    - When is the right and most accurate timing for a PCR test for my baby to check for HIV?
+    - What does it truly mean for me and my baby if my viral load is confirmed as undetectable during my pregnancy?
+    - I need some help and guidance with partner disclosure regarding my HIV status for PMTCT.
+    - Can I get more detailed information on PrEP for my baby if I am HIV positive?
+    - Is my expressed breastmilk considered safe for my baby if I am HIV positive and consistently on my ARV treatment?
+    - Information on post-exposure prophylaxis options for my baby is needed as soon as possible.
+    - Umama onechulaza angamuncisa umntwana wakhe xa eselathisweni?
+    - What is Novatrim suspension typically used for in babies as part of the PMTCT program?
+    - Where can I find reliable and confidential HIV/AIDS support groups or healthcare services in my area?
+    - Khuseleka umntwana ungathathi iARVs, kunokwenzeka njani xa umama eneHIV?
+    - Specific HIV positive pregnancy diet information and nutritional advice would be very helpful for me.
+    - What are my available and safest delivery options if I'm known to be HIV positive?
+    - Is it absolutely necessary for my partner to also get an HIV test now that I am pregnant and positive?
+    - What are the potential or common ARV side effects that I might notice in my baby?
+    - How long does a baby typically need to continue to take ARVs as part of the PMTCT protocol?
+    - What does undetectable equals untransmittable specifically mean in the context of pregnancy and breastfeeding?
+    - What is the usual schedule for HIV clinic appointments and tests during pregnancy for PMTCT?
+    - About PMTCT and keeping my baby healthy and HIV-free.
+    - Need info on HIV management and ARVs for my new baby.
+    - Does being HIV positive during pregnancy affect my baby's long-term development in any way?
+    - When stop baby Nevirapine syrup PMTCT?
+    - Baby ARV syrup PMTCT side effects?
+    - How PMTCT program work?
+    - Explain baby PCR test results PMTCT.
+    - Where get Nevirapine for baby PMTCT?
+    - Kufanele ngiye nini ukuyohlola umntwana wami nge PCR test ye HIV?
+    - Stress affect PMTCT success?
+    - How long PMTCT program last?
+    - ARVs free at clinic for PMTCT?
+    - Help partner disclosure HIV status PMTCT.
+    - Newer PMTCT medications available?
+    - What are ARVs, who takes them for PMTCT?
+    - PMTCT info please.
+    - HIV pregnancy care.
+    - ARV for newborn.
+    - Keeping baby HIV negative.
+    - Questions about PMTCT.
+- intent: OTHER
+  subintent: ACCOUNT_UPDATE
+  legacy_intent: Switch to Postbirth
+  examples: |
+    - Delivered, send postbirth messages.
+    - Baby here, change to postnatal.
+    - Gave birth, update messages.
+    - Switch messages postbirth care.
+    - Had baby, send postnatal info.
+    - I've delivered my baby, please send appropriate postbirth messages now.
+    - My baby is here safe and sound, can you please change my updates to postnatal content?
+    - I gave birth last week on Tuesday, please update my messages accordingly from today.
+    - Please switch my current messages to focus on postbirth care and new baby advice.
+    - I've now had my baby, so please send me relevant postnatal information instead.
+    - Please change my MomConnect subscription to receive postbirth messages from this point onwards.
+    - I now want postbirth guidance from MomConnect as my baby has been born.
+    - Please update my messages to reflect my new status as a new mom.
+    - I had my baby already a few days ago, please can you update my MomConnect profile?
+    - I've given birth to my child, so please update my MomConnect profile and messages.
+    - My baby is now born and healthy, please switch my messages to suit this new stage.
+    - I need postnatal support information from MomConnect now that baby is here.
+    - My baby was born yesterday afternoon, could you please update my account and messages?
+    - I need postbirth messages from MomConnect from now on, not the pregnancy ones anymore.
+    - Send me information relevant for a new baby from this day forward.
+    - Please switch my profile to the postnatal stage in your system.
+    - I'm no longer pregnant as my wonderful baby has arrived, please update my status.
+    - My child is now born, so please update my message preferences to reflect this.
+    - My baby has safely arrived into the world, can you switch the content I receive?
+    - Please change my messages to content that is suitable for after the birth of a child.
+    - I gave birth last week, so please update my registered status in your system.
+    - You can now update my status to 'delivered' in your records.
+    - I delivered vaginally today without complications, please update my MomConnect.
+    - My C-section was completed successfully this morning, please update my status.
+    - My newborn has been registered at the clinic, can you please update my messages?
+    - Postnatal care information is what I really need from you now.
+    - I have a request for breastfeeding support information and tips from the postbirth module.
+    - Information about recognizing postpartum depression signs would be very helpful for me now as a new mother.
+    - I have some urgent questions about registering my baby's birth certificate now they're here.
+    - The immunization schedule for my newborn baby is needed, as part of postbirth info.
+    - Nginengane manje, ngicela ningithumelele lonke ulwazi olufanele umama nomntwana osanda kuzalwa.
+    - Ndibelekile umntwana wam, ngicela nitshintshe imiyalezo ibe yeyasemva kokubeleka nokukhulisa usana.
+    - My child has finally arrived, Ngiyabonga, please update my MomConnect message stream accordingly to postbirth.
+    - C-section recovery tips and practical information would be much appreciated from MomConnect now I've delivered.
+    - Please switch all my messages to those suitable for a new mom and her developing baby.
+    - My baby was born on [Date], please update my messages to reflect this new stage.
+    - I've had the baby, it's time for new mom advice and baby care tips from you!
+    - Update profile: Status Delivered. Send relevant post-birth info please.
+    - Just delivered my baby boy today, pls update my status with you.
+    - Delivered twins! Update my MomConnect profile and messages pls.
+    - Ndibelekile izolo, ndicela imiyalezo yomntwana osandul' ukuzalwa.
+    - Ready for the next stage of MomConnect messages after actual delivery!
+    - My delivery happened, please switch me to new mom content.
+    - Baby arrived, update now.
+    - Switch to new baby messages.
+    - Update to postnatal.
+    - Born! Change messages.
+    - It's a boy/girl, new messages pls.
+    - Post birth info now.
+    - Had my little one.
+- intent: OTHER
+  subintent: INFORMATION_QUERY
+  legacy_intent: Clinic Appointment Enquiry
+  examples: |
+    - Next clinic appointment when?
+    - Remind clinic visit.
+    - Need clinic appointment date.
+    - ANC appointment date?
+    - What time next check-up?
+    - When is my next scheduled clinic appointment for antenatal care?
+    - Can you please remind me of my upcoming MomConnect clinic visit details and time?
+    - I urgently need to know my next clinic appointment date and the allocated time.
+    - When is my next ANC appointment actually scheduled for at the clinic?
+    - The clinic didn't give me a clear date for my next follow-up appointment.
+    - The attending nurse didn't tell me specifically when I should come back to the clinic next.
+    - What time is my next routine check-up scheduled for at the government clinic?
+    - Can you provide me with the full details of my next upcoming clinic appointment?
+    - I haven't received my usual MomConnect appointment reminder SMS yet; can you please help check?
+    - Is my next scheduled clinic visit confirmed in your MomConnect system?
+    - When should I ideally go to the clinic for my next antenatal check-up or scan?
+    - When is my next official clinic date supposed to be according to your records?
+    - What time exactly is my confirmed clinic appointment for tomorrow morning?
+    - Is it at all possible for me to reschedule my upcoming clinic visit to another day?
+    - What usually happens at the standard 10 week antenatal appointment for new mothers?
+    - I've unfortunately lost my clinic appointment card and now I need all the details again.
+    - Do I need to bring anything specific with me to my next clinic checkup, like my ID or card?
+    - How often are routine clinic visits typically scheduled for pregnant women during pregnancy?
+    - I completely missed my last scheduled appointment; what should I do now to rebook?
+    - What are the local clinic's contact telephone details or their exact opening and closing hours?
+    - Can you please send me a helpful checklist of what essential items to pack for my labor?
+    - I urgently need to reschedule my important 6wk postnatal checkup for me.
+    - Could you please confirm my complete ANC schedule as per your system?
+    - What essential items should I definitely pack in my main hospital bag for the upcoming birth?
+    - Can I get a comprehensive list of all essential items for my own delivery bag for hospital?
+    - Where exactly at the clinic facility do they usually do the routine Pap smear test?
+    - Is my partner generally allowed to be present with me at the ultrasound scans at the clinic?
+    - Am I due for an important ANC appointment now that I am around 30 weeks pregnant?
+    - Can you please check and confirm my scheduled 26-week ANC check details with the clinic?
+    - Is my next ANC visit correctly set for when I am 34 weeks pregnant, can you please verify?
+    - When is my crucial 12-week ANC appointment and scan supposed to take place?
+    - I need an official appointment confirmation message to be resent to my phone number please.
+    - How do I go about booking my next follow-up clinic visit through MomConnect or directly at the clinic?
+    - What specific tests or procedures are usually done at the next scheduled antenatal appointment for me?
+    - My regular clinic appointment reminder SMS from MomConnect was not received this time around.
+    - Just quickly checking my next clinic appointment date and time please.
+    - Can I get the details for my upcoming clinic visit from you?
+    - What happens at the 28 week checkup usually for my pregnancy?
+    - No reminder SMS received for my clinic visit next week.
+    - Kumele ngiyoyenza nini i-checkup elandelayo ekliniki yami?
+    - Do they do pap smears at this specific facility or should I go elsewhere for that?
+    - How do I book my baby's first immunisation appointment at the clinic?
+    - My appointment query regarding next visit.
+    - Need to confirm my hospital booking for delivery date.
+    - Check my appointment.
+    - When's my next ANC?
+    - My clinic appointment details.
+    - Date for next hospital visit.
+    - Reschedule appointment please.
+    - What to bring to clinic?
+    - Lost appointment card.
+- intent: NOISE_SPAM
+  legacy_intent: Spam
+  examples: |
+    - Buy now limited time offer check this out now before it's too late!
+    - Congratulations you have won a massive prize claim it now by clicking here immediately.
+    - This is not health related at all, please just ignore this random message.
+    - Spam alert there's a special discount if you click here immediately, don't miss out.
+    - This is an unsolicited advertisement message, please disregard its contents entirely.
+    - Spam message: get cheap weight loss medication online from our pharmacy store today.
+    - This is definitely just spam, please ignore it completely and do not reply.
+    - There's a limited time investment offer that is not of any concern or interest to me.
+    - You can win a brand new free iphone 15, just click now to enter the draw!
+    - Join my amazing makemoneyfast online scheme and get rich very quick from home.
+    - An urgent loan approval is currently waiting for you, apply within the next 5 minutes.
+    - Buy cheap Viagra and Cialis medication online, best prices guaranteed discreet delivery.
+    - dfgkjhsdgfjhgsdf kjhsfg sdkjfgh lkjhdsfg
+    - Please call me back urgently on this number 082XXXXXXX, it's extremely important finance matter.
+    - Hot local singles are waiting in your immediate area, click now to meet and chat with them.
+    - Your bank account requires urgent verification, please follow this suspicious link: http://bit.ly/totally-a-scam-link
+    - Random special characters like !@#$%^&*()_+|}{":?><[];',./
+    - Get a special discounted insurance quote with our amazing limited time offer today only.
+    - Use this Https link to claim your R3500 SASSA relief grant now before it expires.
+    - You've won big with Shoprite vouchers, claim them today before they are all gone!
+    - Click here right now to get your free iPhone 15, strictly limited stock available.
+    - Bitcoin investment opportunity with a 200% ROI guaranteed, you must invest now!
+    - Earn big money with Bitcoin trading, just click here for instant returns on your small investment.
+    - An exclusive Bitcoin bonus is available for you, secure your new digital wallet now.
+    - Claim your free store rewards card today and get massive shopping discounts.
+    - Get our brand new store rewards card for amazing cash back offers on all purchases.
+    - This special rewards offer will unlock many premium deals and benefits for you.
+    - www.malicious-VIRUS-download-link.com urgent tax refund link, you must verify your details now.
+    - Premium adult content subscription service, subscribe now for exclusive uncensored access.
+    - Get your loan approval in just 5 minutes from now, apply now for almost instant cash payout.
+    - This is a PHISHING attempt: SARS tax update, please verify all your banking details with us now.
+    - Join this amazing new MLM pyramid scheme opportunity and earn big money starting today.
+    - You get premium access to our exclusive dating site, join now to find your perfect match tonight.
+    - Dislaa, please ignore this obvious spam message as it is not relevant to MomConnect.
+    - PRAYER POINTS FOR ALL EXPECTING AND PREGNANT WOMEN
+    - Please call urgently 083xxxxxxx regarding a serious finance problem I am currently facing.
+    - Get free money for all new moms, just click this special link to claim your cash grant.
+    - You can win a free car today! Enter now!
+    - XXX adult video chat link, click if you are over 18.
+    - Cheap loans available, no credit check required.
+    - Lonely? Hot singles in CPT waiting to chat! Reply HOT to connect!
+    - SARS: Tax refund of R3450.21 pending. Confirm your banking details here: [phishing link]
+    - Asjkdhasd kjahsd kjahsd kjahsd lajshd
+    - Found lost dog needs new home urgently please contact Mary on 07xxxxxxx
+    - Vote for [Political Party Name] in the upcoming election - Win free airtime!
+    - Prophet Musa miracle healing and financial blessings call this number now!
+    - Lost love back spells that work fast and are guaranteed! Call psychic.
+    - Click this for a surprise.
+    - Your computer has a virus.
+    - Free holiday giveaway.
+    - Make money online quick.
+    - You have been selected.
