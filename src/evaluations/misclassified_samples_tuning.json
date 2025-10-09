@@ -1,0 +1,257 @@
+[
+  {
+    "text": "Ngiphunyelwe isisu, ngicela ningabe nisangithumelela eminye imilayezo.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "We experienced a neonatal death shortly after birth, please adjust my profile.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Had a loss, need to change my status.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Can you update that I had a stillbirth?",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Yekani ukundithumelela le miyalezo engiyitholayo.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I have already delivered my baby, so I don't need these pregnancy specific messages.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "How do I stop this?",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "File missing clinic.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Quick service clinic.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Clean waiting room.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Efficient appointment system.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I definitely didn't receive the important reminder for my scheduled 20 week scan from Momconnect this week; what exactly went wrong there?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "You have completely misunderstood my previous important question about [specific health topic], please try again.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Why did the MomConnect service suddenly just stop sending all the helpful weekly messages to my registered phone number?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Your chatbot is broken.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I need a human, not a bot.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I really do appreciate getting the informative weekly updates from MomConnect about how my baby is currently developing.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Love the chatbot.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Super helpful reminders.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I would now much prefer to use the SMS channel only for now; please kindly stop any further WhatsApp messages from MomConnect.",
+    "true_label": "OTHER",
+    "predicted_label": "SENSITIVE_EXIT"
+  },
+  {
+    "text": "Please immediately stop all further USSD messages that are sent to my number and use SMS for me instead from now on, thank you very much.",
+    "true_label": "OTHER",
+    "predicted_label": "SENSITIVE_EXIT"
+  },
+  {
+    "text": "My pregnancy is over, baby is here.",
+    "true_label": "OTHER",
+    "predicted_label": "SENSITIVE_EXIT"
+  },
+  {
+    "text": "Your Standard Bank account needs urgent verification! CLICK NOW to avoid immediate suspension: [suspicious-link-standardbank]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "You can lose belly weight fast and very easy with our amazing new natural slimming product! Limited stock available now only!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Are you feeling Lonely tonight? Hot local Cape Town based singles are currently waiting online to chat with YOU right now! Reply with HOT to connect instantly with them!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "You can easily make up to R5000 per day by simply working from the comfort of your own home! Very Easy setup is required! Visit our website at [spam-link-makemoney-fast] for more detailed information.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Your City of Cape Town municipal electricity account is now seriously overdue for payment! You must Pay the outstanding amount now to avoid immediate and inconvenient disconnection of your power supply: [phishing-link- Eskom-CoCT-pay]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Why not invest in new and exciting Crypto coins today for truly massive potential financial returns on your investment! GUARANTEED DAILY PROFIT FOR ALL NEW AND EXISTING INVESTORS!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This one extremely simple life changing financial trick will totally and completely change your entire financial life situation for the better forever! Watch this amazing short video now to learn how: [spam-link- lifechange-money]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "H E L L O My Dearest and Respected Friend, Can you please kindly and urgently assist me to help transfer $10 Million USD from my locked overseas bank account? Please Reply to this message for more private and confidential details about the transaction.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This is a completely random and unsolicited text message that was sent to you by mistake asjdhakjsdhkasjhdkjashdkjahsdkjfh qwertpoiuy zxcvbnm lkjhgfds",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Urgent Alert System Notification: You have (1) new important and unread voicemail message that is waiting for you to listen to it now: [suspicious-link-voicemail-scam-alert-now]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Do you happen to need a special and powerful prayer for something specific in your life today or this week? Send your most urgent prayer request to us now for immediate attention! Have a truly Blessed and absolutely wonderful day ahead!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "You can very easily increase your current manhood size up to an XtraLarge size NATURALLY and also very safely! Order your supply of this amazing product today for very fast and highly effective noticeable results now!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Please urgently claim your important new SASSA R350 social relief of distress grant update information by clicking on this official looking link here: [phishing-link-sassa-grant-scam-update]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Do you really want much whiter and also significantly brighter teeth in just one single week from this point forward? Amazing dental cosmetic results are fully guaranteed! Buy this revolutionary new product now online from our store!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "We have many SECRET and well-paying mystery shopper jobs currently available now in your local residential area, paying up to R2000/week in cash, please contact Agent Betty on her personal WhatsApp number for details.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Urgent Security Warning! Your Android mobile phone has a dangerous and very critical system VIRUS infection that needs immediate attention! You must Scan your phone immediately and urgently now using this special provided link: [malware-link-virus-scan-android-now]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Check out this amazing deal, 90% off!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Your computer is infected, call this number.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Secret to making millions revealed!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Free psychic reading, find your future.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Unclaimed parcel for you, confirm details.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Message from a long lost relative with inheritance.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Click to see who has a crush on you.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Your subscription is expiring, renew here [false link].",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Free gift card, just complete this survey.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Get followers fast on social media.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Cheap medication no prescription.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Mystery shopper job offer.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Financial freedom seminar.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  }
+]

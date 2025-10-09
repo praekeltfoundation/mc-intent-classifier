@@ -1,0 +1,40 @@
+--- Final Hold-Out Test Set Performance Report ---
+
+--- Parent-Level Performance ---
+
+                precision    recall  f1-score   support
+
+      FEEDBACK       0.97      0.88      0.92       221
+    NOISE_SPAM       1.00      0.28      0.43        47
+         OTHER       0.89      0.99      0.94       560
+SENSITIVE_EXIT       0.97      0.95      0.96        98
+
+      accuracy                           0.92       926
+     macro avg       0.96      0.77      0.81       926
+  weighted avg       0.93      0.92      0.91       926
+
+
+--- Sub-Intent Performance: FEEDBACK ---
+
+              precision    recall  f1-score   support
+
+   COMPLAINT       0.93      0.81      0.87       111
+  COMPLIMENT       1.00      0.88      0.94       110
+        None       0.00      0.00      0.00         0
+      OPTOUT       0.00      0.00      0.00         0
+
+    accuracy                           0.85       221
+   macro avg       0.48      0.42      0.45       221
+weighted avg       0.96      0.85      0.90       221
+
+--- Sub-Intent Performance: SENSITIVE_EXIT ---
+
+              precision    recall  f1-score   support
+
+   BABY_LOSS       1.00      0.96      0.98        48
+        None       0.00      0.00      0.00         0
+      OPTOUT       1.00      0.94      0.97        50
+
+    accuracy                           0.95        98
+   macro avg       0.67      0.63      0.65        98
+weighted avg       1.00      0.95      0.97        98

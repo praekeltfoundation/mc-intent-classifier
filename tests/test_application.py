@@ -2,7 +2,7 @@
 import os
 import sys
 from base64 import b64encode
-from typing import Generator
+from collections.abc import Generator
 
 import pytest
 from flask.testing import FlaskClient

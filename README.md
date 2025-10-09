@@ -18,29 +18,50 @@ _A simplified flowchart of the classification process._
 
 
 
-### Model Development & Training
-This section is for anyone involved in managing the data, training the model, or evaluating its performance.
+### Model Development Workflow
+This section is for anyone involved in managing the data, training the model, or evaluating its performance. The process follows a standard **Train -> Validate -> Test** cycle to ensure robust and unbiased results.
 
-**Data & Schema**
+1. **Data Preparation**
 
-The ground truth for this model lives in `src/data/nlu.yaml`. This file contains all the training examples, which are then processed by `src/data/build_datasets.py` to create the final training files.
+    The ground truth for this model lives in `src/data/nlu.yaml`. To regenerate the final training, validation, and test files from this source, run: 
 
-  - To regenerate the training data from the source YAML files, run
     ```bash
-    make datasets  # Which runs: poetry run python src/data/build_datasets.py --emit-jsonl
+    make datasets
     ```
-    This will create clean .jsonl files (e.g., samples.train.jsonl) in the src/mapped_data/ directory.
+    This will create clean `.jsonl` files (e.g., `samples.train.jsonl`) in the `src/mapped_data/` directory.
     
-  - To train a new version of the model, run
+2. **Model Training**
+  
+    To train a new version of the model using the samples.train.jsonl dataset, run:
     ```bash
-      make train  # Which runs: poetry run python src/train_model.py
-      ```
-    This script executes the complete pipeline: it loads the processed data, encodes the text, trains the classifier, and saves all model artifacts to the `src/artifacts/ directory`.
+      make train
+    ```
+    This script saves all model artifacts (the classifier, encoder, and manifest) to the `src/artifacts/` directory.
 
 
 ### Evaluation & Threshold Tuning
 
-Model performance is measured against a hold-out test set (`test.yaml`). Confidence thresholds are defined in `src/artifacts/thresholds.json` and can be tuned by analyzing the model's performance on the validation set to balance the needs of each intent (e.g., prioritizing recall for `SENSITIVE_EXIT`).
+This is a two-step process to find the optimal confidence thresholds and then get an unbiased measure of the final model's performance.
+
+  - **Tune Thresholds on the Validation Set**
+
+    Run the evaluation script in "tune" mode. This uses the `samples.validation.jsonl` dataset to find the best confidence threshold for each intent category.
+
+    ```
+    make tune-thresholds
+    ```
+
+    This generates the `src/artifacts/thresholds.json` file, which is required for the model to run. It also produces a detailed text report and performance plots in the `src/artifacts/` directory.
+
+  - **Evaluate Final Performance on the Test Set**
+
+    Once the model is trained and the thresholds are tuned, run the final performance report. This uses the **hold-out** `samples.test.jsonl` dataset to provide an unbiased measure of how the model will perform on new, unseen data.
+
+    ```
+    make evaluate
+    ```
+
+    The output of this command is the definitive performance report for the model version.
 
 
 ### API, Deployment & Integration

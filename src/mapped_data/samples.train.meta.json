@@ -3,10 +3,10 @@
   "source_sha256": "e2c1dc6837b6f10ca5df4f7951a1cfbe12916f4468eda5dd188f0bc4931045d3",
   "mapping_version": "2025-09-29-OTHER-v2",
   "counts": {
+    "NOISE_SPAM": 52,
     "SENSITIVE_EXIT": 109,
     "FEEDBACK": 241,
-    "OTHER": 559,
-    "NOISE_SPAM": 52
+    "OTHER": 559
   },
   "num_samples": 961
 }

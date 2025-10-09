@@ -1,0 +1,372 @@
+[
+  {
+    "text": "Ndiphunyelwe sisisu.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I had a stillbirth, this was reported at the maternity clinic.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Perfect, thanks a lot!",
+    "true_label": "OTHER",
+    "predicted_label": "FEEDBACK"
+  },
+  {
+    "text": "Perfect, exactly what needed.",
+    "true_label": "OTHER",
+    "predicted_label": "FEEDBACK"
+  },
+  {
+    "text": "Ndicela niyeke ukundithumela le miyalezo ngoku nangoku.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Dnt send again.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Ndicela uyeka ukundithumela lemiyalezo.",
+    "true_label": "SENSITIVE_EXIT",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Blood results lost, must redo!",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Sister dismissed baby's cough concerns.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Facility needs better hygiene.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Sister Pumla Khayelitsha clinic star!",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Short wait time clinic, better!",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Chatbot confused.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Please can you stop the bot from repeating the exact same message over and over again? It's annoying.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "It keeps miscalculating my pregnancy weeks by a significant margin, which is a serious issue.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Why is there still no official Xitsonga language option in this otherwise potentially useful service?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I missed my important 32wk reminder from MomConnect this week, and I relied on it.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Where is the specific MomConnect message I was expecting to receive today about my scan results?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This information you've just provided is not useful or relevant to me in any way.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I'm still waiting for a proper and actually relevant response from you regarding my previous query.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Why don't you actually respond to my specific detailed questions instead of just sending generic information all the time?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "I'm no longer receiving any momconnect messages at all; what happened to the service or perhaps my subscription?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "SENSITIVE_EXIT"
+  },
+  {
+    "text": "Why am I not receiving any messages about my next crucial clinic appointment from your system anymore?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Can you actually provide real assistance or do you just send out standard, pre-written, generic stuff all the time without listening?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "That is completely not what I asked for, MomConnect. Please try to understand my actual query this time.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Asked clinic times, got baby food info!",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Stop repeating bot!",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Gestation calc incorrect.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "System mixing appointment dates.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Why service stop messages MomConnect?",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Messages helpful, thanks.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Thx for messages.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Reminders life savers.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Appointment reminders good.",
+    "true_label": "FEEDBACK",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "The clinic didn't give me a clear date for my next follow-up appointment.",
+    "true_label": "OTHER",
+    "predicted_label": "FEEDBACK"
+  },
+  {
+    "text": "The attending nurse didn't tell me specifically when I should come back to the clinic next.",
+    "true_label": "OTHER",
+    "predicted_label": "FEEDBACK"
+  },
+  {
+    "text": "My regular clinic appointment reminder SMS from MomConnect was not received this time around.",
+    "true_label": "OTHER",
+    "predicted_label": "FEEDBACK"
+  },
+  {
+    "text": "This is not health related at all, please just ignore this random message.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This is an unsolicited advertisement message, please disregard its contents entirely.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Spam message: get cheap weight loss medication online from our pharmacy store today.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This is definitely just spam, please ignore it completely and do not reply.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "There's a limited time investment offer that is not of any concern or interest to me.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "An urgent loan approval is currently waiting for you, apply within the next 5 minutes.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Buy cheap Viagra and Cialis medication online, best prices guaranteed discreet delivery.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "dfgkjhsdgfjhgsdf kjhsfg sdkjfgh lkjhdsfg",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Please call me back urgently on this number 082XXXXXXX, it's extremely important finance matter.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Hot local singles are waiting in your immediate area, click now to meet and chat with them.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Your bank account requires urgent verification, please follow this suspicious link: http://bit.ly/totally-a-scam-link",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Random special characters like !@#$%^&*()_+|}{\":?><[];',./",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Use this Https link to claim your R3500 SASSA relief grant now before it expires.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Bitcoin investment opportunity with a 200% ROI guaranteed, you must invest now!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "An exclusive Bitcoin bonus is available for you, secure your new digital wallet now.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Get our brand new store rewards card for amazing cash back offers on all purchases.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This special rewards offer will unlock many premium deals and benefits for you.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Premium adult content subscription service, subscribe now for exclusive uncensored access.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Get your loan approval in just 5 minutes from now, apply now for almost instant cash payout.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "This is a PHISHING attempt: SARS tax update, please verify all your banking details with us now.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "You get premium access to our exclusive dating site, join now to find your perfect match tonight.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Dislaa, please ignore this obvious spam message as it is not relevant to MomConnect.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "PRAYER POINTS FOR ALL EXPECTING AND PREGNANT WOMEN",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Please call urgently 083xxxxxxx regarding a serious finance problem I am currently facing.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Get free money for all new moms, just click this special link to claim your cash grant.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "XXX adult video chat link, click if you are over 18.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Cheap loans available, no credit check required.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Lonely? Hot singles in CPT waiting to chat! Reply HOT to connect!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "SARS: Tax refund of R3450.21 pending. Confirm your banking details here: [phishing link]",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Asjkdhasd kjahsd kjahsd kjahsd lajshd",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Found lost dog needs new home urgently please contact Mary on 07xxxxxxx",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Vote for [Political Party Name] in the upcoming election - Win free airtime!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Prophet Musa miracle healing and financial blessings call this number now!",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "Lost love back spells that work fast and are guaranteed! Call psychic.",
+    "true_label": "NOISE_SPAM",
+    "predicted_label": "OTHER"
+  },
+  {
+    "text": "My phone's battery dies too quickly.",
+    "true_label": "OTHER",
+    "predicted_label": "SENSITIVE_EXIT"
+  },
+  {
+    "text": "Thanks for listening to me vent.",
+    "true_label": "OTHER",
+    "predicted_label": "FEEDBACK"
+  },
+  {
+    "text": "My car won't start this morning.",
+    "true_label": "OTHER",
+    "predicted_label": "SENSITIVE_EXIT"
+  }
+]
