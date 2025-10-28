@@ -74,10 +74,13 @@ class EnsembleClassifier:
         if parent == "FEEDBACK":
             # Using pre-trained multilingual model for robust sentiment analysis
             sentiment = self.sentiment_pipeline(text, top_k=1)[0]
-            # Map 'positive' to COMPLIMENT, and 'neutral'/'negative' to COMPLAINT
-            sub_reason = (
-                "COMPLIMENT" if sentiment["label"] == "positive" else "COMPLAINT"
-            )
+            # Map 'positive' to COMPLIMENT, 'negative' to COMPLAINT, and 'neutral' to None
+            if sentiment["label"] == "positive":
+                sub_reason = "COMPLIMENT"
+            elif sentiment["label"] == "negative":
+                sub_reason = "COMPLAINT"
+            else:
+                sub_reason = "None"  # Handle 'neutral' case
             return Enrichment(
                 sub_reason=sub_reason,
                 score=sentiment["score"],

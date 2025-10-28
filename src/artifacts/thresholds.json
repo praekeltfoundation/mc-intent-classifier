@@ -1,5 +1,6 @@
 {
   "review_band": 0.2847,
+  "sentiment_review_band": 0.9539,
   "per_parent": {
     "FEEDBACK": 0.4933,
     "NOISE_SPAM": 0.356,

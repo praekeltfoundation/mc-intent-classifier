@@ -88,7 +88,11 @@ class MockEnsemble:
         """Simulates the enrichment process to get a sub-intent prediction."""
         if parent_label == "FEEDBACK":
             sentiment = self.sentiment_pipeline(text, top_k=1)[0]
-            return "COMPLIMENT" if sentiment["label"] == "positive" else "COMPLAINT"
+            if sentiment["label"] == "positive":
+                return "COMPLIMENT"
+            if sentiment["label"] == "negative":
+                return "COMPLAINT"
+            return "None"  # Handle neutral case
         if (
             parent_label == "SENSITIVE_EXIT"
             and self.clf_sensitive_exit
@@ -177,6 +181,78 @@ def _find_optimal_thresholds(
     return thresholds, tabulate(report_data, headers=headers, tablefmt="grid")
 
 
+def _find_optimal_sentiment_threshold(
+    true_df: pd.DataFrame, mock_ensemble: MockEnsemble
+) -> float:
+    """Find a review threshold for the sentiment model based on misclassifications."""
+    logging.info("Finding optimal review threshold for sentiment model...")
+
+    # 1. Isolate feedback data
+    fb_df = true_df[true_df["label"] == "FEEDBACK"].copy()
+    if fb_df.empty:
+        logging.warning("No FEEDBACK samples in validation set. Defaulting to 0.5")
+        return 0.5
+
+    # 2. Get true labels and sentiment model predictions
+    y_true_sub = fb_df["feedback_subtype"].fillna("None").tolist()
+
+    predictions = []
+    for text in fb_df["text"]:
+        # Get raw sentiment preds
+        pred = mock_ensemble.sentiment_pipeline(text, top_k=1)[0]
+        predictions.append(pred)
+
+    # 3. Map predictions to our labels
+    y_pred_labels = []
+    y_pred_scores = []
+    for pred in predictions:
+        y_pred_scores.append(pred["score"])
+        if pred["label"] == "positive":
+            y_pred_labels.append("COMPLIMENT")
+        elif pred["label"] == "negative":
+            y_pred_labels.append("COMPLAINT")
+        else:
+            y_pred_labels.append("None")  # Neutral
+
+    # 4. Find misclassifications
+    is_correct = np.array(y_true_sub) == np.array(y_pred_labels)
+
+    # 5. Use PR curve to find a threshold that captures uncertainty
+    # We are finding the threshold for "is this a bad prediction?"
+    # A "bad" prediction is one that is "incorrect" (our y_true)
+    # We want to find a threshold on the *confidence score* (our y_score)
+    # This is a bit of a proxy, but it's data-driven.
+    # We treat "incorrect" as the "positive" class to find.
+
+    if len(np.unique(is_correct)) < 2:
+        logging.warning(
+            "All sentiment predictions were correct or incorrect. Defaulting."
+        )
+        return 0.75  # Default if no misclassifications to tune on
+
+    scores_for_tuning = 1.0 - np.array(y_pred_scores)
+    precision, recall, thresholds = precision_recall_curve(
+        ~is_correct,  # y_true (is_incorrect)
+        scores_for_tuning,  # probas_pred ("uncertainty" score)
+        pos_label=True,
+    )
+
+    # Find a threshold that gives high (e.g., 90%) recall for "incorrect" preds
+    target_recall = 0.90
+    high_recall_indices = np.where(recall >= target_recall)[0]
+
+    if len(high_recall_indices) > 0:
+        # Get the threshold corresponding to the first time we hit 90% recall
+        optimal_threshold = thresholds[high_recall_indices[0]]
+        # We were tuning on (1.0 - score), so convert back
+        final_threshold = 1.0 - optimal_threshold
+    else:
+        # Fallback if we can't hit 90%
+        final_threshold = 0.75
+
+    return round(float(final_threshold), 4)
+
+
 def _get_predicted_parent_labels(
     y_probs: NDArray[np.float64], le: LabelEncoder, thresholds: Thresholds
 ) -> list[str]:
@@ -215,10 +291,19 @@ def _generate_hierarchical_report(
     ]:
         sub_df = true_df[true_df["label"] == parent_name].copy()
         if not sub_df.empty:
-            sub_df["predicted_sub"] = [
-                mock_ensemble.enrich(text, parent)
-                for text, parent in zip(sub_df["text"], sub_df["predicted_parent"])
-            ]
+            if parent_name == "FEEDBACK":
+                # Simulate the /nlu/feedback/ endpoint:
+                # We ALWAYS call enrich with "FEEDBACK", ignoring the parent prediction
+                sub_df["predicted_sub"] = [
+                    mock_ensemble.enrich(text, "FEEDBACK") for text in sub_df["text"]
+                ]
+            else:
+                # Simulate the /nlu/babyloss/ endpoint:
+                # Logic is dependent on the parent prediction (the original logic)
+                sub_df["predicted_sub"] = [
+                    mock_ensemble.enrich(text, parent)
+                    for text, parent in zip(sub_df["text"], sub_df["predicted_parent"])
+                ]
             y_true_sub = sub_df[sub_col].fillna("None").tolist()
             y_pred_sub = sub_df["predicted_sub"].fillna("None").tolist()
             sub_report = classification_report(y_true_sub, y_pred_sub, zero_division=0)
@@ -304,10 +389,16 @@ def tune_and_evaluate(artifacts_dir: Path, data_path: Path, save_plots: bool) ->
     threshold_values, threshold_report = _find_optimal_thresholds(
         true_df["label"].tolist(), y_probs, le
     )
+    # Load the mock ensemble *early* to use it for tuning
+    mock_ensemble = MockEnsemble(artifacts_dir)
+
+    sentiment_review_band = _find_optimal_sentiment_threshold(true_df, mock_ensemble)
+    logging.info(f"Found optimal sentiment review band: {sentiment_review_band}")
     final_thresholds = {
         "review_band": round(
             np.mean([v for k, v in threshold_values.items() if k != "OTHER"]), 4
         ),
+        "sentiment_review_band": sentiment_review_band,
         "per_parent": threshold_values,
     }
     thresholds_path = artifacts_dir / "thresholds.json"

@@ -1,5 +1,5 @@
 {
-  "version": "2025-10-09-v1",
+  "version": "2025-10-28-v1",
   "encoder": "BAAI/bge-m3",
   "parent_labels": [
     "FEEDBACK",
@@ -14,5 +14,5 @@
     ]
   },
   "training_data": "samples.train.jsonl",
-  "timestamp_utc": "2025-10-09T02:05:02Z"
+  "timestamp_utc": "2025-10-28T12:39:00Z"
 }

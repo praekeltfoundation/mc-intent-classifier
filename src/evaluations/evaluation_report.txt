@@ -30,13 +30,13 @@ SENSITIVE_EXIT       0.95      0.89      0.92        61
 
               precision    recall  f1-score   support
 
-   COMPLAINT       0.94      0.90      0.92        73
-  COMPLIMENT       0.98      0.86      0.91        69
+   COMPLAINT       0.94      0.92      0.93        73
+  COMPLIMENT       0.98      0.93      0.96        69
         None       0.00      0.00      0.00         0
 
-    accuracy                           0.88       142
-   macro avg       0.64      0.59      0.61       142
-weighted avg       0.96      0.88      0.92       142
+    accuracy                           0.92       142
+   macro avg       0.64      0.62      0.63       142
+weighted avg       0.96      0.92      0.94       142
 
 --- Sub-Intent Performance: SENSITIVE_EXIT ---
 
