@@ -15,6 +15,7 @@ from src.application import app
 from src.config.schemas import Enrichment, IntentResult, PredictionResponse
 from src.utils.normalise import normalise_text
 
+
 # --- This fixture is preserved from your original file ---
 @pytest.fixture
 def client() -> Generator[FlaskClient, None, None]:
@@ -89,7 +90,7 @@ def test_nlu_feedback_success(
     # 3. Mock the threshold value
     # We need to configure the mock's structure properly
     mock_classifier.thresholds = mocker.MagicMock()
-    mock_classifier.thresholds.sentiment_review_band = 0.75 # Example threshold
+    mock_classifier.thresholds.sentiment_review_band = 0.75  # Example threshold
 
     # 4. Mock the manifest dictionary (used for model_version)
     mock_classifier.manifest = {"version": "test-v1"}
@@ -106,8 +107,8 @@ def test_nlu_feedback_success(
         "model_version": "test-v1",
         "parent_label": "FEEDBACK",
         "probability": 0.99,
-        "review_status": "CLASSIFIED", # Because 0.99 > 0.75
-        "sentiment_label": "positive", # Check the extra field
+        "review_status": "CLASSIFIED",  # Because 0.99 > 0.75
+        "sentiment_label": "positive",  # Check the extra field
     }
     assert response.json == expected_json
 
@@ -117,7 +118,7 @@ def test_nlu_feedback_success(
     call_args, _ = mock_classifier.sentiment_pipeline.call_args
     expected_normalised_text = normalise_text("the nurses were fantastic")
     assert call_args[0] == expected_normalised_text
-    
+
     # Verify 'predict' was NOT called
     mock_classifier.predict.assert_not_called()
 
