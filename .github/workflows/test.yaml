@@ -28,7 +28,8 @@ jobs:
           poetry run ruff format --check
           poetry run ruff check
       - name: Test
-        run: poetry run pytest
+        # This line is modified to skip the data-heavy tests
+        run: poetry run pytest -m "not data"
 
   docker-image:
     needs: [test]

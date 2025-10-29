@@ -12,6 +12,8 @@ import yaml
 
 from src.data.build_datasets import annotate_file, map_intent
 
+pytestmark = pytest.mark.data
+
 LEGACY_16 = [
     "Baby Loss",
     "Opt out",
