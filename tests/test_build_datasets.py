@@ -41,7 +41,7 @@ def tmp_data_dir(tmp_path: Path, request: pytest.FixtureRequest) -> Path:
     d.mkdir(parents=True, exist_ok=True)
 
     # Clean up after test completes
-    def cleanup():
+    def cleanup() -> None:
         if d.exists():
             shutil.rmtree(d, ignore_errors=True)
 

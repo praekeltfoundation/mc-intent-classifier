@@ -81,3 +81,6 @@ local_settings.py
 scripts/exports/
 
 celerybeat-schedule
+
+# Generated data, mapping, and JSONL files
+src/mapped_data/
