@@ -121,6 +121,6 @@ def test_yaml_and_jsonl_counts_and_labels_match() -> None:
         assert Counter(r["label"] for r in y_rows) == Counter(
             r["label"] for r in j_rows
         ), f"label mix mismatch: {yml_path} vs {jsn_path}"
-        assert {r["text"] for r in y_rows} == {
-            r["text"] for r in j_rows
-        }, f"text set mismatch: {yml_path} vs {jsn_path}"
+        assert {r["text"] for r in y_rows} == {r["text"] for r in j_rows}, (
+            f"text set mismatch: {yml_path} vs {jsn_path}"
+        )

@@ -1,0 +1,51 @@
+--- Optimal Threshold Report ---
+
++----------------+-------------+----------+---------------------+----------------+
+| Intent         |   Precision |   Recall |   Optimal Threshold | Strategy       |
++================+=============+==========+=====================+================+
+| FEEDBACK       |      0.9786 |   0.9648 |              0.4933 | F1-Max         |
++----------------+-------------+----------+---------------------+----------------+
+| NOISE_SPAM     |      0.9714 |   0.9714 |              0.356  | F1-Max         |
++----------------+-------------+----------+---------------------+----------------+
+| SENSITIVE_EXIT |      0.1097 |   1      |              0.0049 | Recall >= 0.99 |
++----------------+-------------+----------+---------------------+----------------+
+
+--- Hierarchical Performance Report ---
+
+--- Parent-Level Performance ---
+
+                precision    recall  f1-score   support
+
+      FEEDBACK       1.00      0.92      0.96       142
+    NOISE_SPAM       1.00      0.17      0.29        35
+         OTHER       0.87      0.99      0.93       318
+SENSITIVE_EXIT       0.95      0.89      0.92        61
+
+      accuracy                           0.91       556
+     macro avg       0.95      0.74      0.77       556
+  weighted avg       0.92      0.91      0.89       556
+
+
+--- Sub-Intent Performance: FEEDBACK ---
+
+              precision    recall  f1-score   support
+
+   COMPLAINT       0.94      0.92      0.93        73
+  COMPLIMENT       0.98      0.93      0.96        69
+        None       0.00      0.00      0.00         0
+
+    accuracy                           0.92       142
+   macro avg       0.64      0.62      0.63       142
+weighted avg       0.96      0.92      0.94       142
+
+--- Sub-Intent Performance: SENSITIVE_EXIT ---
+
+              precision    recall  f1-score   support
+
+   BABY_LOSS       1.00      0.55      0.71        31
+        None       0.00      0.00      0.00         0
+      OPTOUT       0.73      0.90      0.81        30
+
+    accuracy                           0.72        61
+   macro avg       0.58      0.48      0.50        61
+weighted avg       0.87      0.72      0.76        61

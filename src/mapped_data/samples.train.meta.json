@@ -1,12 +1,12 @@
 {
   "source_file": "nlu.yaml",
-  "source_sha256": "e2c1dc6837b6f10ca5df4f7951a1cfbe12916f4468eda5dd188f0bc4931045d3",
+  "source_sha256": "0f807ea81940d35dbb5aef36e5b1893b9c15bc7d3011910097ce6acedda477cb",
   "mapping_version": "2025-09-29-OTHER-v2",
   "counts": {
+    "NOISE_SPAM": 52,
     "SENSITIVE_EXIT": 109,
-    "FEEDBACK": 241,
     "OTHER": 559,
-    "NOISE_SPAM": 52
+    "FEEDBACK": 241
   },
   "num_samples": 961
 }

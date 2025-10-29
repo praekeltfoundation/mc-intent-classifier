@@ -1,12 +1,18 @@
 {
-  "version": "2025-09-29-v1",
+  "version": "2025-10-28-v1",
   "encoder": "BAAI/bge-m3",
   "parent_labels": [
     "FEEDBACK",
+    "SENSITIVE_EXIT",
     "NOISE_SPAM",
-    "OTHER",
-    "SENSITIVE_EXIT"
+    "OTHER"
   ],
+  "sub_intent_labels": {
+    "SENSITIVE_EXIT": [
+      "BABY_LOSS",
+      "OPTOUT"
+    ]
+  },
   "training_data": "samples.train.jsonl",
-  "timestamp_utc": "2025-09-29T11:32:42Z"
+  "timestamp_utc": "2025-10-28T12:39:00Z"
 }

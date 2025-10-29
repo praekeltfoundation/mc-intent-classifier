@@ -13,6 +13,7 @@ from prometheus_flask_exporter import PrometheusMetrics
 
 from src.classifiers.ensemble import EnsembleClassifier
 from src.utils.logger import get_logger
+from src.utils.normalise import normalise_text
 
 # --- Setup ---
 version = importlib.metadata.version("mc-intent-classifier")
@@ -91,7 +92,11 @@ def nlu_babyloss() -> ResponseReturnValue:
 @app.route("/nlu/feedback/")
 @basic_auth.required  # type: ignore
 def nlu_feedback() -> ResponseReturnValue:
-    """Detects 'compliment' or 'complaint' sub-intents with detailed metrics."""
+    """
+    Detects 'compliment' or 'complaint' sub-intents with detailed metrics.
+    This endpoint assumes the user is already in a "feedback" state.
+    It bypasses the parent classifier and calls the sentiment model directly.
+    """
     if not classifier:
         return jsonify({"error": "Classifier not available"}), 503
 
@@ -99,18 +104,38 @@ def nlu_feedback() -> ResponseReturnValue:
     if not question:
         return jsonify({"error": "The 'question' parameter is required."}), 400
 
-    prediction = classifier.predict(question)
-    top_intent = prediction["intents"][0]
+    # 1. Normalize the text (just like the classifier does)
+    norm_text = normalise_text(question)
 
+    # 2. Call the sentiment pipeline directly (bypassing the parent model)
+    sentiment = classifier.sentiment_pipeline(norm_text, top_k=1)[0]
+    sentiment_label = sentiment["label"]
+    sentiment_score = round(sentiment["score"], 4)
+
+    # 3. Apply the correct logic to map sentiment to intent
     intent_response = "None"
-    if top_intent["key"] == "FEEDBACK":
-        intent_response = top_intent["enrichment"].get("sub_reason", "None")
+    if sentiment_label == "positive":
+        intent_response = "COMPLIMENT"
+    elif sentiment_label == "negative":
+        intent_response = "COMPLAINT"
 
+    # 4. Determine review_status using DATA-DRIVEN thresholds
+    is_neutral_feedback = sentiment_label == "neutral"
+
+    # Use the new, data-driven threshold from your tuning script
+    is_low_confidence = sentiment_score < classifier.thresholds.sentiment_review_band
+
+    review_status = (
+        "NEEDS_REVIEW" if (is_low_confidence or is_neutral_feedback) else "CLASSIFIED"
+    )
+
+    # 5. Build the final payload
     response_payload = {
         "intent": intent_response,
-        "model_version": prediction["model_version"],
-        "parent_label": top_intent["key"],
-        "probability": top_intent["probability"],
-        "review_status": prediction["review_status"],
+        "model_version": classifier.manifest["version"],
+        "parent_label": "FEEDBACK",
+        "probability": sentiment_score,
+        "review_status": review_status,
+        "sentiment_label": sentiment_label,
     }
     return jsonify(response_payload)

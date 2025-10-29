@@ -25,10 +25,11 @@ class SampleRow(TypedDict):
 
 # --- API Response Schemas (used by the classifier) ---
 class Enrichment(TypedDict, total=False):
-    """Holds enrichment data, like subtype or sentiment score."""
+    """Represents the sub-intent details derived from enrichment rules."""
 
     sub_reason: str
     score: float
+    sentiment_label: Literal["positive", "neutral", "negative"]
 
 
 class IntentResult(TypedDict):

@@ -25,6 +25,7 @@ def test_accept_and_review_logic() -> None:
         other=0.5,  # Using a default value
         noise=0.7,  # Using a default value
         review_band=0.4,
+        sentiment_review_band=0.75,
     )
 
     # Case 1: Score is above acceptance and review band
