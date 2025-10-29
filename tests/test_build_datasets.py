@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -34,10 +35,17 @@ OTHER_SUBS = {"ACCOUNT_UPDATE", "INFORMATION_QUERY", "CONFIRMATION"}
 
 
 @pytest.fixture()
-def tmp_data_dir(tmp_path: Path) -> Path:
+def tmp_data_dir(tmp_path: Path, request: pytest.FixtureRequest) -> Path:
     """Provide a temporary, isolated data directory for tests."""
     d = tmp_path / "src" / "data"
     d.mkdir(parents=True, exist_ok=True)
+
+    # Clean up after test completes
+    def cleanup():
+        if d.exists():
+            shutil.rmtree(d, ignore_errors=True)
+
+    request.addfinalizer(cleanup)
     return d
 
 
