@@ -13,6 +13,25 @@ jobs:
       matrix:
         python-version: ["3.11"]
     steps:
+      - name: 🧹 Free up disk space
+        run: |
+          echo "Initial disk space:"
+          df -h
+          
+          # Remove large, pre-installed software
+          sudo rm -rf /usr/share/dotnet          # .NET SDKs
+          sudo rm -rf /usr/local/lib/android    # Android SDK
+          sudo rm -rf /opt/ghc                  # Haskell
+          
+          # Clean up Docker images (if any)
+          sudo docker system prune -af --volumes
+          
+          # Clean up apt-get cache
+          sudo apt-get clean
+          
+          echo "Disk space after cleanup:"
+          df -h
+
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
@@ -28,7 +47,6 @@ jobs:
           poetry run ruff format --check
           poetry run ruff check
       - name: Test
-        # This line is modified to skip the data-heavy tests
         run: poetry run pytest -m "not data"
 
   docker-image:
@@ -57,3 +75,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
