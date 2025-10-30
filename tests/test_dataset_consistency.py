@@ -15,6 +15,9 @@ from typing import Any
 import pytest
 import yaml
 
+pytestmark = pytest.mark.data
+
+
 # Search both locations
 BASE_DIRS = [Path("src/data"), Path("src/mapped_data")]
 

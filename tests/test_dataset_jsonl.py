@@ -6,9 +6,12 @@ import json
 from collections import Counter
 from pathlib import Path
 
+import pytest
 import yaml
 
 from src.data.build_datasets import process_file
+
+pytestmark = pytest.mark.data
 
 
 def test_emit_jsonl_and_meta_from_annotated_yaml(tmp_path: Path) -> None:

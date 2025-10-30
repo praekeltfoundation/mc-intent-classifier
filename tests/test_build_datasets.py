@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 from typing import Any
 
@@ -10,6 +11,8 @@ import pytest
 import yaml
 
 from src.data.build_datasets import annotate_file, map_intent
+
+pytestmark = pytest.mark.data
 
 LEGACY_16 = [
     "Baby Loss",
@@ -34,10 +37,17 @@ OTHER_SUBS = {"ACCOUNT_UPDATE", "INFORMATION_QUERY", "CONFIRMATION"}
 
 
 @pytest.fixture()
-def tmp_data_dir(tmp_path: Path) -> Path:
+def tmp_data_dir(tmp_path: Path, request: pytest.FixtureRequest) -> Path:
     """Provide a temporary, isolated data directory for tests."""
     d = tmp_path / "src" / "data"
     d.mkdir(parents=True, exist_ok=True)
+
+    # Clean up after test completes
+    def cleanup() -> None:
+        if d.exists():
+            shutil.rmtree(d, ignore_errors=True)
+
+    request.addfinalizer(cleanup)
     return d
 
 
