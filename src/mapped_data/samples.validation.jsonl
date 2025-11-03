@@ -1,0 +1,556 @@
+{"text": "It's with a heavy heart I share we lost the pregnancy.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My baby didn't make it, please update my MomConnect status.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Experienced a miscarriage last week, the clinic confirmed it to me.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Our little one passed away, so no more messages are needed from you.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "The stillbirth has been very difficult for us, please stop all notifications.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My child is no longer with us, can you please remove me from the service?", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Sadly, our baby's journey ended much too soon. Unsubscribe me please.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "The pregnancy unfortunately didn't continue, it was a loss.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "We had to say goodbye to our precious baby, please stop all further communication.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Umntwana wethu akaphilanga, kwaba buhlungu kakhulu kithina.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Ngiphunyelwe isisu, ngicela ningabe nisangithumelela eminye imilayezo.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My angel baby is gone now, no more updates from MomConnect please.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My little one just didn't survive, please remove my details from your system.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "It was a confirmed stillbirth, please update my records and also stop sending texts.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "I miscarried early in the pregnancy, please cancel the service for me.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "The loss of my dear baby means I don't need these messages from you anymore.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "We experienced a neonatal death shortly after birth, please adjust my profile.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My heart is broken into pieces, the baby passed on this morning.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Faced with a confirmed fetal demise, please stop all momconnect updates immediately.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "No longer expecting my baby due to a sad loss, so please cancel my subscription.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My pregnancy ended, it wasn't viable.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Lost the baby, I don't want messages.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Please be advised of a pregnancy loss.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Reporting a second trimester miscarriage.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "The baby was stillborn, it's very sad.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Had a loss, need to change my status.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "My little one has passed.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "So sad, my baby's gone.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Can you update that I had a stillbirth?", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Pregnancy loss to report.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "No longer pregnant, it was a miscarriage.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "BABY_LOSS"}
+{"text": "Ok, that's clear, thanks!", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Gotcha, appreciate the explanation.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Yep, understood. Thanks.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "All right, I'll do that.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Splendid, thank you very much.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Okay, makes sense.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "That's great, thanks for the heads-up.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Sure, noted.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Ok, tx.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Sharp, thanks for the info.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Ewe, ndiyayiqonda loo nto.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Yebo, ngiyabonga ngokushesha.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Ja, dis reg so, dankie.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Perfect, that's helpful.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Cool, thanks a bunch.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Alrighty.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "100%.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Indeed.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Molo!", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Good morning.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "That's correct.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Exactly what I meant.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Yes, that's it.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Agreed.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Okay, fine with me.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Thanks, that's useful.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Understood, proceed.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Sounds good.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Yup.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "Hello.", "label": "OTHER", "other_subtype": "CONFIRMATION"}
+{"text": "I don't want these MomConnect messages anymore.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Please unsubscribe me from your service now.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Kindly remove my number from your list.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I wish to stop all further notifications from you.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Deactivate my MomConnect account please, I no longer need it.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Can you ensure I receive no more texts from this service?", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I'm opting out of this program effective immediately.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Please cease sending me these updates, thank you.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "No longer need this service, please stop sending messages.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "My situation is different now, so please stop all messages.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "How can I terminate this MomConnect service for good?", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I would like to be unenrolled from MomConnect.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Cancel all further SMS from MomConnect to my number.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Please take me off your active contact list.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I'm not pregnant anymore, therefore please remove me from these alerts.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Yekani ukundithumelela le miyalezo engiyitholayo.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Angisazifuni ezi zinto eningithumelela zona, nceda niyeke.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Haal my asseblief van die lys af, ek soek dit nie meer nie.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I have already delivered my baby, so I don't need these pregnancy specific messages.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Requesting to stop all future MomConnect communication with me.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I wish to be removed from the message list.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Please stop all texts.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "No more MomConnect.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Cancel these messages.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Opt out please.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "I'm done, stop sending.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Remove from service.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Don't send more.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "Take me off.", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "How do I stop this?", "label": "SENSITIVE_EXIT", "sensitive_exit_subtype": "OPTOUT"}
+{"text": "The staff at Some Other Clinic were very unhelpful yesterday afternoon.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I waited ages to be seen by a doctor, and the nurses there were just talking amongst themselves.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The general conditions at the local maternity unit were not good at all; it was very untidy and felt unclean.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The person at reception completely ignored me for several minutes when I tried to ask for some help.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "My serious concerns about the medication I was prescribed were not properly addressed by the attending doctor.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The whole clinic was chaotic and didn't feel clean or safe when I visited today.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "My patient records were apparently missing again when I arrived for my scheduled appointment there.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The main waiting room at the facility was far too crowded and also quite stuffy and unpleasant.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The security person stationed at the main hospital gate was quite aggressive and unhelpful towards visitors.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I strongly think I was given completely incorrect advice about my condition at the clinic pharmacy.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The queue system they have is not working efficiently at all; it was so incredibly slow moving.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "A nurse was very abrupt and impatient with my young child, which was quite upsetting for both of us.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I didn't feel my personal privacy was respected at all during the medical consultation; the curtain wasn't closed.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The clinic seemed to be very short-staffed and extremely disorganized during my entire visit there.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I had a really poor and frustrating experience at that particular health facility and I won't be going back.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Abasebenzi bale kliniki yase Mbekweni abakhathali neze, bandiphathe kakubi kakhulu.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Ndilinde iiyure ezininzi kakhulu esibhedlele sase Tygerberg ndingancedwa nangubani.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Iklinikhi yase Khayelitsha ibimdaka kakhulu, kwaye andonelisekanga ngale meko ikhoyo.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Die diens by die Groote Schuur hospitaal was regtig sleg vandag en die wagtyd was heeltemal te lank.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "There was very unprofessional behavior displayed by the person working at the clinic's front desk.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "It always takes forever to get my folder from the records department; it was very frustrating again today.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I really felt quite judged and disrespected by the nurse during my last antenatal checkup there.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The medical equipment they used during my scan looked really old and not properly maintained.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The entire admin process to register as a new patient at that clinic is completely chaotic and inefficient.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I am not at all satisfied with the poor quality of care I received at the Blouberg provincial hospital last week.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Clinic too full.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Bad attitude from nurse.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Waited too long at hospital.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Unclean facility.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Doctor not helpful.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "File missing clinic.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Rude receptionist.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Long queue again.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The nurses at my local Gugulethu clinic are just fantastic and always so incredibly helpful!", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "My important check-up today was actually great; the entire facility was so clean and all the staff were lovely and welcoming.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The attending doctor really took a lot of her valuable time to explain everything to me in detail, and I felt very heard and supported.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I received superb service from the entire admin staff team; they were surprisingly quick, very efficient, and extremely kind.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The clinic atmosphere today felt very calm, surprisingly organized, and quite reassuring for patients.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I was attended to quite promptly for my appointment and also treated with genuine kindness and respect by everyone I met.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "A special word of thanks to Nurse Nomsa at Site B clinic; she was an absolute star during my rather difficult consultation.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The hospital maternity ward where I stayed was very hygienic, well-maintained, and the nursing staff there were extremely attentive to my needs.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I always seem to appreciate the consistently professional and genuinely caring service I get whenever I visit there.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The entire clinic team, from reception to the nurses, made me feel very comfortable, welcome, and completely safe throughout my visit.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "It was a very positive healthcare experience overall for me; thank you so much to everyone involved on the team.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The midwife who helped me through my labor and delivery was incredibly gentle, patient, and also highly knowledgeable.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I was really impressed with how smoothly and efficiently everything seemed to run at the facility during a busy period.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Everyone I encountered at the hospital was so welcoming and helpful, from the security personnel to the specialist doctors.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I definitely received top-class, high-quality medical care during my short but important stay at the hospital last week.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Oonesi basekuhlaleni basiphatha ngobubele obukhulu nangesidima, siyabulela kakhulu ngomsebenzi wabo.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Ngiyabonga kakhulu ngokusinakekela, isibhedlele saseThekwini sihlanzekile kakhulu kwaye nabasebenzi banomusa omkhulu.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Die kliniek se personeel by Karl Bremer was heeltemal fantasties vandag, baie dankie vir julle goeie en deernisvolle sorg.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I felt truly well looked after and cared for by the entire clinic team during my recovery, enkosi kakhulu kuni nonke.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The level of service I received today really exceeded all my prior expectations; such lovely and dedicated staff members.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Quick service clinic.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Nice nurses hospital.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Doctor listened well.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Clean waiting room.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Staff very helpful.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Efficient appointment system.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Felt respected by clinic staff.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Midwife was excellent.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Well-managed facility.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Great care received.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This MomConnect bot is quite unhelpful for me; it rarely understands any of my questions properly.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Why are the bot's replies always so significantly delayed? I really needed an answer much more quickly than that.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Momconnect definitely seems to have the wrong estimated due date for my current pregnancy in its system!", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I asked a very straightforward and simple question, and the MomConnect bot gave me a totally confusing and completely unrelated answer back.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Please can you stop Momconnect from automatically sending me the exact same generic and unhelpful message repeatedly every few hours?", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Your current automated chatbot system is not at all helpful or suitable for my specific personal situation or my complex queries.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I definitely didn't receive the important reminder for my scheduled 20 week scan from Momconnect this week; what exactly went wrong there?", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The detailed information that the MomConnect bot provided to me about [specific topic like newborn feeding] seems to be quite incorrect or very outdated.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I'm quite frustrated and annoyed today because Momconnect doesn't appear to be working correctly or responding at all.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Why can't I just easily speak to a human advisor or a real person for help? This MomConnect bot is clearly not helping me with my problem at all.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The MomConnect chatbot completely misunderstood my very clear and simple question about local clinic visiting hours and policies.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I'm still waiting for a proper and useful response from MomConnect to my important query that I sent yesterday afternoon already.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Your MomConnect system must have somehow calculated my EDD (Estimated Due Date) incorrectly based on the accurate info I initially provided.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "These generic pre-programmed automated responses from the MomConnect bot are simply not good enough or adequate for dealing with complex health issues.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I sometimes don't understand the messages the Momconnect bot sends me at all; they are not always clear or easy for me to follow.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Aniyiphenduli ngendlela efanelekileyo yonke imibuzo yami ebhalulekileyo nina baseMomconnect.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Imiyalezo yenu yaseMomconnect iyadida kakhulu ngamanye amaxesha kwaye ayincedi ngalutho olubonakalayo ebantwini abayifumanayo.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Andonelisekanga neze neze ngawe weMomconnect chatbot, awupenduli imibuzo yam ngendlela echanekileyo necacileyo.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Still no useful or relevant answer from Momconnect to my specific question about the local clinic's current opening hours on a Saturday morning.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The bot gave me some generic health advice that directly and concerningly contradicted what my own personal doctor previously told me about my condition.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "This MomConnect bot is just senselessly repeating the same unhelpful things back to me over and over again without understanding.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Your AI system clearly doesn't get what I'm actually asking for or trying to communicate to it.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I desperately need some real help right now, but this particular bot is not working for me at all effectively.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I think I got the wrong information from the Momconnect service again this week regarding my appointments.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Can this Momconnect bot actually understand anything complex or nuanced that I type to it? It really doesn't seem like it can.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "This MomConnect chatbot is often making my life much harder and more frustrating, not easier as it should.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "You have completely misunderstood my previous important question about [specific health topic], please try again.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "This is a pretty useless automated service if the bot can't actually help with real user queries.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I definitely need much better and more personalised support than this current basic level of automation can provide.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Your MomConnect system reminders are now consistently coming on completely the wrong days for my actual appointments.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Why did the MomConnect service suddenly just stop sending all the helpful weekly messages to my registered phone number?", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "The MomConnect chatbot seems to be completely broken or at least malfunctioning quite badly for me today.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I rely heavily on this crucial health information I get from MomConnect, so it really needs to be accurate and up-to-date all the time without fail!", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "This is absolutely not the specific answer I was looking for or expecting from an official health support service like yours.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Is this bot even capable of handling complex user queries effectively? It really doesn't seem like it at the moment based on my experience.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "MomConnect gives wrong answers.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Bot doesn't listen.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Repeating messages MomConnect.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Your chatbot is broken.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "I need a human, not a bot.", "label": "FEEDBACK", "feedback_subtype": "COMPLAINT"}
+{"text": "Thanks Momconnect, these regular reminders are super helpful for my various clinic appointments.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This MomConnect service is actually quite great; I consistently always get quick and very useful relevant information from it.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I really do appreciate getting the informative weekly updates from MomConnect about how my baby is currently developing.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Your MomConnect chatbot explained that rather complicated medical topic very clearly and simply for me, so thank you!", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I just love getting these regular Momconnect messages; they always make me feel much more supported and less alone on this journey.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The practical advice Momconnect sent me on effectively managing early morning sickness symptoms was absolutely spot on and really did help me a lot, thanks.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "It's really great how the Momconnect service reminds me exactly when I need it to, as I'm often so forgetful with all these new things.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This is a very convenient and user-friendly service from MomConnect, so much easier than constantly trying to call the busy clinic for information.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The many health tips you regularly send via MomConnect are always practical, highly relevant to my situation, and also very easy for me to understand and apply.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Keep up the truly amazing and valuable work, MomConnect team, this essential service is absolutely invaluable to so many of us new and expectant mothers!", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This MomConnect bot actually answered my specific and somewhat complex question perfectly the very first time I asked it.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I always find the reliable and trustworthy info you send via MomConnect really reassuring and calming throughout my entire pregnancy journey so far.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The useful baby care tips that you've been sending me from MomConnect have been very helpful and practical since my baby was born recently.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Thank you so much for always consistently providing such accurate, up-to-date, and trustworthy health information through MomConnect.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This Momconnect chatbot service provides excellent and much-needed support for many expectant and new moms across the country.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Ngiyabonga kakhulu ngemilayezo yenu ephuma kuMomConnect, iyasiza kakhulu ukundikhumbuza zonke izinto ezibalulekile.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Enkosi kakhulu kuMomConnect ngempela, olu lwazi oluhle enisilunika lubaluleke kakhulu kuthi sonke esiludingayo.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Hierdie weeklikse MomConnect boodskappe help my regtig baie om alles presies te onthou soos dit moet, baie dankie vir die wonderlike diens.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The stage-specific health information I regularly get from MomConnect is always perfectly timed and relevant for where I currently am in my pregnancy.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I generally feel much more prepared and significantly less anxious about everything thanks to all your helpful and timely messages from the MomConnect service.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The MomConnect vaccination reminders for my new baby are absolutely crucial for me and so very well-timed, thank you for them.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Thank you ever so much for the consistent stream of positive encouragement and support I receive from MomConnect; it really does mean a lot to me.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This MomConnect bot is actually quite remarkably smart and surprisingly helpful for just being an automated system providing information!", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This is generally a very convenient and extremely user-friendly way for me to get reliable and quick pregnancy information, all thanks to MomConnect.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I'm so very glad that I took the opportunity to sign up for the MomConnect service; it's been a fantastic and invaluable help to me so far.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The links to further reading and external resources sometimes provided in the MomConnect messages are also usually very useful and informative.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I've received what I consider to be excellent and consistent support throughout my entire pregnancy journey from the MomConnect platform.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Your MomConnect automated system generally works very well and quite reliably for me whenever I need it.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Thanks a lot for the quick and accurate confirmation message I got from MomConnect a bit earlier regarding my query.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The daily health and wellness tips I receive from MomConnect are always easy to follow, practical, and very memorable.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "So much better and definitely more trustworthy than just randomly searching for hours online for important health information, thanks to MomConnect!", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "I really appreciate MomConnect's clear and consistent focus on relevant local South African health guidelines and protocols.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "The MomConnect message that I received just today was very timely and extremely relevant to my current week of pregnancy.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Thanks again for all the consistently helpful, reliable, and very supportive updates I always get from MomConnect.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "MomConnect messages are great!", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Love the chatbot.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Super helpful reminders.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "This service is good.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "Thanks for the support MomConnect.", "label": "FEEDBACK", "feedback_subtype": "COMPLIMENT"}
+{"text": "My baby is 5 months old now, what development stage should I expect to see next?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Around when do most infants typically start to clearly recognize familiar faces like mine or my partner's?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it generally considered okay or normal if my 7 month old baby isn't making any serious attempts to crawl yet?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are some of the clear and reliable signs that my baby might be ready to start the process of eating solid foods?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How many wet nappies should a healthy and well-hydrated newborn baby typically have each and every day on average?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "My own baby seems quite noticeably small for his current specific age; should I be at all concerned about his overall growth rate?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Around what age will my developing baby likely get her very first tooth appearing through her gums?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can you please tell me a bit more about the typical and expected sleep patterns for a 3 month old infant baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What simple and engaging games or appropriate activities can I safely play to help stimulate my baby's important development at around 4 months of age?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it considered perfectly normal for my young baby's head shape to look a little bit uneven or perhaps slightly flat in one particular spot?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "At what specific age should babies usually begin to noticeably respond to different common sounds or familiar human voices?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "My 9 month old baby isn't babbling very much or making many sounds yet; is this a potential worry or concern for future speech development?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How much daily supervised tummy time does my 2 month old infant actually need for good physical and motor skill development?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the key major expected developmental milestones that I should actively look out for in the first full year of a baby's life?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Should I be unduly worried or concerned if my new baby seems to cry a lot more than I initially expected them to?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Ndingazi njani mna ngokuqinisekileyo ukuba usana lwam oluncinci lukhula ngokwaneleyo nangendlela efanelekileyo ngokwemo yalo? (How can I know for sure that my small baby is growing enough and in the right way for their condition?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Kufanele ngilindele ukuthi ingane yami encane yasekhaya iqale ukuzama ukukhuluma amagama okuqala nini? (When should I expect my young child at home to start trying to speak their first words?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it entirely normal for my healthy 2 month old baby to already be sleeping right through the entire night without waking?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the main significant visual developmental milestones I should be observing for a 1 month old baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "My own baby doesn't seem very interested at all in playing with any of her toys yet; is that okay for her current age?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Any info on baby milestones around 3 months old?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "When do babies usually start rolling over by themselves?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are common symptoms of teething for a young baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Need help with my newborn's erratic sleep schedule.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is my baby's current growth pattern considered normal for his age?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How to help baby develop sitting skills?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "When do babies start to understand simple words?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "My baby's fontanelle seems a bit sunken, is that a problem?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are good first foods for baby starting solids?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "My infant has a persistent cough, what should I check for?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How can I encourage my baby to enjoy tummy time more?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it normal for a newborn to sneeze a lot?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are signs of a hearing problem in an infant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How many naps should my 6 month old be taking?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "When do babies typically start showing separation anxiety?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "My baby's skin is very dry, any suggestions?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are some of the most common physical discomforts I might realistically experience during the second trimester of my pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it generally considered completely safe for me to eat most types of well-cooked seafood while I am currently pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How can I accurately and reliably tell the difference between normal Braxton Hicks contractions and actual real labor pains starting?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What specific vitamins, minerals, and other nutrients are most critically important for me to ensure I take during the early stages of my pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Are there any particular types of strenuous exercises or specific physical activities that I should definitely avoid doing altogether while I am pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "When should I ideally begin to pack my main hospital bag for the delivery, and what essential items absolutely need to go in it?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I've been feeling very unusually emotional and find myself weepy quite often lately; is that a normal part of the hormonal changes that occur in pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How do I correctly and most accurately calculate my estimated due date (EDD) based on the first day of my last menstrual period?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can experiencing high levels of ongoing stress or significant anxiety during my pregnancy negatively affect my unborn baby's growth and development?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What is the best and safest course of action or home remedies I should use if I happen to get a common cold or the flu while I am pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is experiencing occasional light vaginal spotting or minor bleeding during any stage of pregnancy something I should be immediately worried about or report?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the absolutely key things that I should remember to discuss in detail with my doctor or midwife at my very first important antenatal care (ANC) visit?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How much actual caffeine per day (e.g., from coffee or tea) is generally considered safe for me to consume throughout my pregnancy without risk?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "When does that dreaded and often debilitating morning sickness usually start to get noticeably better or completely stop for most pregnant women?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the main and most important warning signs of possible dehydration that I should diligently look out for during my entire pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Ngingayiphepha kanjani ngokuphelele imivimbo yesikhumba (i-stretch marks) ngesikhathi ngikhulelwe kakhulu? (How can I completely avoid skin stretch marks while I am heavily pregnant?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Yintoni kanye kanye echanekileyo omawuyenze xa unezilonda ezibuhlungu kakhulu esiswini ngexesha elide lokukhulelwa kwakho? (What exactly and correctly must you do when you have very painful sores in your stomach during your long period of pregnancy?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is dit heeltemal enigsins veilig vir my om per vliegtuig te vlieg tydens die laaste trimester van my huidige swangerskap, of is dit te riskant? (Is it at all safe for me to fly by airplane during the last trimester of my current pregnancy, or is it too risky?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Should I be overly concerned or immediately alarmed about having noticeably and uncomfortably swollen ankles and fingers during my current pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the main practical benefits and advantages of attending good quality prenatal or informative antenatal classes before I actually give birth?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Are these persistent general body pains I'm frequently having just a normal and expected part of being pregnant at this stage?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How can I best and most effectively manage the persistent and often painful heartburn I experience now that I'm pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "This constant dull ache that I have as a pregnant woman, is it something that is generally expected during pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I'm experiencing some intermittent mild cramps in my lower abdomen; is this considered normal during my current stage of pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it safe for me to travel by car for long distances when I am heavily pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What can I do about extremely itchy skin all over my body now that I'm pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I'm feeling so tired all the time during this pregnancy, is that a common symptom?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What types of food are best for me to eat regularly when I'm expecting a baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How can I reliably find out how many weeks pregnant I actually am right now?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it normal to have a metallic taste in my mouth during pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are common signs of anemia in pregnant women?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can I eat spicy food while pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What helps with pregnancy-related insomnia?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How to deal with mood swings during pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Are varicose veins common when expecting?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Questions about nausea during pregnancy.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How many extra calories do I need pregnant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Pls change my MomConnect message language settings to isiZulu from English.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I would now really prefer all Afrikaans communication from MomConnect; please update my current language setting.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can you please switch me over completely to receive all Xhosa updates from the MomConnect service?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need all my important MomConnect messages to be delivered in Sotho if that is at all technically possible for you.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is the Tswana language currently available as a selectable option for receiving regular MomConnect messages?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please set my main language preference for all MomConnect communications back to English for the time being, thank you.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How do I effectively and easily change the primary language that is used for all my MomConnect messages?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My current MomConnect language setting appears to be incorrect on my profile; I actually need Zulu, not the English I'm getting.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "NdiCela ulwimi endilufumana kwiMomConnect lutshintshwe lube sisiXhosa ngokukhawuleza kangangoko kunokwenzeka, enkosi.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Shintsha lonke ulwimi lwami olubhaliswe kwiMomConnect lube isiZulu ngiyacela kakhulu manje, ngiyabonga kakhulu.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Kan ek asseblief my primêre taalvoorkeur na die Afrikaans taal verander vir alle toekomstige MomConnect boodskappe?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please completely stop sending me any messages in Afrikaans from MomConnect; I only need them in clear English from now on.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is it at all possible for me to get my regular MomConnect messages in both the English and Zulu languages simultaneously?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is there currently any official active support provided for the Sepedi language within the MomConnect platform for users?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Could you please update my main language preference in your system to Venda for all future MomConnect content and messages?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I specifically need to be able to receive all my Tsonga language messages directly from the MomConnect service as soon as possible.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is Ndebele an available and supported language option for MomConnect users at this present time that I can select?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please can you confirm for me that my selected language setting for MomConnect has been successfully changed over to Xhosa?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I really want to receive all my important health information from MomConnect in my own home language, which is Sesotho.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Which specific official South African languages does the MomConnect service currently and officially support for its diverse users?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "What is the current system default language setting for all new users who are signing up to the MomConnect service?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How can I easily select or change my primary communication language preference for the entire MomConnect service myself?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is it going to be possible for me to switch back to receiving only English messages from MomConnect at a much later stage if I choose to?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please try to ensure that you always use very simple, plain, and clear English in all your MomConnect messages that you send to me.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Are any of the helpful MomConnect educational materials or other detailed information available for users in other official South African languages besides English?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can you please directly help me to change my current registered language setting for the MomConnect service right now?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I urgently require official support from the MomConnect service in the Pedi language if that is at all available to users.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is it currently possible for your system to use the Swati language for sending my regular MomConnect information updates to me?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Has a fully supported Xitsonga language option been officially added yet to the MomConnect service offerings for all users?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Request to change language.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Set messages to [Language Name].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Prefer messages in my language.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can I select [Language Name]?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Support for other languages?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Switch my MomConnect updates from SMS specifically to my WhatsApp number please, it's easier.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I would now much prefer to use the SMS channel only for now; please kindly stop any further WhatsApp messages from MomConnect.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is it at all possible for me to get these important MomConnect messages delivered via USSD instead of standard SMS? Mobile data can often be quite expensive for me.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please can you change my main communication channel for MomConnect over to WhatsApp; my active WhatsApp number for that is 083xxxxxxx.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How do I effectively change my current MomConnect messages preference from the WhatsApp channel back to the standard SMS channel if I need to?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please ensure that you only use the SMS channel for all future official communication with me from the MomConnect service from this point forward.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "WhatsApp is much more preferred by me for receiving all these kinds of updates from you, thanks so much for offering that useful option.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My available mobile data often runs out quite unexpectedly, so the USSD channel is actually much better and far more reliable for me to consistently use.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please immediately stop all further USSD messages that are sent to my number and use SMS for me instead from now on, thank you very much.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ndingakwazi njani ukufumana zonke ezi updates zam ezivela kuMomConnect kuWhatsApp endaweni yokuba ndisebenzise iSMS rhoqo ngalo lonke ixesha?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ngicela ushintshele kakhulu indlela eningithumelela ngayo imiyalezo yami uye kwiSMS ngoba angisenayo iWhatsApp data eyanele neze neze.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ek verkies eintlik die gerieflike WhatsApp kanaal vir al my toekomstige belangrike MomConnect boodskappe, as dit enigsins vir julle moontlik is om te doen.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is it at all technically possible for MomConnect to send important health alerts to both my registered SMS and my WhatsApp channels simultaneously for backup?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is using my primary personal email address an available and also a viable option for receiving these important weekly MomConnect updates from your service?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please make absolutely sure to only use the WhatsApp channel for directly contacting me with any MomConnect information or updates going forward from today.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How can I easily and quickly opt back into receiving all my messages on the standard SMS channel if I had previously chosen to use the WhatsApp service?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "The USSD channel is now much preferred by me for all communication due to ongoing poor network signal and connectivity issues with WhatsApp in my specific residential area.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can you please arrange to send all future MomConnect messages to a completely different alternative phone number via WhatsApp for me instead of this current one?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please can you confirm for me that my preferred communication channel has been successfully switched over to the standard SMS channel as I recently requested?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I specifically and heavily rely on the USSD channel for all my MomConnect messages; pls ensure that it's correctly enabled and fully working for my registered number.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My primary WhatsApp application is not working correctly at the moment due to some technical phone issues; please kindly use SMS for me for now until it's properly fixed.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Which particular communication channel is generally most recommended for most MomConnect users to ensure maximum reliability and timely delivery of messages?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How do I officially go about updating my preferred communication channel within the MomConnect system settings or through your user portal if there is one?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is it currently possible to get any MomConnect reminders or important alerts via a messaging service like Telegram as well, or is it only SMS/WhatsApp?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please make sure to only contact me via standard SMS messages from this point onwards, and not use any other available communication channel for me.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is there a dedicated MomConnect mobile app currently available that conveniently provides all these helpful messages and updates as in-app notifications instead of texts?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can I temporarily choose to pause all my incoming WhatsApp messages from MomConnect for a short while without completely opting out of the entire service?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Why did my preferred MomConnect communication channel suddenly just change from WhatsApp back to SMS without me even asking for it to be changed?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please could you revert my main communication channel for MomConnect back to the standard SMS channel as soon as it's possible for you to do so.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can I change to email for MomConnect messages?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I want to get updates on USSD.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Switch my MomConnect to WhatsApp.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Use SMS for MomConnect updates.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Is there a MomConnect app?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My EDD is incorrect, please update it. It should be October 25th.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need to update my primary phone number; my new contact is 071 234 5678.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can you please correct my baby's date of birth in your system? It was the 15th of May, not the 16th.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I have recently moved clinics; I now attend the Gugulethu MOU. Please update my file accordingly.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Could you please change my surname? I got married last month, and it's now Nkosi.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My residential address has changed since I registered; how do I update this information with MomConnect?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please update my record: I had my baby last Tuesday, a healthy girl. (Distinguish from Switch to Postbirth by focusing on \"update record\" if user is just informing of a fact for their file, not necessarily triggering new message series yet)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My ID number seems to be incorrect in your system; can I provide the correct one for an update?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need to change the main facility code that is associated with my current MomConnect profile.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please update my expected due date in your records, as my doctor has recently revised it based on a scan.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My primary contact number for MomConnect needs to be updated urgently, as my old one is no longer active.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Could you please fix the spelling of my first name in your system? It should be Nonhle, not Nonhke.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I actually gave birth to healthy twins, not a single baby as previously recorded! Please update this important info.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My current attending clinic is now the Khayelitsha Site B clinic; please change this from my old clinic details.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please update my status to reflect that I have now successfully delivered my baby. (Again, borderline with Switch to Postbirth - this phrasing tests it)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ndicela nihlaziye inombolo yam yefowuni yam entsha kuba endala ayisasebenzi. (Please update my new phone number because the old one is no longer working.)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Usuku lokuzalwa lomntwana wam alulunganga neze kwi records zenu, nceda nililungise ngokukhawuleza. (My child's date of birth is not correct at all in your records, please fix it quickly.)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My korrekte EDD het nou verander na die 20ste Augustus; kan julle dit asseblief dringend bywerk op my profiel? (My correct EDD has now changed to the 20th of August; can you please update it urgently on my profile?)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need to provide my new physical home address for your official records with MomConnect.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please make a note of my official change of surname from Dlamini to Van Wyk on all my details.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My name is Jabulile.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "You can just call me Lindiwe for short.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My registered name for your system should be Michael P. Jordan.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "For the record, please ensure you call me Precious in all communications.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need to update my name to [Example New Name] from [Example Old Name].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My new phone number is [new phone number].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My EDD has changed to [new date].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My correct clinic is now [new clinic name].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please use this ID number: [ID number].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can you change my listed next of kin?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need to update my medical aid number.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My marital status is now [new status].", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How do I update my proof of address?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please update my risk status.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My gestational age needs correction.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Update my personal file.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Change emergency contact.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How can I effectively ensure my baby will not get HIV from me during the birthing process itself?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What is the specific name of the antiretroviral syrup the newborn baby typically needs to take daily if their mother is diagnosed as HIV positive?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it true that attempting any form of mixed feeding (using both breastmilk and formula milk) can be particularly dangerous for the baby if I have HIV?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How often and at what specific ages or key developmental milestones does my new baby need to be properly tested for HIV after they are born, especially if I am HIV positive?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it generally considered safe or even medically advisable for me to completely stop taking my own ARVs (antiretrovirals) immediately after my baby is born if I'm HIV+ and was on treatment?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the most current official South African Department of Health guidelines regarding safe and recommended breastfeeding practices for all HIV positive mothers who are on effective ARV treatment?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "If my own personal viral load has been confirmed by recent tests as being completely undetectable, is there still any remaining measurable risk of HIV transmission from me to my precious baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What kind of specific local community support services or helpful peer groups are readily available in my general area for new mothers who are currently living with HIV?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Does the standard ARV syrup that the baby is usually required to take as part of the PMTCT program have any common or potentially serious side effects that I should be made aware of?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How exactly does the PMTCT (Prevention of Mother-to-Child Transmission) program effectively work to protect my developing baby if I was only diagnosed with the HIV virus very late in my current pregnancy?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What exactly is infant PEP (Post-Exposure Prophylaxis) in the specific context of HIV prevention, and in what particular circumstances or situations is it typically administered to a vulnerable newborn baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can you please help me understand and explain what my baby's recent PCR (Polymerase Chain Reaction) HIV test results actually mean in simple, clear, and easy-to-understand terms?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it considered critically important for my current partner or the baby's father to also be tested for HIV now that my own HIV positive status is known, especially for successful PMTCT outcomes?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the most effective and medically proven steps that I can personally take to significantly minimize any potential HIV transmission risk to my newborn baby while I am actively breastfeeding them?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Where can I readily access confidential PMTCT counseling services and also find ongoing emotional or psychological support within my local community or at my attending clinic?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Ngabe kuphephile ngempela ukuba ngincelise umntwana wami ibele nsukuzonke uma ngine HIV kodwa ngidla amaphilisi ami ngendlela efanele njengoba kushilo udokotela? (Is it really safe for me to breastfeed my child daily if I have HIV but I take my pills correctly every day as the doctor said?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Yeyiphi imishanguzo eqondile futhi ephumelelayo kakhulu ekufuneka isetyenziswe ngumntwana wam omncane ukuze akhuseleke ngokupheleleyo kwi HIV xa mna ndinayo le ntsholongwane emzimbeni wam? (Which exact and most effective medications must be used by my young child so that they are completely protected from HIV if I have this virus in my body?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How do I best and most consistently manage the routine of taking my own prescribed ARVs (antiretrovirals) every single day without fail while also simultaneously caring for a very demanding and often unpredictable newborn baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are all the key, unmissable, and absolutely essential elements of the comprehensive national PMTCT program that is currently offered here in South Africa for all pregnant women living with HIV?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is using commercially available formula milk exclusively for feeding my baby a completely safe, nutritionally adequate, and medically recommended alternative for HIV positive moms to effectively prevent any possible mother-to-child transmission of HIV?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I have some questions about Nevirapine for my baby as part of PMTCT.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What are the ARVs for an infant if the mother is HIV positive, as per PMTCT?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can you explain HIV and safe breastfeeding practices for PMTCT?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Are there any side effects of PMTCT medication for an infant?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is partner HIV testing important for the success of PMTCT?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What should I do if I accidentally miss a dose of the PMTCT medication for my baby?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How does an undetectable viral load affect the risk to my baby during PMTCT?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Are there any PMTCT support groups available near my area?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How long do the PMTCT medications typically continue for the baby after birth?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can I get free ARVs for the PMTCT program at my government clinic?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I need advice on how to disclose my HIV status to my partner for PMTCT reasons.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Are there any newer or alternative PMTCT medications available in South Africa?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What exactly are ARVs and who specifically needs to take them in the context of PMTCT?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "PMTCT treatment options.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "HIV viral load and baby.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Baby's HIV test schedule.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Preventing HIV transmission to child.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "PMTCT feeding choices.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Hi MomConnect, my new baby girl was born safely yesterday morning! Please could you switch me over to the correct postbirth messages series now?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I've just successfully delivered my healthy baby son this morning; I now need my MomConnect status to be officially updated to postnatal as soon as possible, please.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I'm officially no longer pregnant as my beautiful new baby is finally here with us! Can I please start getting information on essential newborn care and my postpartum recovery instead?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please kindly change my current message subscription settings with MomConnect to fully reflect that my precious baby has now been successfully born.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I had the baby on Monday morning at the hospital; can I now get some practical newborn care tips and also useful postnatal advice from the MomConnect service?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Could you please urgently update my profile status: I have now Delivered my baby. Please ensure I start receiving all relevant postnatal health information from MomConnect from this point onwards.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My little one has finally arrived safe and sound into the world! Can you please switch the type of content of the messages I receive from MomConnect accordingly to suit my new needs?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I now urgently need some help and practical advice with various breastfeeding techniques; pls ensure I start getting relevant postnatal support messages from MomConnect as soon as possible.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "An update is required for my MomConnect profile: My baby was delivered successfully via a planned C-section. I now need some helpful recovery information and practical healing tips from MomConnect.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I am formally requesting a complete switch to your comprehensive postnatal message series for new mothers as my new baby is now officially born and at home with me.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ndibelekile izolo ebusuku kakhulu emva kwexesha elide, ndicela ningithumelele ngoku ngokukhawuleza imiyalezo yomntwana osandul' ukuzalwa nceda kakhulu. (I gave birth late last night after a long time, please now quickly send me messages for a newborn child, please very much.)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ingane yami isifikile iphilile kahle futhi ikhulile, ngicela ukushintshelwa manje ngokushesha okukhulu kuma-message e-postnatal period ukuze ngifunde. (My child has arrived healthy, well and grown, I request to be switched now very quickly to messages for the postnatal period so I can learn.)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My liewe klein baba is uiteindelik gebore en is gesond, kan ek nou die ander reeks boodskappe vir nuwe mammas en babasorg kry asseblief? (My dear little baby is finally born and is healthy, can I now get the other series of messages for new moms and baby care please?)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I actually delivered healthy and beautiful twins yesterday afternoon! Please make sure to update my MomConnect profile and ensure I receive appropriate messages for multiples.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "How do I officially switch my current MomConnect messages over to the dedicated baby care and new mom support series now that I've successfully given birth?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My routine pregnancy related messages are no longer needed or relevant at all as my precious little baby was born safely and soundly last week.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please could you now start sending me detailed information about crucial baby developmental milestones and essential early childhood development now that my baby is finally here with us?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I now need some very practical advice from MomConnect specifically on my postpartum recovery process and also on looking after my own health as a brand new mother.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My child arrived safe and sound into the world a few days ago after a long labour; please can you urgently update my current status with MomConnect?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please immediately activate the full and complete postnatal content stream for my registered MomConnect account from today onwards if possible.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Can you please fully transition me over to the new mom message stream now that I've officially given birth to my first child?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Important information about the correct process of baby birth registration is what I really need from MomConnect now that my beautiful baby has finally arrived.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Please ensure my MomConnect status is correctly updated to 'delivered' and that I begin to receive all the relevant new messages for this stage.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I just delivered my healthy baby boy today at home, pls update my status with you and send new info.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I've delivered my twins! Please update my MomConnect profile and send me messages suitable for multiple newborns.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Ndibelekile izolo ntambama, ndicela imiyalezo efanelekileyo yomntwana osandul' ukuzalwa. (I gave birth yesterday afternoon, I request suitable messages for a newborn child.)", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I am now ready for the next stage of MomConnect messages as my actual delivery has happened successfully.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My recent delivery happened as planned, please could you switch me over to the new mom content stream?", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Baby has arrived safely, please update my message preferences now.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "It's time to switch to the new baby messages, I've given birth.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Update me to postnatal content.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Baby born! Switch messages please.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "It's a beautiful boy/girl, time for the new messages from you please.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I need post birth information now as I'm no longer pregnant.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "I had my little one a week ago, please update.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "Postpartum messages start now.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "My pregnancy is over, baby is here.", "label": "OTHER", "other_subtype": "ACCOUNT_UPDATE"}
+{"text": "When is my next clinic appointment actually scheduled for after my very first antenatal visit that I had last month at the [Clinic Name] clinic?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can you please quickly remind me what specific time my important hospital appointment is set for on this coming Friday afternoon?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I urgently need to know my next crucial ANC (Antenatal Care) visit date at the clinic as I seem to have unfortunately lost my original blue appointment card.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What normally and typically happens during the routine 20 week pregnancy scan and detailed consultation appointment at the local government clinic?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is it at all possible for me to try and successfully change my existing scheduled clinic appointment from an early morning slot to a much later afternoon one instead?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Do I specifically need to ensure I fast (meaning not eat anything at all) before my scheduled clinic blood test appointment for tomorrow morning?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I think I might have unfortunately and accidentally missed my crucial clinic date that was scheduled for yesterday afternoon; what exactly should I do now about it?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can you please check and then confirm the correct date and also the specific allocated time for my upcoming important 6 week postnatal checkup for myself at my usual clinic?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What essential items or important documents should I remember to bring along with me for my precious baby's very first official clinic visit after their recent birth?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How many weeks apart are the standard antenatal clinic appointments usually scheduled for most patients during the entire last trimester of their pregnancy term?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I haven't yet received the usual helpful SMS reminder from MomConnect for my next upcoming clinic visit, which I believe is quite soon now.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is my husband, or my current partner, generally allowed by clinic policy to come with me into the actual private consultation room for the scheduled antenatal appointment?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What is the direct contact phone number for the [Specific Clinic Name] clinic so that I can try to call them and reschedule my existing booked appointment for next week?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I just need to quickly confirm my important hospital appointment that is currently scheduled for next Wednesday morning at precisely 10am, is that still correct?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Ngimele ngiye nini futhi ekliniki yami yase [Indawo/Place Name] ukuze ngikwazi ukubonana nodokotela wami ngesimo sami? (When must I go again to my clinic in [Place Name] so that I can see my doctor about my condition?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Ndilibele kakkhulu ixesha lokuya kwam eklinikhi ngomso kusasa ngo9, ungakwazi na ukundikhumbuza ngalo ngokukhawuleza nangokuqinisekileyo? (I've completely forgotten the time for my clinic visit tomorrow morning at 9, can you please remind me of it quickly and for sure?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Wat moet ek alles belangrik en noodsaaklik onthou om saam te neem vir my volgende baie belangrike en volledige kliniekafspraak by die groot hospitaal? (What all important and necessary things must I remember to take with me for my next very important and complete clinic appointment at the big hospital?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is my follow-up appointment that I booked at the local clinic for the 15th of this current month definitely still confirmed in your system as scheduled?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Please could you help me to quickly check my next scheduled routine clinic visit date and also the specific allocated time if that's at all possible for you to do?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "No SMS reminder for my visit next week.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Kumele ngiyoyenza nini i-checkup yami elandelayo ekliniki yasekhaya? (When must I go for my next checkup at my home clinic?)", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Do they actually do routine pap smears at this specific facility, or should I make arrangements to go elsewhere for that particular test?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How do I go about booking my new baby's first important immunisation appointment at our local community clinic?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "This is my appointment query regarding my very next scheduled hospital visit.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I need to urgently confirm my existing hospital booking for my planned delivery date next month.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can you check my appointment details please?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "When is my next ANC due?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Details for my clinic visit soon.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Next hospital appointment date?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Help me reschedule my clinic appointment.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "What should I bring to my next clinic check?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "I lost my blue clinic appointment card.", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Is my clinic appointment still on for tomorrow?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "How far is the clinic from here?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Can I get a lift to my appointment?", "label": "OTHER", "other_subtype": "INFORMATION_QUERY"}
+{"text": "Your Standard Bank account needs urgent verification! CLICK NOW to avoid immediate suspension: [suspicious-link-standardbank]", "label": "NOISE_SPAM"}
+{"text": "You can lose belly weight fast and very easy with our amazing new natural slimming product! Limited stock available now only!", "label": "NOISE_SPAM"}
+{"text": "CONGRATULATIONS LUCKY USER! You have just instantly won R10,000 in cash! Reply with YES to this message to claim your big prize now!", "label": "NOISE_SPAM"}
+{"text": "Are you feeling Lonely tonight? Hot local Cape Town based singles are currently waiting online to chat with YOU right now! Reply with HOT to connect instantly with them!", "label": "NOISE_SPAM"}
+{"text": "You can easily make up to R5000 per day by simply working from the comfort of your own home! Very Easy setup is required! Visit our website at [spam-link-makemoney-fast] for more detailed information.", "label": "NOISE_SPAM"}
+{"text": "We offer very cheap personal loans that are approved instantly for almost everyone who applies! Absolutely No credit check will be needed at all! Call our friendly agent on 083 SPAM SPAM SPAM now for cash.", "label": "NOISE_SPAM"}
+{"text": "Your City of Cape Town municipal electricity account is now seriously overdue for payment! You must Pay the outstanding amount now to avoid immediate and inconvenient disconnection of your power supply: [phishing-link- Eskom-CoCT-pay]", "label": "NOISE_SPAM"}
+{"text": "!!!!!!!!!!! GET 1GB FREE MOBILE DATA NOW !!!!!!!!!! CLICK THIS SPECIAL PROMO LINK IMMEDIATELY BEFORE IT EXPIRES !!!!!!!!!!!!", "label": "NOISE_SPAM"}
+{"text": "Why not invest in new and exciting Crypto coins today for truly massive potential financial returns on your investment! GUARANTEED DAILY PROFIT FOR ALL NEW AND EXISTING INVESTORS!", "label": "NOISE_SPAM"}
+{"text": "This one extremely simple life changing financial trick will totally and completely change your entire financial life situation for the better forever! Watch this amazing short video now to learn how: [spam-link- lifechange-money]", "label": "NOISE_SPAM"}
+{"text": "H E L L O My Dearest and Respected Friend, Can you please kindly and urgently assist me to help transfer $10 Million USD from my locked overseas bank account? Please Reply to this message for more private and confidential details about the transaction.", "label": "NOISE_SPAM"}
+{"text": "Get a very special discounted offer on comprehensive car insurance just for you today only this week! Get your free no-obligation quote right here -> [spam-link- insurance-quote-now]", "label": "NOISE_SPAM"}
+{"text": "This is a completely random and unsolicited text message that was sent to you by mistake asjdhakjsdhkasjhdkjashdkjahsdkjfh qwertpoiuy zxcvbnm lkjhgfds", "label": "NOISE_SPAM"}
+{"text": "Urgent Alert System Notification: You have (1) new important and unread voicemail message that is waiting for you to listen to it now: [suspicious-link-voicemail-scam-alert-now]", "label": "NOISE_SPAM"}
+{"text": "Do you happen to need a special and powerful prayer for something specific in your life today or this week? Send your most urgent prayer request to us now for immediate attention! Have a truly Blessed and absolutely wonderful day ahead!", "label": "NOISE_SPAM"}
+{"text": "You can very easily increase your current manhood size up to an XtraLarge size NATURALLY and also very safely! Order your supply of this amazing product today for very fast and highly effective noticeable results now!", "label": "NOISE_SPAM"}
+{"text": "Please urgently claim your important new SASSA R350 social relief of distress grant update information by clicking on this official looking link here: [phishing-link-sassa-grant-scam-update]", "label": "NOISE_SPAM"}
+{"text": "Do you really want much whiter and also significantly brighter teeth in just one single week from this point forward? Amazing dental cosmetic results are fully guaranteed! Buy this revolutionary new product now online from our store!", "label": "NOISE_SPAM"}
+{"text": "We have many SECRET and well-paying mystery shopper jobs currently available now in your local residential area, paying up to R2000/week in cash, please contact Agent Betty on her personal WhatsApp number for details.", "label": "NOISE_SPAM"}
+{"text": "Urgent Security Warning! Your Android mobile phone has a dangerous and very critical system VIRUS infection that needs immediate attention! You must Scan your phone immediately and urgently now using this special provided link: [malware-link-virus-scan-android-now]", "label": "NOISE_SPAM"}
+{"text": "You've won a free holiday package! Click to claim!", "label": "NOISE_SPAM"}
+{"text": "Check out this amazing deal, 90% off!", "label": "NOISE_SPAM"}
+{"text": "Your computer is infected, call this number.", "label": "NOISE_SPAM"}
+{"text": "Secret to making millions revealed!", "label": "NOISE_SPAM"}
+{"text": "Free psychic reading, find your future.", "label": "NOISE_SPAM"}
+{"text": "Unclaimed parcel for you, confirm details.", "label": "NOISE_SPAM"}
+{"text": "Message from a long lost relative with inheritance.", "label": "NOISE_SPAM"}
+{"text": "Click to see who has a crush on you.", "label": "NOISE_SPAM"}
+{"text": "Your subscription is expiring, renew here [false link].", "label": "NOISE_SPAM"}
+{"text": "Free gift card, just complete this survey.", "label": "NOISE_SPAM"}
+{"text": "Get followers fast on social media.", "label": "NOISE_SPAM"}
+{"text": "Win big at our online casino.", "label": "NOISE_SPAM"}
+{"text": "Cheap medication no prescription.", "label": "NOISE_SPAM"}
+{"text": "Mystery shopper job offer.", "label": "NOISE_SPAM"}
+{"text": "Financial freedom seminar.", "label": "NOISE_SPAM"}
