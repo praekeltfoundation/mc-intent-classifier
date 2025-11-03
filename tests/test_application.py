@@ -145,3 +145,69 @@ def test_nlu_invalid(
     )
     assert response.status_code == 400
     assert response.json == {"error": "The 'question' parameter is required."}
+
+
+@pytest.mark.parametrize(
+    "text, expected_mock_label, expected_mock_sub_intent",
+    [
+        # User's bug report examples
+        ("Good service", "FEEDBACK", "COMPLIMENT"),
+        ("dirty clinic", "FEEDBACK", "COMPLAINT"),
+        ("Service was good", "FEEDBACK", "COMPLIMENT"),
+        # A known-good example to ensure it's NOT babyloss
+        ("Staff was friendly", "FEEDBACK", "COMPLIMENT"),
+        # An 'OTHER' example that should also not be babyloss
+        ("Next clinic appointment when?", "OTHER", "INFORMATION_QUERY"),
+    ],
+)
+def test_nlu_babyloss_negative_cases(
+    client: FlaskClient,
+    mocker: MockerFixture,
+    basic_auth_headers: dict[str, str],
+    text: str,
+    expected_mock_label: str,
+    expected_mock_sub_intent: str,
+) -> None:
+    """
+    Tests that common feedback or other messages are NOT misclassified as
+    babyloss by the /nlu/babyloss/ endpoint.
+
+    This test mocks the classifier's *correct* prediction (e.g., FEEDBACK)
+    and asserts that the endpoint logic correctly returns "babyloss: false".
+    """
+    mock_classifier = mocker.patch("src.application.classifier")
+
+    # 1. Mock the classifier's *correct* response for this text
+    enrichment = Enrichment(sub_reason=expected_mock_sub_intent)
+
+    mock_classifier.predict.return_value = PredictionResponse(
+        model_version="test-v1",
+        intents=[
+            IntentResult(
+                label=expected_mock_label,
+                key=expected_mock_label,
+                probability=0.95,
+                enrichment=enrichment,
+            )
+        ],
+        review_status="CLASSIFIED",
+    )
+
+    # 2. Call the endpoint we are testing
+    response = client.get(f"/nlu/babyloss/?question={text}", headers=basic_auth_headers)
+
+    # 3. Assert the results
+    assert response.status_code == 200
+
+    # The /nlu/babyloss/ endpoint logic checks the prediction.
+    # Since the top label is FEEDBACK or OTHER, it will not find "BABY_LOSS".
+    expected_json = {
+        "babyloss": False,
+        "model_version": "test-v1",
+        "parent_label": expected_mock_label,
+        "sub_intent": expected_mock_sub_intent,
+        "probability": 0.95,
+        "review_status": "CLASSIFIED",
+    }
+    assert response.json == expected_json
+    mock_classifier.predict.assert_called_once_with(text)

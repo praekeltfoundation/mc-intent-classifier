@@ -148,22 +148,8 @@ def _find_optimal_thresholds(
             continue
 
         f1_scores = np.nan_to_num((2 * precision * recall) / (precision + recall))
-        if class_name == "SENSITIVE_EXIT":
-            target_recall = 0.99
-            high_recall_indices = np.where(recall >= target_recall)[0]
-            best_idx = (
-                high_recall_indices[0]
-                if len(high_recall_indices) > 0
-                else np.argmax(f1_scores)
-            )
-            strategy = (
-                f"Recall >= {target_recall}"
-                if len(high_recall_indices) > 0
-                else "F1-Max (Fallback)"
-            )
-        else:
-            best_idx = np.argmax(f1_scores)
-            strategy = "F1-Max"
+        best_idx = np.argmax(f1_scores)
+        strategy = "F1-Max"
 
         optimal_threshold = class_thresholds[best_idx]
         thresholds[class_name] = round(float(optimal_threshold), 4)
