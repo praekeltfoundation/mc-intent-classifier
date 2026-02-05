@@ -69,6 +69,7 @@ class TestTurnAPIClient:
         mock_post.assert_called_once_with(
             "https://api.turn.io/v1/messages/msg-123/labels",
             json={"labels": ["compliment"]},
+            timeout=30,
         )
 
         # Verify response
