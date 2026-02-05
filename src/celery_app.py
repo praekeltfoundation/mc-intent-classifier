@@ -8,16 +8,13 @@ from celery import Celery
 celery_app = Celery("mc-intent-classifier")
 
 # RabbitMQ broker configuration
-broker_url = os.environ.get("CELERY_BROKER_URL", "amqp://guest:guest@localhost:5672/")
-result_backend = os.environ.get("CELERY_RESULT_BACKEND", "rpc://")
+broker_url = os.environ.get("CELERY_BROKER_URL", "amqp://guest:guest@localhost:5672//")
 
 # Celery configuration
 celery_app.conf.update(
     broker_url=broker_url,
-    result_backend=result_backend,
     task_serializer="json",
     accept_content=["json"],
-    result_serializer="json",
     timezone="UTC",
     enable_utc=True,
     task_track_started=True,

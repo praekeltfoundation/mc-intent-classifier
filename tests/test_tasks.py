@@ -13,13 +13,13 @@ class TestHelloWorldTask:
 
     def test_hello_world_default(self):
         """Test hello world task with default parameter."""
-        result = hello_world.delay()
-        assert result.get() == {"status": "success", "message": "Hello, World!"}
+        result = hello_world()
+        assert result == {"status": "success", "message": "Hello, World!"}
 
     def test_hello_world_custom_name(self):
         """Test hello world task with custom name."""
-        result = hello_world.delay("Celery")
-        assert result.get() == {"status": "success", "message": "Hello, Celery!"}
+        result = hello_world("Celery")
+        assert result == {"status": "success", "message": "Hello, Celery!"}
 
     def test_hello_world_synchronous(self):
         """Test hello world task called synchronously."""
@@ -41,12 +41,7 @@ class TestCeleryConfiguration:
         # Should either be from env var or default
         assert "amqp://" in celery_app.conf.broker_url
 
-    def test_celery_result_backend_configured(self):
-        """Test that result backend is configured."""
-        assert celery_app.conf.result_backend is not None
-
     def test_task_serializer_is_json(self):
         """Test that task serializer is set to JSON."""
         assert celery_app.conf.task_serializer == "json"
-        assert celery_app.conf.result_serializer == "json"
         assert "json" in celery_app.conf.accept_content
