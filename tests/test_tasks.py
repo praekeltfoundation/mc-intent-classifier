@@ -1,7 +1,5 @@
 """Tests for Celery tasks."""
 
-import os
-
 from src.celery_app import celery_app
 from src.tasks import hello_world
 
