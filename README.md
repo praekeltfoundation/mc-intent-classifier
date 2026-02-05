@@ -101,5 +101,7 @@ There is a [docker image](https://github.com/praekeltfoundation/mc-intent-classi
 | CELERY_BROKER_URL | RabbitMQ connection URL (e.g., amqp://user:pass@host:5672/) | Yes (for async processing) |
 | CELERY_RESULT_BACKEND | Result backend URL (e.g., rpc://) | No (defaults to rpc://) |
 | CELERY_TASK_ALWAYS_EAGER | Set to "true" for synchronous task execution (testing only) | No |
+| TURN_API_BASE_URL | Turn API base URL (e.g., https://whatsapp.turn.io) | Yes (for Turn integration) |
+| TURN_API_TOKEN | Turn API authentication token (Bearer token) | Yes (for Turn integration) |
 
 **Note:** You need to run both the Flask app (webhook receiver) and Celery worker (task processor) containers for full functionality.
