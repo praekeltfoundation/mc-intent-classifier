@@ -73,7 +73,7 @@ class TurnAPIClient:
         try:
             logger.info(f"Updating Turn message {message_id} with label: {label}")
 
-            response = self.session.post(endpoint, json=payload)
+            response = self.session.post(endpoint, json=payload, timeout=30)
 
             # Check for errors
             if response.status_code >= 500:
