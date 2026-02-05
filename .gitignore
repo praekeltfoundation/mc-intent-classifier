@@ -81,3 +81,6 @@ local_settings.py
 scripts/exports/
 
 celerybeat-schedule
+
+# Model stuff
+src/data/intent_embeddings.json

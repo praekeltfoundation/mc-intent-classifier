@@ -17,6 +17,27 @@ To run a local worker, set NLU_USERNAME and NLU_PASSWORD environment variables, 
 ~ poetry run flask --app src.application run
 ```
 
+### Running the Celery Worker
+
+For async task processing, you need to run a Celery worker. First, ensure you have RabbitMQ running (or another message broker configured via `CELERY_BROKER_URL`).
+
+To start the Celery worker:
+```bash
+~ poetry run celery -A src.celery_app worker --loglevel=info --concurrency=4
+```
+
+To test the Celery connection, you can run the hello world task:
+```python
+from src.tasks import hello_world
+result = hello_world.delay("Test")
+print(result.get())  # Should print: {'status': 'success', 'message': 'Hello, Test!'}
+```
+
+For local development with synchronous execution (no RabbitMQ needed), set:
+```bash
+export CELERY_TASK_ALWAYS_EAGER=true
+```
+
 To run the autoformatting and linting, run
 ```bash
 ~ ruff format && ruff check && mypy --install-types
@@ -72,8 +93,13 @@ To release a new version, follow these steps:
 ## Running in Production
 There is a [docker image](https://github.com/praekeltfoundation/mc-intent-classifier/pkgs/container/mc-intent-classifier) that can be used to easily run this service. It uses the following environment variables for configuration:
 
-| Variable      | Description |
-| ----------    | ----------- |
-| NLU_USERNAME  | The username used for API requests |
-| NLU_PASSWORD  | The password used for API requests |
-| SENTRY_DSN    | Where to send exceptions to |
+| Variable      | Description | Required |
+| ----------    | ----------- | -------- |
+| NLU_USERNAME  | The username used for API requests | Yes (for /nlu/ endpoint) |
+| NLU_PASSWORD  | The password used for API requests | Yes (for /nlu/ endpoint) |
+| SENTRY_DSN    | Where to send exceptions to | No |
+| CELERY_BROKER_URL | RabbitMQ connection URL (e.g., amqp://user:pass@host:5672/) | Yes (for async processing) |
+| CELERY_RESULT_BACKEND | Result backend URL (e.g., rpc://) | No (defaults to rpc://) |
+| CELERY_TASK_ALWAYS_EAGER | Set to "true" for synchronous task execution (testing only) | No |
+
+**Note:** You need to run both the Flask app (webhook receiver) and Celery worker (task processor) containers for full functionality.
