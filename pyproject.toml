@@ -19,6 +19,9 @@ sentry-sdk = {extras = ["flask"], version = "^2.18.0"}
 numpy = "2.2.5"
 torch = "2.6.0"
 sentence-transformers = "^3.1.1"
+celery = {extras = ["amqp"], version = "^5.4.0"}
+httpx = "^0.27.0"
+pydantic = "^2.9.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "^0.7.4"
