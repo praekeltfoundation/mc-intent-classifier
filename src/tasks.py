@@ -23,8 +23,8 @@ try:
         nlu_path=_NLU_PATH,
     )
     logger.info("Intent classifier loaded successfully")
-except Exception as e:
-    logger.error(f"Failed to load intent classifier: {e}")
+except Exception:
+    logger.exception("Failed to load intent classifier")
     classifier = None
 
 
