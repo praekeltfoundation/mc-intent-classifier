@@ -118,7 +118,9 @@ def update_turn_message_label(classification: dict) -> dict:
         turn_client = TurnAPIClient()
         turn_response = turn_client.update_message_label(message_id, intent)
 
-        logger.info(f"Successfully updated Turn message {message_id} with label: {intent}")
+        logger.info(
+            f"Successfully updated Turn message {message_id} with label: {intent}"
+        )
 
         return {
             "message_id": message_id,
