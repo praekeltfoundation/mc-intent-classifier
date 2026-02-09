@@ -48,7 +48,6 @@ def classify_turn_message(message_id: str, message_text: str) -> dict:
             - message_id: The Turn message ID
             - intent: Classified intent label
             - confidence: Classification confidence score
-            - error: Optional error string
 
     Raises:
         ValueError: Classifier not loaded or invalid input

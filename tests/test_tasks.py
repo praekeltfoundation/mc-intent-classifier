@@ -85,9 +85,6 @@ class TestUpdateTurnMessageLabelTask:
 
     def test_update_turn_label_success(self, mocker, monkeypatch):
         """Test successful Turn API update."""
-        # Set up Turn API env vars
-        monkeypatch.setenv("TURN_API_BASE_URL", "https://api.turn.io")
-        monkeypatch.setenv("TURN_API_TOKEN", "test-token")
 
         # Mock Turn API client
         mock_turn_client = mocker.Mock()
@@ -163,3 +160,23 @@ class TestClassifyAndUpdateChain:
         assert len(chain_sig.tasks) == 2
         assert chain_sig.tasks[0].name == classify_turn_message.name
         assert chain_sig.tasks[1].name == update_turn_message_label.name
+        assert chain_sig.tasks[0].args == ("msg-123", "Hello there")
+        assert chain_sig.tasks[1].args == ()
+
+    def test_chain_passes_result_to_update(self, mocker):
+        """Ensure classifier result is passed to update_turn_message_label."""
+        mock_classifier = mocker.Mock()
+        mock_classifier.classify.return_value = ("compliment", 0.95)
+        mocker.patch("src.tasks.classifier", mock_classifier)
+
+        mock_update = mocker.patch(
+            "src.tasks.update_turn_message_label.run",
+            return_value={"status": "success"},
+        )
+
+        chain_sig = build_classify_and_update_chain("msg-123", "Thank you!")
+        chain_sig.apply()
+
+        mock_update.assert_called_once_with(
+            {"message_id": "msg-123", "intent": "compliment", "confidence": 0.95}
+        )
