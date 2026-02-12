@@ -1,10 +1,9 @@
 """Turn API client for updating message labels."""
 
 import logging
-import os
-
 import requests
 
+from src.config import load_config
 logger = logging.getLogger(__name__)
 
 
@@ -30,8 +29,9 @@ class TurnAPIClient:
         Raises:
             ValueError: If TURN_API_BASE_URL or TURN_API_TOKEN are not set
         """
-        self.base_url = os.environ.get("TURN_API_BASE_URL", "").rstrip("/")
-        self.api_token = os.environ.get("TURN_API_TOKEN", "")
+        config = load_config()
+        self.base_url = config["TURN_API_BASE_URL"]
+        self.api_token = config["TURN_API_TOKEN"]
 
         if not self.base_url:
             msg = "TURN_API_BASE_URL must be set"
