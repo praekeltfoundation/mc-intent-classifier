@@ -1,9 +1,11 @@
 """Turn API client for updating message labels."""
 
 import logging
+
 import requests
 
 from src.config import load_config
+
 logger = logging.getLogger(__name__)
 
 

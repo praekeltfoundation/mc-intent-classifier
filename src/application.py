@@ -1,4 +1,5 @@
 import importlib.metadata
+
 import sentry_sdk
 from flask import Flask, request
 from prometheus_flask_exporter import PrometheusMetrics

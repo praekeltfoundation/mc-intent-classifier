@@ -4,7 +4,6 @@ from __future__ import annotations
 
 import os
 
-
 DEFAULT_CELERY_BROKER_URL = "amqp://guest:guest@localhost:5672//"
 
 
@@ -18,9 +17,7 @@ def load_config() -> dict:
         "CELERY_BROKER_URL": os.environ.get(
             "CELERY_BROKER_URL", DEFAULT_CELERY_BROKER_URL
         ),
-        "CELERY_TASK_ALWAYS_EAGER": os.environ.get(
-            "CELERY_TASK_ALWAYS_EAGER", "false"
-        )
+        "CELERY_TASK_ALWAYS_EAGER": os.environ.get("CELERY_TASK_ALWAYS_EAGER", "false")
         .lower()
         .strip()
         == "true",

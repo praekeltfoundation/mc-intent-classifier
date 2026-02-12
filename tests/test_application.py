@@ -104,7 +104,9 @@ def test_nlu_missing_json_body(client):
 def test_nlu_invalid_payload(client):
     """"""
 
-    body = json.dumps({"not_messages": []}, separators=(",", ":"), sort_keys=True).encode()
+    body = json.dumps(
+        {"not_messages": []}, separators=(",", ":"), sort_keys=True
+    ).encode()
     signature = _sign_payload(body, app.config["TURN_HMAC_SECRET"])
 
     response = client.post(
