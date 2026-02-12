@@ -1,53 +1,58 @@
 import importlib.metadata
-import os
-from pathlib import Path
 
 import sentry_sdk
 from flask import Flask, request
-from flask_basicauth import BasicAuth
 from prometheus_flask_exporter import PrometheusMetrics
+from pydantic import ValidationError
 
-from src.intent_classifier import IntentClassifier
+from src.config import load_config
+from src.tasks import build_classify_and_update_chain
+from src.turn_webhook import TurnWebhook
+from src.utils import validate_turn_signature
 
 version = importlib.metadata.version("mc-intent-classifier")
 
-dirname = os.path.dirname(__file__)
-DATA_PATH = Path(f"{dirname}/data")
-NLU_FILE_PATH = DATA_PATH / "nlu.yaml"
-EMBEDDINGS_FILE_PATH = DATA_PATH / "intent_embeddings.json"
-
 app = Flask(__name__)
-app.config["BASIC_AUTH_USERNAME"] = os.environ.get("NLU_USERNAME")
-app.config["BASIC_AUTH_PASSWORD"] = os.environ.get("NLU_PASSWORD")
+app.config.from_mapping(load_config())
 
 
-if os.environ.get("SENTRY_DSN"):
+if app.config.get("SENTRY_DSN"):
     sentry_sdk.init(
-        dsn=os.environ.get("SENTRY_DSN"),
+        dsn=app.config.get("SENTRY_DSN"),
         traces_sample_rate=0.0,
     )
-
-basic_auth = BasicAuth(app)
 
 metrics = PrometheusMetrics(app)
 metrics.info("app_info", "Application info", version=version)
 
-classifier = IntentClassifier(
-    embeddings_path=EMBEDDINGS_FILE_PATH, nlu_path=NLU_FILE_PATH
-)
 
-
-@app.route("/nlu/")
-@basic_auth.required
+@app.route("/nlu/", methods=["POST"])
 def nlu():
-    question = request.args.get("question")
+    signature_error = validate_turn_signature(
+        request, app.config.get("TURN_HMAC_SECRET")
+    )
+    if signature_error:
+        return signature_error
 
-    if not question:
-        return {"error": "question is required"}, 400
+    payload = request.get_json(silent=True)
+    if payload is None:
+        return {"error": "json body required"}, 400
 
-    intent, confidence = classifier.classify(question)
-    return {
-        "question": question,
-        "intent": intent,
-        "confidence": confidence,
-    }
+    try:
+        webhook = TurnWebhook.model_validate(payload)
+    except ValidationError as exc:
+        return {"error": "invalid payload", "details": exc.errors()}, 400
+
+    text_messages = [
+        message
+        for message in webhook.messages
+        if message.type == "text" and message.text and message.text.body
+    ]
+
+    for message in text_messages:
+        build_classify_and_update_chain(message.id, message.text.body).apply_async()
+
+    if not text_messages:
+        return {"status": "ignored", "count": 0}
+
+    return {"status": "queued", "count": len(text_messages)}
