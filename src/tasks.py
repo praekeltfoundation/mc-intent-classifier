@@ -1,9 +1,7 @@
-"""Celery tasks for async processing."""
+"""Celery task implementations for worker processes."""
 
 import logging
 from pathlib import Path
-
-from celery import chain
 
 from src.celery_app import celery_app
 from src.intent_classifier import IntentClassifier
@@ -140,11 +138,3 @@ def update_turn_message_label(classification: dict) -> dict:
             exc_info=True,
         )
         raise
-
-
-def build_classify_and_update_chain(message_id: str, message_text: str):
-    """Build a Celery chain that classifies then updates the Turn label."""
-    return chain(
-        classify_turn_message.s(message_id, message_text),
-        update_turn_message_label.s(),
-    )

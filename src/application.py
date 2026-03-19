@@ -6,7 +6,7 @@ from prometheus_flask_exporter import PrometheusMetrics
 from pydantic import ValidationError
 
 from src.config import load_config
-from src.tasks import build_classify_and_update_chain
+from src.queueing import build_classify_and_update_chain
 from src.turn_webhook import TurnWebhook
 from src.utils import validate_turn_signature
 

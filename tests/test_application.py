@@ -105,7 +105,7 @@ def test_nlu_invalid_payload(client):
     """"""
 
     body = json.dumps(
-        {"not_messages": []}, separators=(",", ":"), sort_keys=True
+        {"messages": "not-a-list"}, separators=(",", ":"), sort_keys=True
     ).encode()
     signature = _sign_payload(body, app.config["TURN_HMAC_SECRET"])
 
@@ -117,3 +117,31 @@ def test_nlu_invalid_payload(client):
     )
     assert response.status_code == 400
     assert response.json["error"] == "invalid payload"
+
+
+def test_nlu_status_only_payload_is_ignored(client, mocker):
+    """Status webhooks should be accepted and ignored."""
+
+    mock_build_chain = mocker.patch("src.application.build_classify_and_update_chain")
+
+    payload = {
+        "statuses": [
+            {
+                "id": "wamid.HBgLMjc4MzYzNzg1MzEVAgARGBI2QTBBOTM1MDdFNUEwRDJDOEMA",
+                "status": "delivered",
+                "timestamp": "1773842339",
+            }
+        ]
+    }
+    body = json.dumps(payload, separators=(",", ":"), sort_keys=True).encode()
+    signature = _sign_payload(body, app.config["TURN_HMAC_SECRET"])
+
+    response = client.post(
+        "/nlu/",
+        data=body,
+        content_type="application/json",
+        headers={"X-Turn-Hook-Signature": signature},
+    )
+    assert response.status_code == 200
+    assert response.json == {"status": "ignored", "count": 0}
+    mock_build_chain.assert_not_called()

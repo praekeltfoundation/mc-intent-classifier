@@ -3,11 +3,8 @@
 import pytest
 
 from src.celery_app import celery_app
-from src.tasks import (
-    build_classify_and_update_chain,
-    classify_turn_message,
-    update_turn_message_label,
-)
+from src.queueing import build_classify_and_update_chain
+from src.tasks import classify_turn_message, update_turn_message_label
 from src.turn_client import TurnAPIClientError, TurnAPIServerError
 
 # Enable eager mode for all tests in this module (run tasks synchronously)
