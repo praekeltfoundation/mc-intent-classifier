@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 
 
 class TurnBaseModel(BaseModel):
@@ -16,4 +16,5 @@ class TurnMessage(TurnBaseModel):
 
 
 class TurnWebhook(TurnBaseModel):
-    messages: list[TurnMessage]
+    messages: list[TurnMessage] = Field(default_factory=list)
+    statuses: list[dict] = Field(default_factory=list)
