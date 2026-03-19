@@ -1,0 +1,63 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+
+  api:
+    build:
+      context: .
+    command:
+      [
+        "/.venv/bin/gunicorn",
+        "application:app",
+        "-b",
+        "0.0.0.0:5000",
+        "-w",
+        "4",
+      ]
+    working_dir: /src
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - "5000:5000"
+    environment:
+      TURN_HMAC_SECRET: ${TURN_HMAC_SECRET}
+      TURN_API_BASE_URL: ${TURN_API_BASE_URL}
+      TURN_API_TOKEN: ${TURN_API_TOKEN}
+      SENTRY_DSN: ${SENTRY_DSN:-}
+      CELERY_BROKER_URL: amqp://guest:guest@rabbitmq:5672//
+      CELERY_TASK_ALWAYS_EAGER: "false"
+
+  worker:
+    build:
+      context: .
+    command:
+      [
+        "/.venv/bin/celery",
+        "-A",
+        "src.celery_app",
+        "worker",
+        "--loglevel=info",
+        "--concurrency=4",
+      ]
+    working_dir: /src
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    environment:
+      TURN_HMAC_SECRET: ${TURN_HMAC_SECRET}
+      TURN_API_BASE_URL: ${TURN_API_BASE_URL}
+      TURN_API_TOKEN: ${TURN_API_TOKEN}
+      SENTRY_DSN: ${SENTRY_DSN:-}
+      CELERY_BROKER_URL: amqp://guest:guest@rabbitmq:5672//
+      CELERY_TASK_ALWAYS_EAGER: "false"
+
+volumes:
+  rabbitmq_data:

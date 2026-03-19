@@ -38,6 +38,8 @@ pip-selfcheck.json
 # Environments
 .env/
 .venv/
+.env.docker
+.env
 
 # Installer logs
 pip-log.txt
