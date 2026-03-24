@@ -9,8 +9,10 @@ FROM ghcr.io/praekeltfoundation/python-base-nw:3.11-bullseye
 COPY --from=build .venv/ .venv/
 COPY src src/
 
+ENV PATH="/.venv/bin:${PATH}"
+
 EXPOSE 5000
 
 WORKDIR /src
 
-CMD ["/.venv/bin/gunicorn", "application:app", "-b", "0.0.0.0:5000", "-w", "4"]
+CMD ["gunicorn", "application:app", "-b", "0.0.0.0:5000", "-w", "4"]
