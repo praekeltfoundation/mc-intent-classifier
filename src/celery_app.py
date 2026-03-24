@@ -25,7 +25,10 @@ def queue_warmup_task(**kwargs) -> None:
     """Queue classifier warm-up after the worker is fully ready."""
     del kwargs
 
-    if app_config["CELERY_TASK_ALWAYS_EAGER"] or not app_config["CELERY_WARM_ON_STARTUP"]:
+    if (
+        app_config["CELERY_TASK_ALWAYS_EAGER"]
+        or not app_config["CELERY_WARM_ON_STARTUP"]
+    ):
         return
 
     celery_app.send_task("src.tasks.warm_intent_classifier")
