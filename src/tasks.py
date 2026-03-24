@@ -3,27 +3,42 @@
 import logging
 from pathlib import Path
 
+from celery.signals import worker_process_init
+
 from src.celery_app import celery_app
 from src.intent_classifier import IntentClassifier
 from src.turn_client import TurnAPIClient, TurnAPIServerError
 
 logger = logging.getLogger(__name__)
 
-# Load classifier once at module level for efficiency
-# Model is large and we're classifying thousands of messages
 _DATA_DIR = Path(__file__).parent / "data"
 _EMBEDDINGS_PATH = _DATA_DIR / "intent_embeddings.json"
 _NLU_PATH = _DATA_DIR / "nlu.yaml"
 
-try:
-    classifier = IntentClassifier(
+classifier = None
+
+
+def _load_classifier() -> IntentClassifier:
+    """Load the classifier in the current worker process."""
+    return IntentClassifier(
         embeddings_path=_EMBEDDINGS_PATH,
         nlu_path=_NLU_PATH,
     )
-    logger.info("Intent classifier loaded successfully")
-except Exception:
-    logger.exception("Failed to load intent classifier")
-    classifier = None
+
+
+@worker_process_init.connect
+def initialize_worker(**kwargs) -> None:
+    """Initialize heavy worker state after Celery forks child processes."""
+    del kwargs
+
+    global classifier
+
+    try:
+        classifier = _load_classifier()
+        logger.info("Intent classifier loaded successfully")
+    except Exception:
+        logger.exception("Failed to load intent classifier")
+        classifier = None
 
 
 @celery_app.task(
@@ -51,6 +66,16 @@ def classify_turn_message(message_id: str, message_text: str) -> dict:
         ValueError: Classifier not loaded or invalid input
     """
     # Validate classifier is loaded
+    global classifier
+
+    if classifier is None and not celery_app.conf.task_always_eager:
+        try:
+            classifier = _load_classifier()
+            logger.info("Intent classifier loaded on demand")
+        except Exception:
+            logger.exception("Failed to load intent classifier")
+            classifier = None
+
     if classifier is None:
         error_msg = "Intent classifier not loaded. Cannot classify message."
         logger.error(f"{error_msg} Message ID: {message_id}")
