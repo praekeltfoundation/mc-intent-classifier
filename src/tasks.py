@@ -3,8 +3,6 @@
 import logging
 from pathlib import Path
 
-from celery.signals import worker_process_init
-
 from src.celery_app import celery_app
 from src.intent_classifier import IntentClassifier
 from src.turn_client import TurnAPIClient, TurnAPIServerError
@@ -26,19 +24,29 @@ def _load_classifier() -> IntentClassifier:
     )
 
 
-@worker_process_init.connect
-def initialize_worker(**kwargs) -> None:
-    """Initialize heavy worker state after Celery forks child processes."""
-    del kwargs
-
+def _get_classifier() -> IntentClassifier | None:
+    """Return the process-local classifier, loading it on first use."""
     global classifier
 
-    try:
-        classifier = _load_classifier()
-        logger.info("Intent classifier loaded successfully")
-    except Exception:
-        logger.exception("Failed to load intent classifier")
-        classifier = None
+    if classifier is None and not celery_app.conf.task_always_eager:
+        try:
+            classifier = _load_classifier()
+            logger.info("Intent classifier loaded on demand")
+        except Exception:
+            logger.exception("Failed to load intent classifier")
+            classifier = None
+
+    return classifier
+
+
+@celery_app.task
+def warm_intent_classifier() -> dict:
+    """Warm the process-local classifier so first real task avoids cold start."""
+    loaded_classifier = _get_classifier()
+    if loaded_classifier is None:
+        raise ValueError("Intent classifier not loaded. Warm-up failed.")
+
+    return {"status": "ready"}
 
 
 @celery_app.task(
@@ -66,17 +74,8 @@ def classify_turn_message(message_id: str, message_text: str) -> dict:
         ValueError: Classifier not loaded or invalid input
     """
     # Validate classifier is loaded
-    global classifier
-
-    if classifier is None and not celery_app.conf.task_always_eager:
-        try:
-            classifier = _load_classifier()
-            logger.info("Intent classifier loaded on demand")
-        except Exception:
-            logger.exception("Failed to load intent classifier")
-            classifier = None
-
-    if classifier is None:
+    loaded_classifier = _get_classifier()
+    if loaded_classifier is None:
         error_msg = "Intent classifier not loaded. Cannot classify message."
         logger.error(f"{error_msg} Message ID: {message_id}")
         raise ValueError(error_msg)
@@ -84,7 +83,7 @@ def classify_turn_message(message_id: str, message_text: str) -> dict:
     try:
         # Step 1: Classify the message
         logger.info(f"Classifying message {message_id}: {message_text[:100]}...")
-        intent, confidence = classifier.classify(message_text)
+        intent, confidence = loaded_classifier.classify(message_text)
         logger.info(
             f"Classified message {message_id} as '{intent}' with confidence {confidence:.4f}"
         )

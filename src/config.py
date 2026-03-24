@@ -5,6 +5,9 @@ from __future__ import annotations
 import os
 
 DEFAULT_CELERY_BROKER_URL = "amqp://guest:guest@localhost:5672//"
+DEFAULT_CELERY_TASK_TIME_LIMIT = 900
+DEFAULT_CELERY_TASK_SOFT_TIME_LIMIT = 840
+DEFAULT_CELERY_WARM_ON_STARTUP = False
 
 
 def load_config() -> dict:
@@ -17,6 +20,20 @@ def load_config() -> dict:
         "CELERY_BROKER_URL": os.environ.get(
             "CELERY_BROKER_URL", DEFAULT_CELERY_BROKER_URL
         ),
+        "CELERY_TASK_TIME_LIMIT": int(
+            os.environ.get("CELERY_TASK_TIME_LIMIT", DEFAULT_CELERY_TASK_TIME_LIMIT)
+        ),
+        "CELERY_TASK_SOFT_TIME_LIMIT": int(
+            os.environ.get(
+                "CELERY_TASK_SOFT_TIME_LIMIT", DEFAULT_CELERY_TASK_SOFT_TIME_LIMIT
+            )
+        ),
+        "CELERY_WARM_ON_STARTUP": os.environ.get(
+            "CELERY_WARM_ON_STARTUP", str(DEFAULT_CELERY_WARM_ON_STARTUP)
+        )
+        .lower()
+        .strip()
+        == "true",
         "CELERY_TASK_ALWAYS_EAGER": os.environ.get("CELERY_TASK_ALWAYS_EAGER", "false")
         .lower()
         .strip()
@@ -35,8 +52,8 @@ def load_celery_config(config: dict | None = None) -> dict:
         "timezone": "UTC",
         "enable_utc": True,
         "task_track_started": True,
-        "task_time_limit": 300,  # 5 minutes max per task
-        "task_soft_time_limit": 240,  # 4 minutes soft limit
+        "task_time_limit": config["CELERY_TASK_TIME_LIMIT"],
+        "task_soft_time_limit": config["CELERY_TASK_SOFT_TIME_LIMIT"],
         "worker_prefetch_multiplier": 1,  # Fetch one task at a time for long-running tasks
         "worker_max_tasks_per_child": 1000,  # Restart worker after 1000 tasks
     }

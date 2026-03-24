@@ -4,7 +4,11 @@ import pytest
 
 from src.celery_app import celery_app
 from src.queueing import build_classify_and_update_chain
-from src.tasks import classify_turn_message, update_turn_message_label
+from src.tasks import (
+    classify_turn_message,
+    update_turn_message_label,
+    warm_intent_classifier,
+)
 from src.turn_client import TurnAPIClientError, TurnAPIServerError
 
 # Enable eager mode for all tests in this module (run tasks synchronously)
@@ -75,6 +79,22 @@ class TestClassifyTurnMessageTask:
         # Verify result
         assert result["intent"] == "Unclassified"
         assert result["confidence"] == 0.42
+
+    def test_warm_classifier_success(self, mocker):
+        """Test successful warm-up."""
+        mock_classifier = mocker.Mock()
+        mocker.patch("src.tasks._get_classifier", return_value=mock_classifier)
+
+        result = warm_intent_classifier()
+
+        assert result == {"status": "ready"}
+
+    def test_warm_classifier_not_loaded(self, mocker):
+        """Test warm-up failure when classifier cannot be loaded."""
+        mocker.patch("src.tasks._get_classifier", return_value=None)
+
+        with pytest.raises(ValueError, match="Intent classifier not loaded"):
+            warm_intent_classifier()
 
 
 class TestUpdateTurnMessageLabelTask:
