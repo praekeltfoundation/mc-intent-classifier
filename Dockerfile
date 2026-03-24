@@ -10,6 +10,7 @@ COPY --from=build .venv/ .venv/
 COPY src src/
 
 ENV PATH="/.venv/bin:${PATH}"
+ENV TOKENIZERS_PARALLELISM=false
 
 EXPOSE 5000
 
