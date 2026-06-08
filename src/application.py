@@ -43,14 +43,14 @@ def nlu():
     except ValidationError as exc:
         return {"error": "invalid payload", "details": exc.errors()}, 400
 
-    text_messages = [
-        message
-        for message in webhook.messages
-        if message.type == "text" and message.text and message.text.body
-    ]
+    text_messages: list[tuple[str, str]] = []
+    for message in webhook.messages:
+        if message.type != "text" or message.text is None or not message.text.body:
+            continue
+        text_messages.append((message.id, message.text.body))
 
-    for message in text_messages:
-        build_classify_and_update_chain(message.id, message.text.body).apply_async()
+    for message_id, message_text in text_messages:
+        build_classify_and_update_chain(message_id, message_text).apply_async()
 
     if not text_messages:
         return {"status": "ignored", "count": 0}

@@ -28,6 +28,7 @@ dev = [
     "pre-commit>=4.0.1,<5.0.0",
     "pytest>=8.3.3,<9.0.0",
     "pytest-mock>=3.14.0,<4.0.0",
+    "ty>=0.0.44,<0.1.0",
 ]
 
 [tool.uv]
@@ -36,6 +37,10 @@ required-version = "==0.11.19"
 [tool.uv.build-backend]
 module-name = "src"
 module-root = ""
+
+[tool.ty.environment]
+python-version = "3.11"
+python-platform = "linux"
 
 [build-system]
 requires = ["uv_build>=0.11.19,<0.12"]

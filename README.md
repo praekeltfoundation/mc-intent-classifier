@@ -92,6 +92,12 @@ To run the autoformatting and linting:
 uv run ruff format && uv run ruff check
 ```
 
+To run type checking:
+
+```bash
+uv run ty check src tests
+```
+
 For the test runner, we use [pytest](https://docs.pytest.org/):
 
 ```bash

@@ -40,10 +40,9 @@ class IntentClassifier:
         self.model_name = model_name
         self.embeddings_path = Path(embeddings_path)
         self.nlu_path = Path(nlu_path)
-        self.model: SentenceTransformer | None = None
+        self.model = self._load_model()
         self.mean_embeddings: dict[str, np.ndarray] = {}
 
-        self._load_model()
         if not self.embeddings_path.exists():
             labeled_data = read_yaml(self.nlu_path)
             if not labeled_data:
@@ -64,10 +63,10 @@ class IntentClassifier:
         else:
             self.mean_embeddings = self._load_mean_embeddings()
 
-    def _load_model(self):
+    def _load_model(self) -> SentenceTransformer:
         """Loads the Sentence Transformer model."""
         try:
-            self.model = SentenceTransformer(self.model_name)
+            return SentenceTransformer(self.model_name)
         except Exception as e:
             raise ValueError(f"Error loading model '{self.model_name}': {e}") from e
 
@@ -133,9 +132,6 @@ class IntentClassifier:
         the precomputed MEAN embedding for each intent. Returns empty
         dict on critical error.
         """
-        if self.model is None:
-            raise RuntimeError("Model is not loaded. Cannot calculate similarities.")
-
         try:
             incoming_embedding = self.model.encode([incoming_text])
         except Exception as e:
