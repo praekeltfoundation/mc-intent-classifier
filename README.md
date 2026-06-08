@@ -4,14 +4,14 @@ Model that classifies the intent of inbound messages. It is not intended to be e
 
 ## Development
 
-This project uses [Poetry](https://python-poetry.org/docs/#installation) for packaging and dependency management, so install that first.
+This project uses [uv](https://docs.astral.sh/uv/) for packaging and dependency management, so install that first.
 
 Ensure you're also running at least python 3.11, `python --version`.
 
 Then you can install the dependencies:
 
 ```bash
-poetry install
+uv sync
 ```
 
 ### Local Stack with Docker Compose
@@ -71,13 +71,13 @@ curl -i -X POST http://localhost:5000/nlu/ \
 To run Flask directly:
 
 ```bash
-poetry run flask --app src.application run
+uv run flask --app src.application run
 ```
 
 To run Celery directly (requires RabbitMQ or another broker):
 
 ```bash
-poetry run celery -A src.celery_app worker --loglevel=info --concurrency=4
+uv run celery -A src.celery_app worker --loglevel=info --concurrency=4
 ```
 
 For synchronous local testing (no broker):
@@ -89,13 +89,13 @@ export CELERY_TASK_ALWAYS_EAGER=true
 To run the autoformatting and linting:
 
 ```bash
-poetry run ruff format && poetry run ruff check && poetry run mypy --install-types
+uv run ruff format && uv run ruff check
 ```
 
 For the test runner, we use [pytest](https://docs.pytest.org/):
 
 ```bash
-poetry run pytest
+uv run pytest
 ```
 
 ## Regenerating the embeddings JSON file
@@ -105,7 +105,7 @@ poetry run pytest
 1. Run the Flask app. This should regenerate the embeddings file:
 
 ```bash
-poetry run flask --app src.application run
+uv run flask --app src.application run
 ```
 
 ## Editor configuration
@@ -115,16 +115,16 @@ If you'd like your editor to handle linting and/or formatting for you, here's ho
 ### Visual Studio Code
 
 1. Install the Python and Ruff extensions.
-1. In settings, check the "Python > Linting: Mypy Enabled" box.
-1. In settings, set the "Python > Formatting: Provider" to "black" (apparently `ruff format` is not supported by the Python extension yet, and `black` is probably close enough).
+1. In settings, set Ruff as the default formatter.
 1. If you want formatting to apply automatically, in settings, check the "Editor: Format On Save" checkbox.
 
 Alternatively, add the following to your `settings.json`:
 
 ```json
 {
-  "python.linting.mypyEnabled": true,
-  "python.formatting.provider": "black",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff"
+  },
   "editor.formatOnSave": true
 }
 ```
@@ -136,12 +136,12 @@ To release a new version, follow these steps:
 1. Make sure all relevant PRs are merged and that all necessary QA testing is complete.
 1. Make sure release notes are up to date and accurate.
 1. In one commit on the `main` branch:
-   - Update the version number in `pyproject.toml` to the release version
+   - Update the version number in `[project].version` in `pyproject.toml` to the release version
    - Replace the UNRELEASED header in `CHANGELOG.md` with the release version and date
 1. Tag the release commit with the release version (for example, `v0.2.1` for version `0.2.1`).
 1. Push the release commit and tag.
 1. In one commit on the `main` branch:
-   - Update the version number in `pyproject.toml` to the next pre-release version
+   - Update the version number in `[project].version` in `pyproject.toml` to the next pre-release version
    - Add a new UNRELEASED header in `CHANGELOG.md`
 1. Push the post-release commit.
 

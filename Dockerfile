@@ -1,9 +1,12 @@
-FROM ghcr.io/praekeltfoundation/python-base-nw:3.11-bullseye as build
+FROM ghcr.io/praekeltfoundation/python-base-nw:3.11-bullseye AS build
 
-RUN pip install poetry==1.8.4
-COPY . ./
-RUN poetry config virtualenvs.in-project true \
-    && poetry install --no-dev --no-interaction --no-ansi
+COPY --from=ghcr.io/astral-sh/uv:0.11.19 /uv /uvx /bin/
+ENV UV_PYTHON_DOWNLOADS=0 \
+    UV_PROJECT_ENVIRONMENT=/.venv
+
+COPY pyproject.toml uv.lock README.md ./
+COPY src src/
+RUN uv sync --locked --no-dev --no-editable --compile-bytecode
 
 FROM ghcr.io/praekeltfoundation/python-base-nw:3.11-bullseye
 COPY --from=build .venv/ .venv/
