@@ -3,7 +3,7 @@ import hmac
 from hashlib import sha256
 
 
-def validate_turn_signature(req, secret: str):
+def validate_turn_signature(req, secret: str | None):
     if not secret:
         return {"error": "TURN_HMAC_SECRET must be set"}, 500
 

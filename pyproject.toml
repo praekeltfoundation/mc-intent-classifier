@@ -1,37 +1,50 @@
-[tool.poetry]
+[project]
 name = "mc-intent-classifier"
 version = "0.1.1.dev0"
 description = ""
-authors = ["Erik Harding <erik@praekelt.org>"]
+authors = [{ name = "Erik Harding", email = "erik@praekelt.org" }]
 readme = "README.md"
-repository = "https://github.com/praekeltfoundation/mc-intent-classifier"
-packages = [
-    { include = "src" },
+requires-python = ">=3.11,<4.0"
+dependencies = [
+    "gunicorn>=23.0.0,<24.0.0",
+    "flask>=3.1.3,<4.0.0",
+    "prometheus-flask-exporter>=0.23.1,<0.24.0",
+    "flask-basicauth>=0.2.0,<0.3.0",
+    "sentry-sdk[flask]>=2.18.0,<3.0.0",
+    "numpy==2.2.5",
+    "torch==2.6.0",
+    "sentence-transformers>=3.1.1,<4.0.0",
+    "celery>=5.4.0,<6.0.0",
+    "requests>=2.32.0,<3.0.0",
+    "pydantic>=2.9.0,<3.0.0",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-gunicorn = "^23.0.0"
-flask = "^3.1.3"
-prometheus-flask-exporter = "^0.23.1"
-flask-basicauth = "^0.2.0"
-sentry-sdk = {extras = ["flask"], version = "^2.18.0"}
-numpy = "2.2.5"
-torch = "2.6.0"
-sentence-transformers = "^3.1.1"
-celery = {extras = ["amqp"], version = "^5.4.0"}
-requests = "^2.32.0"
-pydantic = "^2.9.0"
+[project.urls]
+Repository = "https://github.com/praekeltfoundation/mc-intent-classifier"
 
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.7.4"
-pre-commit = "^4.0.1"
-pytest = "^8.3.3"
-pytest-mock = "^3.14.0"
+[dependency-groups]
+dev = [
+    "ruff>=0.7.4,<0.8.0",
+    "pre-commit>=4.0.1,<5.0.0",
+    "pytest>=8.3.3,<9.0.0",
+    "pytest-mock>=3.14.0,<4.0.0",
+    "ty>=0.0.44,<0.1.0",
+]
+
+[tool.uv]
+required-version = "==0.11.19"
+
+[tool.uv.build-backend]
+module-name = "src"
+module-root = ""
+
+[tool.ty.environment]
+python-version = "3.11"
+python-platform = "linux"
 
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["uv_build>=0.11.19,<0.12"]
+build-backend = "uv_build"
 
 
 [tool.ruff.lint]
