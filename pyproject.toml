@@ -12,7 +12,7 @@ dependencies = [
     "flask-basicauth>=0.2.0,<0.3.0",
     "sentry-sdk[flask]>=2.18.0,<3.0.0",
     "numpy==2.2.5",
-    "torch==2.6.0",
+    "torch==2.13.0",
     "sentence-transformers>=3.1.1,<4.0.0",
     "celery>=5.4.0,<6.0.0",
     "requests>=2.32.0,<3.0.0",
